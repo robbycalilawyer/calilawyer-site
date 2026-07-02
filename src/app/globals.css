@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/* ============================================================
+   CaliLawyer — the "house" design system
+   All colors, fonts, radii, motion, and spacing live here as
+   tokens. Components must reference tokens, never raw hex.
+   ============================================================ */
+
+:root {
+  /* --- Brand colors (the six) --- */
+  --color-ink: #000000;
+  --color-charcoal: #333333;
+  --color-bone: #c7c5be;
+  --color-paper: #f5f4f1;
+  --color-gold: #ffc800;
+  --color-white: #ffffff;
+
+  /* --- Radii --- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* --- Motion --- */
+  --motion-fast: 200ms;
+  --motion-base: 300ms;
+  --motion-slow: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Spacing (8pt scale) --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+}
+
+/* Wire tokens into Tailwind's theme so utilities like bg-ink,
+   text-gold, rounded-md, font-display resolve to our system. */
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-charcoal: var(--color-charcoal);
+  --color-bone: var(--color-bone);
+  --color-paper: var(--color-paper);
+  --color-gold: var(--color-gold);
+  --color-white: var(--color-white);
+
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+}
+
+/* ---------- Base ---------- */
+* {
+  border-color: var(--color-bone);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17px, within 16–18 */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Typography roles ---------- */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+.font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+.h-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.h-section {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
+.h-card {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  line-height: 1.15;
+  font-weight: 400;
+}
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.figure {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Focus states (WCAG 2.2 AA) ----------
+   3px ring, 2px offset. Ink on light grounds, gold on dark.
+   Never removed. */
+:where(a, button, input, textarea, select, [tabindex], summary):focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+/* On dark grounds, opt in with .on-dark to switch the ring to gold. */
+.on-dark :where(a, button, input, textarea, select, [tabindex], summary):focus-visible,
+:where(a, button, input, textarea, select, [tabindex], summary).on-dark:focus-visible {
+  outline-color: var(--color-gold);
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* ---------- Utility: content width ---------- */
+.container-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+@media (min-width: 768px) {
+  .container-site {
+    padding-inline: var(--space-8);
+  }
+}
+
+/* ---------- Signature: dual-path gold hairline ---------- */
+@keyframes hairline-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.hairline {
+  transform-origin: top;
+  animation: hairline-grow var(--motion-slow) var(--ease-out) 120ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hairline {
+    animation: none;
+    transform: scaleY(1);
+  }
+}
+
+/* ---------- StatCounter reveal ---------- */
+@keyframes count-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.count-in {
+  animation: count-in var(--motion-base) var(--ease-out) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .count-in {
+    animation: none;
+  }
+}
+
+/* ---------- Accordion panel ---------- */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--motion-base) var(--ease-out);
+}
+.accordion-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.accordion-panel > div {
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion-panel {
+    transition: none;
+  }
+}

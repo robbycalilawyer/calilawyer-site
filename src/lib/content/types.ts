@@ -51,6 +51,12 @@ export interface PracticeAreaContent {
     items: string[];
   };
 
+  /** Optional related-pages grid (e.g. accident sub-pages). */
+  related?: {
+    title: string;
+    links: { label: string; href: string; blurb: string }[];
+  };
+
   /** 3-step process. */
   process: { step: string; title: string; body: string }[];
 

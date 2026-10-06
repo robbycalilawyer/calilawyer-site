@@ -49,8 +49,8 @@
   --color-gold: var(--color-gold);
   --color-white: var(--color-white);
 
-  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   --radius-sm: var(--radius-sm);
@@ -89,7 +89,7 @@ body {
 .font-display {
   font-family: var(--font-display);
   font-optical-sizing: auto;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 .font-mono {
   font-family: var(--font-mono);
@@ -99,9 +99,9 @@ body {
 .h-hero {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  font-weight: 500;
 }
 .h-section {
   font-family: var(--font-display);

@@ -1,6 +1,7 @@
 import type { PracticeAreaContent } from "@/lib/content/types";
 import { SITE } from "@/lib/site";
 import { LinkButton } from "./Button";
+import { Card } from "./Card";
 import { StatCounter } from "./StatCounter";
 import { Accordion } from "./Accordion";
 import { Testimonial } from "./Testimonial";
@@ -164,6 +165,31 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
           </div>
         </div>
       </section>
+
+      {/* ---------- Related pages (e.g. accident types) ---------- */}
+      {c.related && (
+        <section className="bg-white">
+          <div className="container-site py-16 md:py-20">
+            <h2 className="h-section text-ink">{c.related.title}</h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {c.related.links.map((link) => (
+                <Card key={link.href} href={link.href} className="flex flex-col">
+                  <h3 className="h-card text-ink">{link.label}</h3>
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink/75">
+                    {link.blurb}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-2 font-semibold text-ink">
+                    <span className="border-b-2 border-gold pb-0.5 transition-colors group-hover:border-ink">
+                      Learn more
+                    </span>
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ---------- 3-step process ---------- */}
       <section className="on-dark bg-charcoal">

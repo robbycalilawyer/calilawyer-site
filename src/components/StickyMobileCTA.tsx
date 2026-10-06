@@ -27,7 +27,7 @@ export function StickyMobileCTA() {
           Call now
         </a>
         <a
-          href="/injury#lead-form"
+          href="/contact"
           className="flex min-h-11 flex-1 items-center justify-center rounded-[var(--radius-pill)] bg-gold font-semibold text-ink"
         >
           Free case review

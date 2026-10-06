@@ -228,6 +228,11 @@ export default function Home() {
               <ResultCard key={r.detail} {...r} />
             ))}
           </div>
+          <div className="mt-10">
+            <LinkButton href="/results" variant="secondary" size="lg">
+              View all case results
+            </LinkButton>
+          </div>
         </div>
       </section>
 

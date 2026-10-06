@@ -21,24 +21,46 @@ npm run build    # static export to ./out
 ```
 src/
   app/
-    layout.tsx                       # fonts, header, footer, sticky mobile CTA
-    globals.css                      # design tokens (colors, type, motion, radii)
-    page.tsx                         # home: dual-path hero + conversion stack
-    injury/page.tsx                  # practice hub (PracticeArea template)
-    injury/car-accident/page.tsx     # child page proving template reuse
-    lemon-law/page.tsx               # practice hub (PracticeArea template)
-    lemon-law/what-qualifies/page.tsx# child page proving template reuse
-  components/                        # Header, StickyMobileCTA, Button, Card,
-                                     # ResultCard, StatCounter, Accordion,
-                                     # LeadForm, Testimonial, LocationGrid,
-                                     # Footer, DualPathHero, PracticeArea
+    layout.tsx                        # fonts, header, footer, sticky mobile CTA
+    globals.css                       # design tokens (colors, type, motion, radii)
+    page.tsx                          # home: dual-path hero + conversion stack
+    injury/page.tsx                   # personal injury hub (PracticeArea template)
+    injury/car-accident/              # ┐
+    injury/truck-accident/            # │
+    injury/motorcycle-accident/       # │ accident sub-pages — all render from
+    injury/rideshare-accident/        # │ the PracticeArea template; copy comes
+    injury/pedestrian-accident/       # │ from src/lib/content/accidents.ts
+    injury/dog-bite/                  # │
+    injury/slip-and-fall/             # ┘
+    lemon-law/page.tsx                # lemon law hub (PracticeArea template)
+    lemon-law/what-qualifies/page.tsx # child page proving template reuse
+    results/page.tsx                  # filterable case-results grid (placeholders)
+    about/page.tsx                    # firm manifesto + team/credentials placeholders
+    faq/page.tsx                      # grouped FAQ accordion + FAQPage JSON-LD
+    contact/page.tsx                  # full lead form + contact methods + consent
+    blog/page.tsx                     # resource index (placeholder article cards)
+    privacy/page.tsx                  # privacy policy (placeholder, pending counsel)
+    terms/page.tsx                    # terms + attorney-advertising disclaimer
+  components/                         # Header, StickyMobileCTA, Button, Card,
+                                      # ResultCard, ResultsGrid, StatCounter,
+                                      # Accordion, LeadForm, Testimonial,
+                                      # LocationGrid, Footer, DualPathHero,
+                                      # PracticeArea
   lib/
-    site.ts                          # firm constants + bracketed placeholders
-    content/                         # PracticeArea data (types, injury, lemon-law)
+    site.ts                           # firm constants + bracketed placeholders
+    content/                          # PracticeArea data:
+                                      #   types, injury, lemon-law, accidents
 ```
 
-Both practice hubs and their child pages render from **one** `PracticeArea`
-component — they differ only by the data object passed in.
+All practice hubs, their child pages, and the seven accident sub-pages render
+from **one** `PracticeArea` component — they differ only by the data object
+passed in. The accident pages are built from the injury base in
+`content/accidents.ts`, overriding only copy that should be unique per case type.
+
+### Routes
+
+`/` · `/injury` (+ 7 accident sub-pages) · `/lemon-law` · `/lemon-law/what-qualifies`
+· `/results` · `/about` · `/faq` · `/contact` · `/blog` · `/privacy` · `/terms`
 
 ## Design system
 
@@ -70,5 +92,9 @@ LEAD_ENDPOINT="https://example.com/leads" npm run build
 Every factual legal claim is left as a bracketed placeholder for attorney
 review (centralized in `src/lib/site.ts`): `[SETTLEMENTS RECOVERED]`,
 `[YEARS IN PRACTICE]`, `[NO-FEE PHRASING]`, `[TCPA CONSENT LANGUAGE]`,
-`[ATTORNEY ADVERTISING DISCLAIMER]`. No settlement figures, review counts, or
-fee guarantees are invented.
+`[ATTORNEY ADVERTISING DISCLAIMER]`, `[RESPONSIBLE ATTORNEY NAME]`,
+`[BAR NUMBER]`, `[FIRM ADDRESS REQUIRED]`, and `[RESULT AMOUNT]` on the results
+page. No settlement figures, client counts, review counts, awards, bar numbers,
+or fee guarantees are invented — these must be supplied and verified before
+launch. The `/privacy` and `/terms` pages are starting templates and must be
+reviewed by counsel.

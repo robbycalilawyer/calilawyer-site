@@ -55,7 +55,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -68,7 +68,7 @@ export function Header() {
         </nav>
 
         {/* Always-on click-to-call (desktop) */}
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href={SITE.phoneHref}
             className="group inline-flex items-center gap-2 text-ink"
@@ -77,17 +77,17 @@ export function Header() {
             <span className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-pill)] bg-ink text-white transition-transform duration-[var(--motion-fast)] group-hover:scale-105">
               <PhoneIcon />
             </span>
-            <span className="figure text-[0.95rem] font-semibold">
+            <span className="figure hidden text-[0.95rem] font-semibold xl:inline">
               {SITE.phoneDisplay}
             </span>
           </a>
-          <LinkButton href="/injury#lead-form" size="md">
+          <LinkButton href="/contact" size="md">
             Free case review
           </LinkButton>
         </div>
 
         {/* Mobile: call + menu toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <a
             href={SITE.phoneHref}
             className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-pill)] bg-ink text-white"
@@ -128,7 +128,7 @@ export function Header() {
       {open && (
         <div
           id="mobile-menu"
-          className="border-t border-bone bg-paper md:hidden"
+          className="border-t border-bone bg-paper lg:hidden"
         >
           <nav
             className="container-site flex flex-col gap-1 py-4"
@@ -146,7 +146,7 @@ export function Header() {
             ))}
             <div className="mt-3 flex flex-col gap-3">
               <LinkButton
-                href="/injury#lead-form"
+                href="/contact"
                 size="lg"
                 onClick={() => setOpen(false)}
               >

@@ -83,6 +83,54 @@ export const injuryContent: PracticeAreaContent = {
     ],
   },
 
+  related: {
+    title: "Accidents we handle",
+    links: [
+      {
+        label: "Car Accidents",
+        href: "/injury/car-accident",
+        blurb:
+          "Rear-end, intersection, hit-and-run, and freeway crashes — we take on the at-fault driver’s insurer.",
+      },
+      {
+        label: "Truck Accidents",
+        href: "/injury/truck-accident",
+        blurb:
+          "Commercial-trucking cases move fast and defend hard. We preserve the evidence before it disappears.",
+      },
+      {
+        label: "Motorcycle Accidents",
+        href: "/injury/motorcycle-accident",
+        blurb:
+          "Riders get blamed by default. We counter the bias with reconstruction and hard facts.",
+      },
+      {
+        label: "Rideshare Accidents",
+        href: "/injury/rideshare-accident",
+        blurb:
+          "Uber and Lyft crashes come with a coverage maze. We find every policy that applies to you.",
+      },
+      {
+        label: "Pedestrian Accidents",
+        href: "/injury/pedestrian-accident",
+        blurb:
+          "Serious injuries and disputed fault. We build the record that shows what really happened.",
+      },
+      {
+        label: "Dog Bites",
+        href: "/injury/dog-bite",
+        blurb:
+          "California holds owners strictly liable in many cases — and insurance usually pays, not the person.",
+      },
+      {
+        label: "Slip & Fall",
+        href: "/injury/slip-and-fall",
+        blurb:
+          "Premises cases turn on proving the hazard. We document it before it’s quietly repaired.",
+      },
+    ],
+  },
+
   process: [
     {
       step: "01",

@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { SITE } from "@/lib/site";
 
-// DISPLAY — editorial authority, headlines only.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// DISPLAY — high-contrast editorial serif, headlines only.
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
 });
 
 // BODY / UTILITY.
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 // DATA / FIGURES — settlement amounts, case numbers, stats.
@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${hanken.variable} ${jetbrains.variable} antialiased`}
+        className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} antialiased`}
       >
         <a
           href="#main"

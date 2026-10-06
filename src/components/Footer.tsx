@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { NAV, PLACEHOLDER, SITE } from "@/lib/site";
-
-const PRACTICE_LINKS = [
-  { label: "Personal Injury", href: "/injury" },
-  { label: "Car Accidents", href: "/injury/car-accident" },
-  { label: "Lemon Law", href: "/lemon-law" },
-  { label: "What Qualifies", href: "/lemon-law/what-qualifies" },
-];
+import {
+  FOOTER_FIRM,
+  FOOTER_LEGAL,
+  FOOTER_PRACTICE,
+  PLACEHOLDER,
+  SITE,
+} from "@/lib/site";
 
 export function Footer() {
   return (
@@ -32,13 +31,19 @@ export function Footer() {
               {SITE.phoneDisplay}
             </a>
             <p className="mt-1 text-sm text-bone">{SITE.addressLine}</p>
+            <a
+              href={`mailto:${SITE.email}`}
+              className="mt-1 inline-block text-sm text-bone transition-colors duration-[var(--motion-fast)] hover:text-white"
+            >
+              {SITE.email}
+            </a>
           </div>
 
           {/* Practice areas */}
           <nav aria-label="Footer practice areas">
             <h2 className="eyebrow text-bone">Practice Areas</h2>
             <ul className="mt-4 space-y-3">
-              {PRACTICE_LINKS.map((l) => (
+              {FOOTER_PRACTICE.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
@@ -55,7 +60,7 @@ export function Footer() {
           <nav aria-label="Footer firm links">
             <h2 className="eyebrow text-bone">The Firm</h2>
             <ul className="mt-4 space-y-3">
-              {NAV.map((l) => (
+              {FOOTER_FIRM.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
@@ -65,14 +70,20 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  href={SITE.phoneHref}
-                  className="text-[0.95rem] text-bone transition-colors duration-[var(--motion-fast)] hover:text-white"
-                >
-                  Free case review
-                </a>
-              </li>
+            </ul>
+
+            <h2 className="eyebrow mt-8 text-bone">Legal</h2>
+            <ul className="mt-4 space-y-3">
+              {FOOTER_LEGAL.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-[0.95rem] text-bone transition-colors duration-[var(--motion-fast)] hover:text-white"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
@@ -85,18 +96,25 @@ export function Footer() {
                 Attorney Advertising.
               </span>{" "}
               {PLACEHOLDER.disclaimer} This website is for general information
-              only and does not create an attorney–client relationship. Prior
-              results do not guarantee a similar outcome. {PLACEHOLDER.noFee}
+              only and does not create an attorney–client relationship.
+              Submitting a form does not create an attorney–client relationship.
+              Do not submit confidential or time-sensitive information through
+              this website. Prior results do not guarantee a similar outcome.{" "}
+              {PLACEHOLDER.noFee}
             </p>
             <p>
               <span className="font-semibold text-bone">Consent.</span>{" "}
               {PLACEHOLDER.tcpa} By submitting a form on this site you agree to
               be contacted about your inquiry by phone, text, or email.
             </p>
+            <p>
+              <span className="font-semibold text-bone">
+                Responsible attorney.
+              </span>{" "}
+              {PLACEHOLDER.responsibleAttorney}. {PLACEHOLDER.firmAddress}.
+            </p>
             <p className="flex flex-wrap items-center gap-x-2 gap-y-1 pt-2">
-              <span>
-                © {SITE.legalName}. All rights reserved.
-              </span>
+              <span>© {SITE.legalName}. All rights reserved.</span>
               <span aria-hidden="true">·</span>
               <span>{SITE.addressLine}.</span>
             </p>

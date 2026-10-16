@@ -9,11 +9,11 @@ export const SITE_FAQS: FaqItem[] = [
   },
   {
     q: "What is a California lemon law case?",
-    a: "Under the Song-Beverly Consumer Warranty Act, a vehicle purchased or leased in California with a warranty may qualify for review when a substantial defect is not repaired after a reasonable number of attempts. Possible outcomes include a buyback, a replacement, or cash compensation. Whether a specific vehicle qualifies depends on the repair history and the warranty.",
+    a: "Under the Song-Beverly Consumer Warranty Act, a vehicle bought or leased in California with a warranty may qualify when a substantial defect isn't repaired after a reasonable number of attempts. Possible outcomes include a buyback, a replacement, or cash compensation. Whether your vehicle qualifies depends on the repair history and the warranty.",
   },
   {
     q: "What should I do immediately after an auto accident?",
-    a: "Get to safety and call 911 so a report can be made. Seek medical care even if you feel fine. Photograph the scene, the vehicles, and visible injuries.",
+    a: "Get to safety and call 911 so there's a report. Get medical care even if you feel fine. Then photograph the scene, the vehicles, and any injuries you can see.",
   },
   {
     q: "Can I still call for a review if I am not sure I have a case?",

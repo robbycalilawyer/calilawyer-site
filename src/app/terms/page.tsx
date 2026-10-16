@@ -25,9 +25,9 @@ export default function TermsPage() {
         <div className="container-site max-w-3xl space-y-8 py-16 text-ink/80 md:py-20">
           <h2 className="h-card text-ink">Not legal advice</h2>
           <p>
-            Material on this website is general information. It is not legal
-            advice, and it may not reflect the latest development in your
-            county or your facts. Do not act, or wait, based only on a page
+            What’s on this site is general information. It isn’t legal
+            advice, and it may not match the latest development in your
+            county or your facts. Don’t act, or wait, based only on a page
             here.
           </p>
           <h2 className="h-card text-ink">No attorney-client relationship</h2>
@@ -38,8 +38,8 @@ export default function TermsPage() {
           </p>
           <h2 className="h-card text-ink">Past results</h2>
           <p>
-            Case results are not published on this site. A past result is not a
-            prediction of a future outcome. Every case is different.
+            We don’t publish case results on this site. A past result isn’t a
+            prediction. Every case is different.
           </p>
           <h2 className="h-card text-ink">Fees</h2>
           <p>{FEE_TERMS} Free consultation.</p>

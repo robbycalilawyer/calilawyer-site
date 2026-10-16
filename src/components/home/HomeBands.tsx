@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { AttorneyFigure } from "@/components/AttorneyPortrait";
 import { Accordion } from "@/components/Accordion";
 import { DualPathHero } from "@/components/DualPathHero";
 import { LocationGrid } from "@/components/LocationGrid";
-import { BLOG_POSTS } from "@/lib/content/blog";
 import { SITE_FAQS } from "@/lib/content/faq";
 import { SERVICE_CITIES, SITE } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
@@ -13,23 +11,23 @@ import { LinkButton } from "@/components/Button";
 const WHY = [
   {
     title: "Records first",
-    body: "We ask for repair orders, medical records, and video before the other side writes the file.",
+    body: "Repair orders, medical records, video. We ask for them before the other side writes the story.",
   },
   {
     title: "The manufacturer, not just the dealer",
-    body: "We take the warranty file to the company that has to answer it.",
+    body: "On a lemon law file, we go to the manufacturer. The dealer isn't the one who has to buy the car back.",
   },
   {
     title: "The insurance file",
-    body: "We document treatment and lost wages before anyone talks about a number.",
+    body: "On an injury file, treatment and lost wages go in before anyone talks about a number.",
   },
   {
     title: "Damages in one place",
-    body: "Bills, wages, and future care go in the file so the demand is specific.",
+    body: "The demand names the bills, the wages, and the care that's still ahead.",
   },
   {
     title: "A file that can be filed",
-    body: "We negotiate from a file that can be filed. A low offer doesn’t close the case.",
+    body: "A low offer doesn't close the case. We negotiate from a file that can be filed.",
   },
   {
     title: "Anywhere in California",
@@ -40,7 +38,7 @@ const WHY = [
 const STEPS = [
   {
     title: "Free consultation",
-    body: "A confidential look at the facts, the repair orders, or the medical records.",
+    body: "Tell us what happened. The consultation is free.",
   },
   {
     title: "Records",
@@ -117,36 +115,10 @@ export function HomeBands() {
       <section className="bg-paper">
         <div className="container-site py-20 md:py-28">
           <LocationGrid
-            heading="Glendale office. Serving clients across California"
+            heading="The office is in Glendale. We also take cases across California."
             cities={[...SERVICE_CITIES]}
             hrefBase="/contact"
           />
-        </div>
-      </section>
-
-      <section className="bg-paper">
-        <div className="container-site py-20 md:py-32">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <h2 className="h-section text-ink">
-                Know the process before the other side calls.
-              </h2>
-            </div>
-            <Link href="/blog" className="font-semibold text-ink">
-              <span className="border-b-2 border-gold pb-0.5">Read resources</span>
-            </Link>
-          </div>
-          <ul className="mt-10 grid gap-6 md:grid-cols-3">
-            {BLOG_POSTS.slice(0, 3).map((post) => (
-              <li key={post.title} className="rounded-[var(--radius-lg)] bg-white p-6">
-                <p className="text-sm font-semibold text-ink">
-                  {post.category}
-                </p>
-                <h3 className="mt-3 font-display text-2xl text-ink">{post.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/70">{post.excerpt}</p>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

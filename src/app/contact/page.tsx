@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Contact",
   description:
-    "Request a free consultation with CaliLawyer.com in Glendale by form, phone, or text. A form doesn’t create an attorney-client relationship.",
+    "Call, text, or send a form to the Glendale office. A form doesn't make you a client. Free consultation.",
   path: "/contact",
 });
 
@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Free consultation."
-        sub="Strictly confidential. No obligation. Not a retainer."
+        sub="Call, text, or use the form. None of that makes you a client."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Contact", path: "/contact" },
@@ -28,9 +28,9 @@ export default function ContactPage() {
             <div>
               <h2 className="h-section text-ink">Tell us what you know so far.</h2>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink">
-                Share as much as you’re comfortable sharing. Someone at the
-                firm reviews it and contacts you. Don’t send confidential or
-                time-sensitive information you can’t also say out loud.
+                Share what you’re comfortable sharing. Someone at the firm
+                reads it and calls you back. Don’t put something in the form
+                that you couldn’t also say on the phone.
               </p>
             </div>
             <ul className="grid gap-4 sm:grid-cols-2">

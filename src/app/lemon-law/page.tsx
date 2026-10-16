@@ -3,9 +3,9 @@ import { lemonLawContent } from "@/lib/content/lemon-law";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "California Lemon Law Attorneys",
+  title: "Lemon Law Lawyer in Glendale, CA",
   description:
-    "California lemon law matters for defective vehicles, repeat warranty repairs, buybacks, and replacements. Free consultation from the Glendale office.",
+    "If the dealer hasn't fixed the car, we can review the warranty file. Buybacks and replacements depend on the facts. Free consultation from the Glendale office.",
   path: "/lemon-law",
 });
 

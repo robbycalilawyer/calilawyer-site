@@ -25,6 +25,12 @@ export interface PracticeAreaContent {
     }[];
   };
 
+  /**
+   * Opening answer on a guide page. 40 to 60 words, and the first
+   * sentence is the answer.
+   */
+  directAnswer?: string;
+
   /** Narrative intro paragraph(s). */
   intro: string[];
 

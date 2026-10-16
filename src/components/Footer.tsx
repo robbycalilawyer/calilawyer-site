@@ -10,9 +10,8 @@ export function Footer() {
           <div>
             <Logo className="h-14 w-auto" />
             <p className="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-bone">
-              California’s lemon law and injury firm. Relentless advocacy for
-              people hurt by negligence and consumers stuck with defective
-              vehicles.
+              We’re a Glendale firm for California lemon law and injury cases.
+              You talk to the office, not a call center.
             </p>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.12em] text-white">
               Available to take a review
@@ -83,7 +82,7 @@ export function Footer() {
           <p>
             This website is for information only and doesn’t create
             an attorney-client relationship. Submitting a form doesn’t create
-            an attorney-client relationship. Do not submit confidential or
+            an attorney-client relationship. Don’t submit confidential or
             time-sensitive information through this website.
           </p>
           <p>

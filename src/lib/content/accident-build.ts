@@ -55,9 +55,9 @@ export function buildAccident(spec: AccidentSpec): PracticeAreaContent {
 export function sharedHelp(line: string) {
   return [
     line,
-    "We take the adjuster’s calls so you do not have to.",
-    "Medical records and wage loss are documented before a demand goes out.",
-    "The file is built as if it will be tried.",
+    "We take the adjuster's calls so you don't have to.",
+    "Medical records and wage loss get written down before a demand goes out.",
+    "We prepare the file as if the case may go to trial.",
     FEE_TERMS,
   ];
 }

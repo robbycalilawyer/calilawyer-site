@@ -6,8 +6,8 @@ import { FEE_TERMS } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "What qualifies as a lemon in California",
-  description:
-    "Repair attempts, days out of service, and warranty signals for a California lemon law matter. Free consultation.",
+    description:
+    "How to tell if a California vehicle may qualify under the lemon law. It depends on the repair history and the warranty. Free consultation.",
   path: "/lemon-law/what-qualifies",
 });
 
@@ -21,11 +21,12 @@ const whatQualifiesContent: PracticeAreaContent = {
     ...lemonLawContent.hero,
     eyebrow: "What Qualifies",
     headline: "Does your vehicle actually qualify as a lemon?",
-    sub: "There's no single repair count. It comes down to your repair history and the warranty. Here's what usually matters.",
+    sub: "There's no single repair count. It comes down to the repair history and the warranty.",
   },
+  directAnswer:
+    "A vehicle may qualify when a covered defect isn't fixed after a reasonable number of repair attempts, or when it's been out of service for a long stretch, and the manufacturer's warranty still applies. Your repair orders are the evidence that matters.",
   intro: [
-    "The question we hear most is “Is my car a lemon?” It depends on the details, and there are clear signals that make a claim worth reviewing.",
-    "A vehicle may qualify when it has a covered defect the manufacturer hasn't fixed after a reasonable number of repair attempts, or when it's been out of service for repairs for a long stretch, while the manufacturer's warranty still applies. The strongest evidence is your paperwork.",
+    "The question we hear most is “Is my car a lemon?” It depends on the details. A few signals make a file worth sending over.",
   ],
   worth: {
     title: "Signals your vehicle may qualify",
@@ -64,7 +65,7 @@ const whatQualifiesContent: PracticeAreaContent = {
       "Three or more repair visits for the same unresolved defect.",
       "Weeks of cumulative downtime waiting on repairs.",
       "A dealer that keeps saying it “can’t reproduce” the problem.",
-      "A serious safety defect after only one or two attempts.",
+      "A serious safety defect after two repair attempts.",
       "Used vehicles may qualify, case by case.",
       "A leased vehicle with a persistent, documented issue.",
     ],

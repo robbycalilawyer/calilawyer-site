@@ -103,27 +103,16 @@ for (const loc of locs) {
   ) {
     fail(`${path} still has a retired claim`);
   }
-  const faq = html.includes('"@type":"FAQPage"') || html.includes('"@type": "FAQPage"');
-  if (faq) {
-    const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
-    for (const block of blocks) {
-      const data = JSON.parse(block[1]);
-      const nodes = data["@graph"] ?? [data];
-      for (const node of nodes) {
-        if (node["@type"] !== "FAQPage") continue;
-        for (const question of node.mainEntity ?? []) {
-          if (!visible.includes(question.name)) fail(`${path} FAQ question not visible: ${question.name}`);
-          if (!visible.includes(question.acceptedAnswer.text)) {
-            fail(`${path} FAQ answer not visible: ${question.name}`);
-          }
-        }
-      }
-    }
-  }
 }
 if (trailing.size > 1) fail("canonical paths mix trailing slashes");
 
-const FORBIDDEN_HTML = ["pending fact-check", "Copy pending", "Last reviewed by"];
+const FORBIDDEN_HTML = [
+  "pending fact-check",
+  "Copy pending",
+  "Last reviewed by",
+  "Question 1",
+  "reviewedBy",
+];
 
 function walkHtml(dir) {
   const found = [];
@@ -135,12 +124,93 @@ function walkHtml(dir) {
   return found;
 }
 
+const BANNED_PHRASES = [
+  "navigating",
+  "landscape",
+  "we understand that",
+  "rest assured",
+  "comprehensive",
+  "seamless",
+  "dedicated to",
+  "tailored",
+  "empower",
+  "in today's",
+  "it's important to note",
+  "delve",
+  "journey",
+];
+
+function readable(html) {
+  return strip(html)
+    .replace(/\u2019/g, "'")
+    .replace(/\u2018/g, "'")
+    .replace(/\u201c/g, '"')
+    .replace(/\u201d/g, '"');
+}
+
+function faqText(value) {
+  return readable(value).replace(/\s+/g, " ").trim();
+}
+
+function assertFaqParity(file, html) {
+  const panels = [...html.matchAll(/role="region"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/g)].map((match) =>
+    faqText(match[1]),
+  );
+  const answers = [];
+  for (const block of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    const data = JSON.parse(block[1]);
+    const nodes = data["@graph"] ?? [data];
+    for (const node of nodes) {
+      const type = node["@type"];
+      const types = Array.isArray(type) ? type : [type];
+      if (!types.includes("FAQPage")) continue;
+      for (const question of node.mainEntity ?? []) {
+        const answer = faqText(question.acceptedAnswer?.text ?? "");
+        answers.push(answer);
+        if (!panels.includes(answer)) {
+          fail(`${file} FAQ JSON-LD answer is not the visible answer word for word: ${question.name}`);
+        }
+      }
+    }
+  }
+  if (answers.length && panels.length !== answers.length) {
+    fail(`${file} has ${panels.length} visible FAQ answers and ${answers.length} JSON-LD answers`);
+  }
+  if (answers.length && panels.join("\n") !== answers.join("\n")) {
+    fail(`${file} FAQ answers are not in the same order as the JSON-LD`);
+  }
+}
+
+let directAnswers = 0;
 for (const file of walkHtml(root)) {
   const html = readFileSync(file, "utf8");
   for (const needle of FORBIDDEN_HTML) {
     if (html.includes(needle)) fail(`${file} contains ${JSON.stringify(needle)}`);
   }
+  if (/—|&mdash;|&#8212;|&#x2014;/i.test(html)) {
+    fail(`${file} contains an em dash`);
+  }
+  const text = readable(html).toLowerCase();
+  for (const phrase of BANNED_PHRASES) {
+    const pattern = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+    if (pattern.test(text)) fail(`${file} contains banned phrase ${JSON.stringify(phrase)}`);
+  }
+  assertFaqParity(file, html);
+  for (const match of html.matchAll(/data-direct-answer="true"[^>]*>([\s\S]*?)<\/p>/g)) {
+    directAnswers += 1;
+    const answer = faqText(match[1]);
+    const count = answer.split(/\s+/).filter(Boolean).length;
+    if (count < 40 || count > 60) {
+      fail(`${file} direct answer is ${count} words, expected 40-60`);
+    }
+    const firstSentence = answer.split(/(?<=\.)\s/)[0] ?? "";
+    const firstWords = firstSentence.split(/\s+/).filter(Boolean);
+    if (firstWords.length < 12 || firstSentence.endsWith("?")) {
+      fail(`${file} direct answer does not open with the answer`);
+    }
+  }
 }
+if (directAnswers < 1) fail("no guide direct answer was exported");
 
 for (const path of UNPUBLISHED) {
   if (sitemap.includes(path)) fail(`sitemap still lists ${path}`);
@@ -159,6 +229,15 @@ for (const path of UNPUBLISHED) {
   if (rules.includes(path)) fail(`${path} is in a redirect or rewrite rule`);
 }
 if (/\b410\b/.test(rules)) fail("a redirect rule uses 410");
+if (!/^\/personal-injury\s+\/injury\s+301\s*$/m.test(rules)) {
+  fail("missing /personal-injury /injury 301");
+}
+if (
+  existsSync(resolve(root, "personal-injury.html")) ||
+  existsSync(resolve(root, "personal-injury/index.html"))
+) {
+  fail("personal-injury alias was exported");
+}
 
 const robots = readFileSync(resolve(root, "robots.txt"), "utf8");
 for (const agent of ["GPTBot", "Google-Extended", "OAI-SearchBot", "PerplexityBot", "ClaudeBot"]) {

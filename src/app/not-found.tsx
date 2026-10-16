@@ -12,10 +12,10 @@ export default function NotFound() {
           ]}
         />
         <p className="eyebrow mt-8 text-ink/60">404</p>
-        <h1 className="h-section mt-3 text-ink">That page is not on this site.</h1>
+        <h1 className="h-section mt-3 text-ink">That page isn’t on this site.</h1>
         <p className="mt-4 max-w-xl text-lg text-ink/75">
-          The address may have changed. Start from the two practice areas, or
-          request a free consultation from the contact page.
+          The address may have changed. Start from injury or lemon law, or
+          ask for a free consultation on the contact page.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link href="/" className="font-semibold text-ink">

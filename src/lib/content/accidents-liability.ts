@@ -3,15 +3,15 @@ import { buildAccident as build, sharedHelp } from "./accident-build";
 export const pedestrianAccident = {
   aliasPath: "/pedestrian-accidents",
   meta: {
-    title: "California Pedestrian Accident Attorneys",
+    title: "Pedestrian Accident Lawyer in Glendale, CA",
     description:
       "Pedestrian injury reviews after crosswalk and hit-and-run crashes in California. We secure video and the driver’s records early.",
     path: "/injury/pedestrian-accidents",
   },
   content: build({
     eyebrow: "Pedestrian accidents",
-    headline: "California pedestrian accident attorneys.",
-    sub: "A person on foot does not have a bumper or an airbag. These injuries are severe, and the defense still looks for a reason the pedestrian was “wrong.”",
+    headline: "California pedestrian accident lawyer.",
+    sub: "A person on foot doesn't have a bumper or an airbag. These injuries are severe, and the defense still looks for a reason the pedestrian was “wrong.”",
     difference:
       "Expect an argument about the crosswalk, the signal, or a phone in your hand. Those facts can matter under comparative fault.",
     evidenceIntro:
@@ -36,7 +36,7 @@ export const pedestrianAccident = {
       },
       {
         label: "Disability",
-        detail: "Limits that do not end when the hospital stay does.",
+        detail: "Limits that don't end when the hospital stay does.",
       },
       {
         label: "Life-care costs",
@@ -60,25 +60,25 @@ export const pedestrianAccident = {
         a: "Hit-and-run files can still involve uninsured-motorist coverage and any video that identifies the vehicle. Call while the cameras still have the clip.",
       },
     ],
-    finalHeadline: "A vehicle hit you. The video will not wait.",
-    finalSub: "Tell us the intersection and the hospital. We will tell you what to save tonight.",
+    finalHeadline: "A vehicle hit you. The video won't wait.",
+    finalSub: "Tell us the intersection and the hospital. We'll tell you what to save tonight.",
   }),
 };
 
 export const dogBite = {
   aliasPath: "/dog-bites",
   meta: {
-    title: "California Dog Bite Attorneys",
+    title: "Dog Bite Lawyer in Glendale, CA",
     description:
       "California dog-bite reviews under the state’s strict-liability rules. We document wounds, animal-control reports, and the owner’s insurance.",
     path: "/injury/dog-bites",
   },
   content: build({
     eyebrow: "Dog bites",
-    headline: "California dog bite attorneys.",
+    headline: "California dog bite lawyer.",
     sub: "A bite can mean infection, nerve damage, and scarring that a homeowner's insurer would rather call a scratch. The legal standard is narrower than people think, and it still has to fit your facts.",
     difference:
-      "California generally applies strict liability when a dog bites someone in a public place, or lawfully on private property. You often do not have to prove the owner already knew the dog was dangerous. There are exceptions, including trespass, and this page is not a ruling on your bite.",
+      "California generally applies strict liability when a dog bites someone in a public place, or lawfully on private property. You often don't have to prove the owner already knew the dog was dangerous. There are exceptions, including trespass, and this page isn't a ruling on your bite.",
     evidenceIntro:
       "Wound photos taken over time are as important as the first snapshot. We also want the paper:",
     evidence: [
@@ -143,7 +143,7 @@ export const slipAndFall = {
     headline: "Slip and Fall Lawyer in Glendale",
     sub: "These cases turn on notice. Someone has to show the owner created the hazard, knew about it, or should have known, and didn't fix it or warn you.",
     difference:
-      "A wet floor is not automatically a lawsuit. The file has to prove notice and a failure to act. Property owners delete surveillance and “lose” sweep logs. Speed matters more here than in almost any other injury claim.",
+      "A wet floor isn't automatically a lawsuit. The file has to prove notice and a failure to act. Property owners delete surveillance and “lose” sweep logs. Speed matters more here than in almost any other injury claim.",
     evidenceIntro:
       "We send a preservation letter for the video before the loop records over the fall.",
     evidence: [
@@ -170,7 +170,7 @@ export const slipAndFall = {
       },
       {
         label: "Lost wages",
-        detail: "Work missed, including jobs you cannot physically do.",
+        detail: "Work missed, including jobs you can't physically do.",
       },
       {
         label: "Pain and limits",
@@ -182,8 +182,8 @@ export const slipAndFall = {
     ),
     faqs: [
       {
-        q: "I did not file an incident report. Is it too late?",
-        a: "A report helps, and the absence of one is something the defense will mention. It is not automatically fatal. Video and witness accounts can still carry the notice question. Call anyway.",
+        q: "I didn't file an incident report. Is it too late?",
+        a: "A report helps, and the absence of one is something the defense will mention. It isn't automatically fatal. Video and witness accounts can still carry the notice question. Call anyway.",
       },
       {
         q: "The store says they inspect every hour.",

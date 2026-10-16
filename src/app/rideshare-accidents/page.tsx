@@ -9,5 +9,5 @@ export const metadata = pageMeta({
 });
 
 export default function RideshareAccidentsAlias() {
-  return <PracticeArea content={rideshareAccident.content} />;
+  return <PracticeArea content={rideshareAccident.content} path={rideshareAccident.meta.path} />;
 }

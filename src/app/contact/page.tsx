@@ -17,6 +17,10 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Free consultation."
         sub="Strictly confidential. No obligation. Not a retainer."
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]}
       />
       <section className="bg-paper">
         <div className="container-site grid items-start gap-12 py-16 lg:grid-cols-[1fr_1.05fr] md:py-20">

@@ -5,5 +5,5 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta(slipAndFall.meta);
 
 export default function SlipAndFallPage() {
-  return <PracticeArea content={slipAndFall.content} />;
+  return <PracticeArea content={slipAndFall.content} path={slipAndFall.meta.path} />;
 }

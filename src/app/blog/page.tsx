@@ -17,6 +17,10 @@ export default function BlogPage() {
         eyebrow="Resources"
         title="Resources and insights."
         sub="Know the process before the other side calls. These cards are previews, not finished articles."
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Resources", path: "/blog" },
+        ]}
       />
       <section className="bg-paper">
         <div className="container-site py-20 md:py-28">

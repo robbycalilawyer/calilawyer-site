@@ -9,5 +9,5 @@ export const metadata = pageMeta({
 });
 
 export default function SlipAndFallAlias() {
-  return <PracticeArea content={slipAndFall.content} />;
+  return <PracticeArea content={slipAndFall.content} path={slipAndFall.meta.path} />;
 }

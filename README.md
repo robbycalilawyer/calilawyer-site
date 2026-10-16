@@ -68,3 +68,15 @@ firm name CaliLawyer.com, responsible attorney Rober A. Terziyan, State Bar of
 California No. 351959. Languages are English, Armenian, and Spanish. Fees are
 stated only as “We handle cases on contingency.” Consultations are free.
 Stats, case results, testimonials, and star ratings are not rendered.
+
+## Answer pages
+
+Guides, city pages, fee pages, `/reviews`, and `/attorneys/robby-terziyan` are
+static App Router routes. Their body text says “Copy pending fact-check.” until
+the briefs are fact-checked. The approved firm facts above are already in the
+header, footer, and JSON-LD.
+
+`public/llms.txt` and `src/app/robots.ts` allow the answer-engine crawlers.
+GPTBot and Google-Extended stay allowed. `npm run build` writes the static
+export; `node scripts/verify-html.mjs` checks sitemap HTML for one `h1`,
+JSON-LD, and absolute canonicals.

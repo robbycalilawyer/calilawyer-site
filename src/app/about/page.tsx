@@ -17,6 +17,10 @@ export default function AboutPage() {
         eyebrow="The firm"
         title="A Glendale office for California cases."
         sub="CaliLawyer.com reviews injury cases and lemon law claims. Free consultation. We handle cases on contingency."
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]}
       />
       <section className="bg-white">
         <div className="container-site grid items-center gap-12 py-20 md:py-32 lg:grid-cols-2">

@@ -1,13 +1,16 @@
+import { BreadcrumbTrail, type Crumb } from "./BreadcrumbTrail";
 import { SlashMotif } from "./SlashMotif";
 
 interface PageHeroProps {
   eyebrow?: string;
   title: string;
   sub?: string;
+  /** When set, a BreadcrumbList is emitted for this non-home page. */
+  crumbs?: Crumb[];
 }
 
 /** Shared ink hero for informational pages. One h1, token colors only. */
-export function PageHero({ eyebrow, title, sub }: PageHeroProps) {
+export function PageHero({ eyebrow, title, sub, crumbs }: PageHeroProps) {
   return (
     <section className="on-dark relative overflow-hidden bg-ink">
       <div
@@ -15,6 +18,11 @@ export function PageHero({ eyebrow, title, sub }: PageHeroProps) {
         aria-hidden="true"
       />
       <div className="container-site relative py-20 md:py-28">
+        {crumbs ? (
+          <div className="mb-6">
+            <BreadcrumbTrail items={crumbs} tone="dark" />
+          </div>
+        ) : null}
         <div className="flex items-center gap-4">
           <SlashMotif />
           {eyebrow ? <span className="eyebrow text-bone">{eyebrow}</span> : null}

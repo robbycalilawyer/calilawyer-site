@@ -9,5 +9,5 @@ export const metadata = pageMeta({
 });
 
 export default function TruckAccidentsAlias() {
-  return <PracticeArea content={truckAccident.content} />;
+  return <PracticeArea content={truckAccident.content} path={truckAccident.meta.path} />;
 }

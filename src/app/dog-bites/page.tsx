@@ -9,5 +9,5 @@ export const metadata = pageMeta({
 });
 
 export default function DogBitesAlias() {
-  return <PracticeArea content={dogBite.content} />;
+  return <PracticeArea content={dogBite.content} path={dogBite.meta.path} />;
 }

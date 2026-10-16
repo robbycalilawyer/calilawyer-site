@@ -194,6 +194,15 @@ if (existsSync(resolve(root, "this-page-does-not-exist.html"))) {
   fail("unknown path was exported");
 }
 
+const formsPath = resolve(root, "__forms.html");
+if (!existsSync(formsPath)) fail("__forms.html was not exported");
+else if (!readFileSync(formsPath, "utf8").includes('<meta name="robots" content="noindex"')) {
+  fail("__forms.html is missing the robots noindex meta");
+}
+if (sitemap.includes("__forms")) fail("sitemap lists __forms.html");
+if (llms.includes("__forms")) fail("llms.txt lists __forms.html");
+if (/disallow:\s*\/__forms/i.test(robots)) fail("robots.txt disallows __forms.html");
+
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);

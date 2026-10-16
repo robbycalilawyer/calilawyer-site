@@ -11,7 +11,7 @@ function crumbsFor(page: GeoPage): Crumb[] {
   const root = page.path.split("/").filter(Boolean)[0];
   const parents: Record<string, Crumb> = {
     "lemon-law": { name: "Lemon law", path: "/lemon-law" },
-    "personal-injury": { name: "Personal injury", path: "/injury" },
+    injury: { name: "Personal injury", path: "/injury" },
   };
   const items: Crumb[] = [{ name: "Home", path: "/" }];
   const parent = root ? parents[root] : undefined;

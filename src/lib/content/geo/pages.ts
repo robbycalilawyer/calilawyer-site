@@ -60,7 +60,7 @@ const CITIES = [
 
 export const CITY_INJURY_PAGES: GeoPage[] = CITIES.map(([slug, name]) =>
   shell({
-    path: `/${slug}/personal-injury-lawyer`,
+    path: `/${slug}/injury-lawyer`,
     title: `${name} personal injury lawyer`,
     eyebrow: `${name} injury`,
     h1: `Personal injury lawyer in ${name}`,
@@ -154,52 +154,10 @@ export const GEO_PAGES: GeoPage[] = [
     kind: "faq",
   }),
   shell({
-    path: "/personal-injury/attorney-fees",
+    path: "/injury/attorney-fees",
     title: "Personal injury attorney fees",
     eyebrow: "Attorney fees",
     h1: "Personal injury attorney fees",
-    kind: "faq",
-  }),
-  shell({
-    path: "/personal-injury/car-accidents",
-    title: "Car accident claims",
-    eyebrow: "Car accidents",
-    h1: "Car accident claims",
-    kind: "faq",
-  }),
-  shell({
-    path: "/personal-injury/rideshare-accidents",
-    title: "Rideshare accident claims",
-    eyebrow: "Rideshare",
-    h1: "Rideshare accident claims",
-    kind: "faq",
-  }),
-  shell({
-    path: "/personal-injury/motorcycle-accidents",
-    title: "Motorcycle accident claims",
-    eyebrow: "Motorcycle",
-    h1: "Motorcycle accident claims",
-    kind: "faq",
-  }),
-  shell({
-    path: "/personal-injury/pedestrian-accidents",
-    title: "Pedestrian accident claims",
-    eyebrow: "Pedestrian",
-    h1: "Pedestrian accident claims",
-    kind: "faq",
-  }),
-  shell({
-    path: "/personal-injury/dog-bites",
-    title: "Dog bite claims",
-    eyebrow: "Dog bites",
-    h1: "Dog bite claims",
-    kind: "faq",
-  }),
-  shell({
-    path: "/personal-injury/premises-liability",
-    title: "Premises liability claims",
-    eyebrow: "Premises",
-    h1: "Premises liability claims",
     kind: "faq",
   }),
   ...CITY_INJURY_PAGES,

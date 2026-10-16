@@ -15,7 +15,7 @@ export const injuryContent: PracticeAreaContent = {
   },
 
   intro: [
-    "The other side starts the same day you are hurt. An adjuster sounds helpful, asks for a recorded statement, and floats a number before you know what the injury will cost. That sequence is a playbook, not a courtesy.",
+    "The other side starts the same day you are hurt. An adjuster sounds helpful and floats a number before you know what the injury will cost. That sequence is a playbook, not a courtesy.",
     "CaliLawyer.com, in Glendale, reviews crashes, rideshare collisions, trucking wrecks, motorcycle and pedestrian injuries, dog bites, premises claims, catastrophic injuries, and wrongful death. We gather the evidence, document the damages, and deal with the carrier directly.",
   ],
 
@@ -61,7 +61,6 @@ export const injuryContent: PracticeAreaContent = {
       "Get medical care, even if you feel steady in the moment.",
       "Photograph the scene, vehicles, hazards, and visible injuries.",
       "Save witness names, incident reports, and any video you already have.",
-      "Do not give a recorded statement before we have talked.",
       "Call while evidence still exists — cameras overwrite and vehicles get repaired.",
       "Keep every bill, wage record, and out-of-pocket receipt.",
     ],
@@ -73,7 +72,6 @@ export const injuryContent: PracticeAreaContent = {
       "A rear-end crash left neck and back pain that will not quit.",
       "The insurer’s first offer does not cover the medical bills.",
       "You were hit by an uninsured or hit-and-run driver.",
-      "An adjuster is pushing for a recorded statement.",
       "Fault is disputed and you are not sure who to call.",
       "A loved one was seriously hurt and cannot manage the claim.",
     ],
@@ -84,13 +82,6 @@ export const injuryContent: PracticeAreaContent = {
     intro:
       "The moment you are injured, the at-fault party’s insurer can start a process aimed at paying less. These are three moves we see, and how the file answers them.",
     items: [
-      {
-        tactic: "Recorded statements",
-        reality:
-          "Adjusters ask questions that can pin fault on you or shrink the injury.",
-        counter:
-          "We handle the communication. You do not have to speak to their adjuster.",
-      },
       {
         tactic: "Quick settlements",
         reality:
@@ -149,10 +140,6 @@ export const injuryContent: PracticeAreaContent = {
     {
       q: "How much does it cost to hire you?",
       a: `Free consultation. ${FEE_TERMS}`,
-    },
-    {
-      q: "Should I talk to the other driver’s insurance company?",
-      a: "It is best not to give a recorded statement first. Adjusters are trained to collect statements that reduce claims. Let us handle those calls.",
     },
     {
       q: "How long do I have to file a claim?",

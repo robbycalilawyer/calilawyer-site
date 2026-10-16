@@ -13,7 +13,7 @@ export const SITE_FAQS: FaqItem[] = [
   },
   {
     q: "What should I do immediately after an auto accident?",
-    a: "Get to safety and call 911 so a report can be made. Seek medical care even if you feel fine. Photograph the scene, the vehicles, and visible injuries. Do not give a recorded statement to the other driver’s insurer before you have talked with a lawyer.",
+    a: "Get to safety and call 911 so a report can be made. Seek medical care even if you feel fine. Photograph the scene, the vehicles, and visible injuries.",
   },
   {
     q: "Can I still call for a review if I am not sure I have a case?",
@@ -21,7 +21,7 @@ export const SITE_FAQS: FaqItem[] = [
   },
   {
     q: "Do you handle cases throughout California?",
-    a: "Yes. The office is in Glendale, and we review matters statewide, including Los Angeles, Orange County, San Diego, the Inland Empire, Sacramento, and the Bay Area. Much of the process can be handled remotely.",
+    a: "Yes. The office is in Glendale. We also help clients in Burbank, Pasadena, Los Angeles, Orange County, San Diego, the Inland Empire, Sacramento, and the Bay Area. Much of the process can be handled remotely.",
   },
   {
     q: "Does submitting a form make me a client?",

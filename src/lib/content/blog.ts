@@ -18,15 +18,8 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "What to do after a car accident in California",
     category: "Personal Injury",
     excerpt:
-      "A short sequence for protecting your health and your claim in the hours after a collision: safety, medical care, photos, and no recorded statement.",
+      "A short sequence for protecting your health and your claim in the hours after a collision: safety, medical care, and photos.",
     date: "Jan 10, 2024",
-  },
-  {
-    title: "Why insurance adjusters call so quickly",
-    category: "Personal Injury",
-    excerpt:
-      "The early call is usually about a recorded statement, not a welfare check. Here is what that conversation is designed to capture.",
-    date: "Jan 05, 2024",
   },
   {
     title: "Is my used car covered by the lemon law?",

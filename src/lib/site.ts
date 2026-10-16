@@ -38,7 +38,6 @@ export const ATTORNEY = {
 export const NAV = [
   { label: "Lemon Law", href: "/lemon-law" },
   { label: "Personal Injury", href: "/injury" },
-  { label: "Results", href: "/results" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
@@ -46,7 +45,6 @@ export const NAV = [
 
 export const FIRM_LINKS = [
   { label: "About the firm", href: "/about" },
-  { label: "Case results", href: "/results" },
   { label: "FAQ", href: "/faq" },
   { label: "Resources", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -100,7 +98,10 @@ export const INJURY_LINKS = [
 
 export const SERVICE_CITIES = [
   "Glendale",
+  "Burbank",
+  "Pasadena",
   "Los Angeles",
+  "Long Beach",
   "Orange County",
   "San Diego",
   "Riverside",
@@ -111,6 +112,5 @@ export const SERVICE_CITIES = [
   "Fresno",
   "Bakersfield",
   "Ventura",
-  "Long Beach",
   "Oakland",
 ] as const;

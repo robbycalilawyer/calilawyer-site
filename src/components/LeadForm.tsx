@@ -23,7 +23,6 @@ interface Fields {
   phone: string;
   email: string;
   details: string;
-  consent: boolean;
   caseType: CaseType;
   vehicle: string;
   ownership: Ownership;
@@ -36,7 +35,6 @@ const EMPTY: Fields = {
   phone: "",
   email: "",
   details: "",
-  consent: false,
   caseType: "Not Sure",
   vehicle: "",
   ownership: "",
@@ -62,7 +60,6 @@ function validate(f: Fields, practice: LeadFormProps["practice"]): FieldErrors {
     if (!f.repairVisits) e.repairVisits = "Select the approximate repair visits.";
     if (!f.daysOut) e.daysOut = "Select how long it has been out of service.";
   }
-  if (!f.consent) e.consent = "Please agree before submitting.";
   return e;
 }
 
@@ -323,36 +320,6 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
             className={`${inputBase} resize-y`}
             placeholder="A few sentences about your situation."
           />
-        </div>
-
-        {/* Consent */}
-        <div>
-          <label
-            htmlFor={`${uid}-consent`}
-            className={`flex cursor-pointer items-start gap-3 text-sm leading-relaxed ${
-              isDark ? "text-bone" : "text-ink/80"
-            }`}
-          >
-            <input
-              id={`${uid}-consent`}
-              name="consent"
-              type="checkbox"
-              checked={fields.consent}
-              onChange={(e) => update("consent", e.target.checked)}
-              aria-invalid={!!errors.consent}
-              aria-describedby={
-                errors.consent ? `${uid}-consent-error` : undefined
-              }
-              className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--color-gold)]"
-            />
-            <span>
-              By submitting, you agree to be contacted by
-              phone, text, or email. Message and data rates may apply. Reply
-              STOP to opt out. This does not create an attorney–client
-              relationship.
-            </span>
-          </label>
-          {fieldError("consent")}
         </div>
 
         {/* Submit-level error */}

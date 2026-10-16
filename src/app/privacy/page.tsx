@@ -35,19 +35,13 @@ export default function PrivacyPage() {
             if you later sign a retainer — provide legal services. We also use
             it to meet legal duties that apply to the firm.
           </p>
-          <h2 className="h-card text-ink">3. Calls and texts</h2>
-          <p>
-            If you submit a phone number, you agree we may
-            contact you by phone or text about that inquiry. Message and data
-            rates may apply. Reply STOP to opt out of texts.
-          </p>
-          <h2 className="h-card text-ink">4. Sharing</h2>
+          <h2 className="h-card text-ink">3. Sharing</h2>
           <p>
             We do not sell personal information. We share it with people inside
             the firm and with service providers needed to operate the practice
             or evaluate the inquiry.
           </p>
-          <h2 className="h-card text-ink">5. Attorney–client privilege</h2>
+          <h2 className="h-card text-ink">4. Attorney–client privilege</h2>
           <p>
             Information sent through this website is not privileged until a
             written retainer creates an attorney–client relationship. Do not

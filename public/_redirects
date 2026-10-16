@@ -1,0 +1,22 @@
+# Old Replit export paths. Forced so the alias HTML does not shadow the 301.
+# Destinations are absolute so a www or *.netlify.app request lands on the apex.
+/personal-injury           https://calilawyer.com/injury                         301!
+/personal-injury/          https://calilawyer.com/injury                         301!
+/car-accidents             https://calilawyer.com/injury/car-accident            301!
+/car-accidents/            https://calilawyer.com/injury/car-accident            301!
+/truck-accidents           https://calilawyer.com/injury/truck-accident          301!
+/truck-accidents/          https://calilawyer.com/injury/truck-accident          301!
+/motorcycle-accidents      https://calilawyer.com/injury/motorcycle-accident     301!
+/motorcycle-accidents/     https://calilawyer.com/injury/motorcycle-accident     301!
+/rideshare-accidents       https://calilawyer.com/injury/rideshare-accident      301!
+/rideshare-accidents/      https://calilawyer.com/injury/rideshare-accident      301!
+/pedestrian-accidents      https://calilawyer.com/injury/pedestrian-accident     301!
+/pedestrian-accidents/     https://calilawyer.com/injury/pedestrian-accident     301!
+/dog-bites                 https://calilawyer.com/injury/dog-bites               301!
+/dog-bites/                https://calilawyer.com/injury/dog-bites               301!
+/slip-and-fall             https://calilawyer.com/injury/slip-and-fall           301!
+/slip-and-fall/            https://calilawyer.com/injury/slip-and-fall           301!
+
+# Host redirects. Netlify's primary-domain setting also sends www to the apex.
+https://www.calilawyer.com/*   https://calilawyer.com/:splat   301!
+https://*.netlify.app/*       https://calilawyer.com/:splat   301!

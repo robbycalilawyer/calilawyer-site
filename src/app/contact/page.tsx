@@ -54,12 +54,6 @@ export default function ContactPage() {
               <span className="font-semibold text-ink">Office: </span>
               {OFFICE.display}
             </p>
-            <p className="border-l-4 border-gold pl-4 text-sm leading-relaxed text-ink/70">
-              By submitting, you agree to be contacted by
-              phone, text, or email. Message and data rates may apply. Reply
-              STOP to opt out. This does not create an attorney–client
-              relationship.
-            </p>
           </div>
           <div id="lead-form" className="scroll-mt-28">
             <LeadForm practice="general" tone="light" />

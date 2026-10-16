@@ -14,7 +14,7 @@ export const carAccident = {
     headline: "California car accident attorneys.",
     sub: "High-speed collisions, intersection crashes, and highway wrecks. The insurer will look for a way to share the blame. We build the file before that story hardens.",
     difference:
-      "California car cases sit on comparative negligence. A carrier can reduce what it pays by assigning you a share of fault — sometimes from a single sentence in a recorded statement.",
+      "California car cases sit on comparative negligence. A carrier can reduce what it pays by assigning you a share of fault.",
     evidenceIntro:
       "Skid marks fade, vehicles are repaired, and cameras overwrite. We move to lock down the proof while it still exists.",
     evidence: [
@@ -55,7 +55,7 @@ export const carAccident = {
     faqs: [
       {
         q: "What should I do right after a car accident?",
-        a: "Get to safety, call 911, photograph the scene, and get medical care even if you feel fine. Then call us before any recorded statement.",
+        a: "Get to safety, call 911, photograph the scene, and get medical care even if you feel fine.",
       },
       {
         q: "What if the other driver says I was partly at fault?",

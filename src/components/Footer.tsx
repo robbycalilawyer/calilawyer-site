@@ -70,8 +70,8 @@ export function Footer() {
             <h2 className="eyebrow text-bone">Glendale</h2>
             <p className="mt-4 text-sm leading-relaxed text-bone">
               Office: {OFFICE.display}. Consultations are also handled statewide,
-              including Los Angeles, Orange County, San Diego, the Inland Empire,
-              Sacramento, and the Bay Area.
+              including Burbank, Pasadena, Los Angeles, Orange County, San Diego,
+              the Inland Empire, Sacramento, and the Bay Area.
             </p>
           </div>
         </div>

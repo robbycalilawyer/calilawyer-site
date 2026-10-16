@@ -13,7 +13,7 @@ export const pedestrianAccident = {
     headline: "California pedestrian accident attorneys.",
     sub: "A person on foot does not have a bumper or an airbag. These injuries are severe, and the defense still looks for a reason the pedestrian was “wrong.”",
     difference:
-      "Expect an argument about the crosswalk, the signal, or a phone in your hand. Those facts can matter under comparative fault. They are not a reason to give a statement before the video is saved.",
+      "Expect an argument about the crosswalk, the signal, or a phone in your hand. Those facts can matter under comparative fault.",
     evidenceIntro:
       "Intersection cameras and nearby businesses overwrite on a short loop. We ask for the footage immediately.",
     evidence: [
@@ -122,7 +122,7 @@ export const dogBite = {
       },
       {
         q: "The owner says the dog was provoked.",
-        a: "Provocation and trespass are arguments the defense raises. Tell us exactly what happened. Do not debate it with the owner or the carrier on a recorded line.",
+        a: "Provocation and trespass are arguments the defense raises. Tell us exactly what happened.",
       },
     ],
     finalHeadline: "Photograph the wound and call before it heals unseen.",

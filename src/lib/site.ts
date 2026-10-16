@@ -10,17 +10,18 @@ export const SITE = {
   phoneDisplay: "(310) 331-0310",
   phoneHref: "tel:+13103310310",
   smsHref: "sms:+13103310310",
-  phoneE164: "+13103310310",
+  /** Schema telephone. Call links stay on phoneHref. */
+  phoneE164: "+1-310-331-0310",
   email: "intake@calilawyer.com",
-  addressLine: "315 Arden Ave, Ste 10, Glendale, CA 91203",
+  addressLine: "315 Arden Ave Ste 10, Glendale, CA 91203",
 } as const;
 
 export const OFFICE = {
-  street: "315 Arden Ave, Ste 10",
+  street: "315 Arden Ave Ste 10",
   city: "Glendale",
   region: "CA",
   postalCode: "91203",
-  display: "315 Arden Ave, Ste 10, Glendale, CA 91203",
+  display: "315 Arden Ave Ste 10, Glendale, CA 91203",
 } as const;
 
 /** Approved fee line. No percentage and no costs explanation. */

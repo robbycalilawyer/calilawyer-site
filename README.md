@@ -66,7 +66,7 @@ LEAD_ENDPOINT="https://example.com/leads" npm run build
 
 ## Approved firm facts
 
-Phone `(310) 331-0310`, office `315 Arden Ave, Ste 10, Glendale, CA 91203`,
+Phone `(310) 331-0310` (`tel:+13103310310`, schema `+1-310-331-0310`), office `315 Arden Ave Ste 10, Glendale, CA 91203`,
 firm name CaliLawyer.com, responsible attorney Rober A. Terziyan, State Bar of
 California No. 351959. Languages are English, Armenian, and Spanish. Fees are
 stated only as “We handle cases on contingency.” Consultations are free.

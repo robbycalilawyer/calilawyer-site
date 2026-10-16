@@ -21,6 +21,10 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title="Frequently asked questions."
         sub="Clear answers. Not a case evaluation, and not legal advice about your facts."
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ]}
       />
       <section className="bg-paper">
         <div className="container-site max-w-3xl py-20 md:py-32">

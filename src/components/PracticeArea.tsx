@@ -9,6 +9,7 @@ import { LeadForm } from "./LeadForm";
 import { JsonLd } from "./JsonLd";
 import { SlashMotif } from "./SlashMotif";
 import { PracticeAreaExtras } from "./PracticeAreaExtras";
+import { BreadcrumbTrail } from "./BreadcrumbTrail";
 
 function CheckIcon({ className = "" }: { className?: string }) {
   return (
@@ -36,13 +37,34 @@ function CheckIcon({ className = "" }: { className?: string }) {
  * child pages. All copy comes from a PracticeAreaContent object, so
  * /injury, /lemon-law, and their children differ only by data.
  */
-export function PracticeArea({ content }: { content: PracticeAreaContent }) {
+export function PracticeArea({
+  content,
+  path,
+}: {
+  content: PracticeAreaContent;
+  /** Canonical path for this page. Hubs default to `/${slug}`. */
+  path?: string;
+}) {
   const c = content;
   const hubHref = `/${c.slug}`;
+  const pagePath = path ?? hubHref;
+  const crumbs = [
+    { name: "Home", path: "/" },
+    ...(c.breadcrumb && c.breadcrumb.href !== pagePath
+      ? [{ name: c.breadcrumb.label, path: c.breadcrumb.href }]
+      : []),
+    {
+      name: c.breadcrumb ? c.hero.eyebrow : c.name,
+      path: pagePath,
+    },
+  ];
 
   return (
     <>
       <JsonLd data={faqSchema(c.faqs)} />
+      <div className="sr-only">
+        <BreadcrumbTrail items={crumbs} />
+      </div>
       {/* ---------- Hero (dark, with stat counters) ---------- */}
       <section className="on-dark relative overflow-hidden bg-ink">
         <div

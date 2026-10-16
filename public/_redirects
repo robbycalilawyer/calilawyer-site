@@ -42,6 +42,34 @@
 /results                         https://calilawyer.com/                                    301!
 /results/                        https://calilawyer.com/                                    301!
 
+# Former /personal-injury/* answer paths. One hop to the final /injury URL.
+/personal-injury/attorney-fees      https://calilawyer.com/injury/attorney-fees             301!
+/personal-injury/attorney-fees/     https://calilawyer.com/injury/attorney-fees             301!
+/personal-injury/car-accidents      https://calilawyer.com/injury/car-accidents             301!
+/personal-injury/car-accidents/     https://calilawyer.com/injury/car-accidents             301!
+/personal-injury/truck-accidents    https://calilawyer.com/injury/truck-accidents           301!
+/personal-injury/truck-accidents/   https://calilawyer.com/injury/truck-accidents           301!
+/personal-injury/motorcycle-accidents  https://calilawyer.com/injury/motorcycle-accidents   301!
+/personal-injury/motorcycle-accidents/ https://calilawyer.com/injury/motorcycle-accidents   301!
+/personal-injury/rideshare-accidents   https://calilawyer.com/injury/rideshare-accidents    301!
+/personal-injury/rideshare-accidents/  https://calilawyer.com/injury/rideshare-accidents    301!
+/personal-injury/pedestrian-accidents  https://calilawyer.com/injury/pedestrian-accidents   301!
+/personal-injury/pedestrian-accidents/ https://calilawyer.com/injury/pedestrian-accidents   301!
+/personal-injury/dog-bites          https://calilawyer.com/injury/dog-bites                 301!
+/personal-injury/dog-bites/         https://calilawyer.com/injury/dog-bites                 301!
+/personal-injury/premises-liability https://calilawyer.com/injury/premises-liability        301!
+/personal-injury/premises-liability/ https://calilawyer.com/injury/premises-liability       301!
+
+# Former city injury slugs.
+/glendale/personal-injury-lawyer    https://calilawyer.com/glendale/injury-lawyer           301!
+/glendale/personal-injury-lawyer/   https://calilawyer.com/glendale/injury-lawyer           301!
+/burbank/personal-injury-lawyer     https://calilawyer.com/burbank/injury-lawyer            301!
+/burbank/personal-injury-lawyer/    https://calilawyer.com/burbank/injury-lawyer            301!
+/pasadena/personal-injury-lawyer    https://calilawyer.com/pasadena/injury-lawyer           301!
+/pasadena/personal-injury-lawyer/   https://calilawyer.com/pasadena/injury-lawyer           301!
+/los-angeles/personal-injury-lawyer https://calilawyer.com/los-angeles/injury-lawyer        301!
+/los-angeles/personal-injury-lawyer/ https://calilawyer.com/los-angeles/injury-lawyer       301!
+
 # Host redirects. These follow the path rules, so an old path on either host
 # matches that path rule and lands on the final apex URL in one hop.
 # Netlify's primary-domain setting also sends www to the apex.

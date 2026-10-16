@@ -16,6 +16,10 @@ export default function TermsPage() {
         eyebrow="Advertisement / Attorney Advertising"
         title="Terms and disclaimers"
         sub={`These terms govern use of ${SITE.name}. They are not a retainer.`}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Terms", path: "/terms" },
+        ]}
       />
       <section className="bg-paper">
         <div className="container-site max-w-3xl space-y-8 py-16 text-ink/80 md:py-20">

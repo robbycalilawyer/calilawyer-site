@@ -83,5 +83,5 @@ const whatQualifiesContent: PracticeAreaContent = {
 };
 
 export default function WhatQualifiesPage() {
-  return <PracticeArea content={whatQualifiesContent} />;
+  return <PracticeArea content={whatQualifiesContent} path="/lemon-law/what-qualifies" />;
 }

@@ -33,7 +33,15 @@ export const LANGUAGE_CODES = ["en", "hy", "es"] as const;
 export const ATTORNEY = {
   name: "Rober A. Terziyan",
   barNumber: "351959",
+  /** ISO date of California admission. Do not convert this into years of experience. */
+  admitted: "2023-12-01",
+  admittedDisplay: "December 1, 2023",
+  path: "/attorneys/robby-terziyan",
 } as const;
+
+export const ATTORNEY_ADDRESS = OFFICE.display;
+export const PERSON_ID = `${SITE.url}${ATTORNEY.path}#person`;
+export const FIRM_ID = `${SITE.url}/#firm`;
 
 export const NAV = [
   { label: "Lemon Law", href: "/lemon-law" },

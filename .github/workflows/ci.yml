@@ -30,3 +30,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Check static HTML
+        run: node scripts/verify-html.mjs

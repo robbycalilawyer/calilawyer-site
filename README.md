@@ -1,8 +1,7 @@
-# CaliLawyer — marketing site
+# CaliLawyer.com marketing site
 
-Static marketing site for a California law firm with two practice areas:
-**personal injury** and **lemon law**. It is the credible umbrella brand that
-segments injury victims and frustrated vehicle owners into two funnels.
+Static marketing site for a California law firm. Two practices: personal
+injury and lemon law.
 
 Built with **Next.js 15** (App Router) + **TypeScript** + **Tailwind v4**,
 statically exported. No backend, CMS, auth, or database. The earlier Vite /
@@ -48,7 +47,7 @@ Colors, fonts, radii, motion, and spacing are tokens in `src/app/globals.css`.
 Components reference tokens only.
 
 - **Colors:** ink, charcoal, bone, paper, gold, white.
-- **Type:** Hanken Grotesk (body), Fraunces (display), JetBrains Mono (figures).
+- **Type:** Hanken Grotesk (body and figures), Fraunces (display). Figures use tabular numbers.
 - **Accessibility (WCAG 2.2 AA):** gold is not body text on light grounds;
   bone is text on dark grounds; 3px focus rings (ink on light, gold on dark)
   stay in place; motion honors `prefers-reduced-motion`.
@@ -58,8 +57,10 @@ Components reference tokens only.
 `LeadForm` posts url-encoded fields to `/__forms.html` as Netlify form `lead`.
 Success is shown only after a 2xx response. A failed post tells the visitor to
 call (310) 331-0310. `public/__forms.html` is the static form Netlify detects
-at deploy, and it is `noindex`. Lemon-law forms collect vehicle facts. The
-repair-order upload is a labeled placeholder.
+at deploy, and it is `noindex`. After the site is imported, enable form
+detection in Netlify and set an email notification, or submissions are not
+delivered. Lemon-law forms collect vehicle facts. The repair-order upload is a
+labeled placeholder.
 
 ## Approved firm facts
 
@@ -68,3 +69,17 @@ firm name CaliLawyer.com, responsible attorney Rober A. Terziyan, State Bar of
 California No. 351959. Languages are English, Armenian, and Spanish. Fees are
 stated only as “We handle cases on contingency.” Consultations are free.
 Stats, case results, testimonials, and star ratings are not rendered.
+
+## Answer pages
+
+Guides, city pages, fee pages, and `/attorneys/robby-terziyan` are
+static App Router routes. Injury fee and case-type URLs live under `/injury`
+(`/injury/attorney-fees`, `/injury/car-accidents`, `/injury/premises-liability`).
+City injury pages are `/{city}/injury-lawyer`. Their unfinished body text says
+“Copy pending fact-check.” The approved firm facts above are already in the
+header, footer, and JSON-LD.
+
+`public/llms.txt` and `src/app/robots.ts` allow the answer-engine crawlers.
+GPTBot and Google-Extended stay allowed. `npm run build` writes the static
+export; `node scripts/verify-html.mjs` checks sitemap HTML for one `h1`,
+JSON-LD, and absolute canonicals.

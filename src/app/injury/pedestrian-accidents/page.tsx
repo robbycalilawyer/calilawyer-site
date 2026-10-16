@@ -5,5 +5,5 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta(pedestrianAccident.meta);
 
 export default function PedestrianAccidentPage() {
-  return <PracticeArea content={pedestrianAccident.content} />;
+  return <PracticeArea content={pedestrianAccident.content} path={pedestrianAccident.meta.path} />;
 }

@@ -16,6 +16,10 @@ export default function PrivacyPage() {
         eyebrow="Privacy"
         title="Privacy policy"
         sub="Last updated October 16, 2026."
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Privacy", path: "/privacy" },
+        ]}
       />
       <section className="bg-paper">
         <div className="container-site max-w-3xl space-y-8 py-16 text-ink/80 md:py-20">

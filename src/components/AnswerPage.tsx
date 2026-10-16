@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Accordion } from "@/components/Accordion";
-import { BreadcrumbTrail, type Crumb } from "@/components/BreadcrumbTrail";
+import type { Crumb } from "@/components/BreadcrumbTrail";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import type { GeoPage } from "@/lib/content/geo/types";
@@ -36,20 +36,19 @@ export function AnswerPage({ page }: { page: GeoPage }) {
           })}
         />
       ) : null}
-      <PageHero eyebrow={page.eyebrow} title={page.h1} />
+      <PageHero eyebrow={page.eyebrow} title={page.h1} crumbs={crumbs} />
       <article className="bg-paper">
-        <div className="container-site max-w-3xl py-12 md:py-16">
-          <BreadcrumbTrail items={crumbs} />
-          <p className="mt-8 text-lg leading-relaxed text-ink">{page.answer}</p>
+        <div className="container-site max-w-3xl py-20 md:py-32">
+          <p className="text-lg leading-relaxed text-ink">{page.answer}</p>
           <p className="mt-4 text-sm text-ink/70">
-            Last reviewed by {ATTORNEY.name}. This is general information, not legal
-            advice.
+            Last reviewed by {ATTORNEY.name}. This is general information. It isn’t
+            legal advice.
           </p>
 
           {page.table ? (
             <div className="mt-10 overflow-x-auto">
               <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
-                <caption className="mb-3 text-left font-display text-2xl text-ink">
+                <caption className="h-card mb-3 text-left text-ink">
                   {page.table.caption}
                 </caption>
                 <thead>
@@ -78,7 +77,7 @@ export function AnswerPage({ page }: { page: GeoPage }) {
 
           {page.sections.map((section) => (
             <section key={section.heading} className="mt-10">
-              <h2 className="font-display text-3xl text-ink">{section.heading}</h2>
+              <h2 className="h-section text-ink">{section.heading}</h2>
               {section.paragraphs?.map((paragraph, index) => (
                 <p key={index} className="mt-4 leading-relaxed text-ink/80">
                   {paragraph}
@@ -96,7 +95,7 @@ export function AnswerPage({ page }: { page: GeoPage }) {
 
           {page.citations.length > 0 ? (
             <section className="mt-10">
-              <h2 className="font-display text-3xl text-ink">Sources</h2>
+              <h2 className="h-section text-ink">Sources</h2>
               <ul className="mt-4 space-y-2">
                 {page.citations.map((cite) => (
                   <li key={cite.href}>
@@ -115,7 +114,7 @@ export function AnswerPage({ page }: { page: GeoPage }) {
 
           {page.faqs.length > 0 ? (
             <section className="mt-12">
-              <h2 className="font-display text-3xl text-ink">Questions</h2>
+              <h2 className="h-section text-ink">Questions</h2>
               <div className="mt-4">
                 <Accordion items={page.faqs} />
               </div>
@@ -124,7 +123,7 @@ export function AnswerPage({ page }: { page: GeoPage }) {
 
           {page.related.length > 0 ? (
             <section className="mt-12">
-              <h2 className="font-display text-3xl text-ink">Related</h2>
+              <h2 className="h-section text-ink">Related</h2>
               <ul className="mt-4 space-y-2">
                 {page.related.map((link) => (
                   <li key={link.href}>

@@ -1,8 +1,7 @@
-# CaliLawyer — marketing site
+# CaliLawyer.com marketing site
 
-Static marketing site for a California law firm with two practice areas:
-**personal injury** and **lemon law**. It is the credible umbrella brand that
-segments injury victims and frustrated vehicle owners into two funnels.
+Static marketing site for a California law firm. Two practices: personal
+injury and lemon law.
 
 Built with **Next.js 15** (App Router) + **TypeScript** + **Tailwind v4**,
 statically exported. No backend, CMS, auth, or database. The earlier Vite /
@@ -48,7 +47,7 @@ Colors, fonts, radii, motion, and spacing are tokens in `src/app/globals.css`.
 Components reference tokens only.
 
 - **Colors:** ink, charcoal, bone, paper, gold, white.
-- **Type:** Hanken Grotesk (body), Fraunces (display), JetBrains Mono (figures).
+- **Type:** Hanken Grotesk (body and figures), Fraunces (display). Figures use tabular numbers.
 - **Accessibility (WCAG 2.2 AA):** gold is not body text on light grounds;
   bone is text on dark grounds; 3px focus rings (ink on light, gold on dark)
   stay in place; motion honors `prefers-reduced-motion`.

@@ -163,6 +163,17 @@ body {
   }
 }
 
+/* ---------- Diagonal slash motif (decorative) ---------- */
+.slash-pattern {
+  background-image: repeating-linear-gradient(
+    -18deg,
+    transparent 0,
+    transparent 12px,
+    color-mix(in srgb, var(--color-gold) 22%, transparent) 12px,
+    color-mix(in srgb, var(--color-gold) 22%, transparent) 13px
+  );
+}
+
 /* ---------- Signature: dual-path gold hairline ---------- */
 @keyframes hairline-grow {
   from {

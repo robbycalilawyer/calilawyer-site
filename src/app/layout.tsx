@@ -3,8 +3,12 @@ import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { MobileBottomCTA } from "@/components/MobileBottomCTA";
+import { FloatingCTA } from "@/components/FloatingCTA";
+import { CaseReviewModal } from "@/components/CaseReviewModal";
+import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
+import { legalServiceSchema } from "@/lib/schema";
 
 // DISPLAY — editorial authority, headlines only.
 const fraunces = Fraunces({
@@ -37,12 +41,31 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Injured in an accident or stuck with a lemon? CaliLawyer routes California injury victims and defective-vehicle owners to the right team. Free case review.",
+    "CaliLawyer fights for people hurt by negligence and consumers stuck with defective vehicles. Free California case review for lemon law and personal injury.",
   openGraph: {
     title: `${SITE.name} — California Personal Injury & Lemon Law Attorneys`,
     description:
-      "Two ways we fight for you: personal injury and California lemon law. Free case review.",
+      "Trial-ready pressure for California lemon law and personal injury claims. Free case review, statewide representation.",
     type: "website",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CaliLawyer — California lemon law and personal injury",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/assets/og-image.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -56,6 +79,7 @@ export default function RootLayout({
       <body
         className={`${fraunces.variable} ${hanken.variable} ${jetbrains.variable} antialiased`}
       >
+        <JsonLd data={legalServiceSchema()} />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-[var(--radius-sm)] focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
@@ -68,7 +92,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <StickyMobileCTA />
+        <FloatingCTA />
+        <MobileBottomCTA />
+        <CaseReviewModal />
       </body>
     </html>
   );

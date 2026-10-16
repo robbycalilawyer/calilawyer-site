@@ -1,11 +1,16 @@
+import Link from "next/link";
 import type { PracticeAreaContent } from "@/lib/content/types";
 import { SITE } from "@/lib/site";
+import { faqSchema } from "@/lib/schema";
 import { LinkButton } from "./Button";
 import { StatCounter } from "./StatCounter";
 import { Accordion } from "./Accordion";
 import { Testimonial } from "./Testimonial";
 import { LocationGrid } from "./LocationGrid";
 import { LeadForm } from "./LeadForm";
+import { JsonLd } from "./JsonLd";
+import { SlashMotif } from "./SlashMotif";
+import { PracticeAreaExtras } from "./PracticeAreaExtras";
 
 function CheckIcon({ className = "" }: { className?: string }) {
   return (
@@ -39,11 +44,29 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
 
   return (
     <>
+      <JsonLd data={faqSchema(c.faqs)} />
       {/* ---------- Hero (dark, with stat counters) ---------- */}
-      <section className="on-dark bg-ink">
-        <div className="container-site grid gap-12 py-16 md:grid-cols-[1.2fr_1fr] md:items-center md:py-24">
+      <section className="on-dark relative overflow-hidden bg-ink">
+        <div
+          className="slash-pattern pointer-events-none absolute inset-0 opacity-50"
+          aria-hidden="true"
+        />
+        <div className="container-site relative grid gap-12 py-16 md:grid-cols-[1.2fr_1fr] md:items-center md:py-24">
           <div>
-            <span className="eyebrow text-bone">{c.hero.eyebrow}</span>
+            {c.breadcrumb ? (
+              <Link
+                href={c.breadcrumb.href}
+                className="text-sm font-semibold text-bone hover:text-white"
+              >
+                ← {c.breadcrumb.label}
+              </Link>
+            ) : null}
+            <div
+              className={`flex items-center gap-4 ${c.breadcrumb ? "mt-4" : ""}`}
+            >
+              <SlashMotif />
+              <span className="eyebrow text-bone">{c.hero.eyebrow}</span>
+            </div>
             <h1 className="h-hero mt-4 text-white">{c.hero.headline}</h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone">
               {c.hero.sub}
@@ -164,6 +187,8 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
           </div>
         </div>
       </section>
+
+      <PracticeAreaExtras content={c} />
 
       {/* ---------- 3-step process ---------- */}
       <section className="on-dark bg-charcoal">

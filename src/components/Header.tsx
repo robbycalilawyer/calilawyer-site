@@ -2,31 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { NAV, SITE } from "@/lib/site";
+import { INJURY_LINKS, NAV, SITE } from "@/lib/site";
 import { LinkButton } from "./Button";
-
-function PhoneIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      width="18"
-      height="18"
-    >
-      <path
-        d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
+import { Logo } from "./Logo";
+import { openCaseModal } from "./CaseReviewModal";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [injuryOpen, setInjuryOpen] = useState(false);
 
-  // Lock body scroll while the mobile menu is open.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -34,134 +18,218 @@ export function Header() {
     };
   }, [open]);
 
-  // Close on Escape.
   useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    if (!open && !injuryOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        setInjuryOpen(false);
+      }
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [open, injuryOpen]);
+
+  function review() {
+    setOpen(false);
+    setInjuryOpen(false);
+    openCaseModal();
+  }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-bone bg-paper/95 backdrop-blur">
-      <div className="container-site flex h-16 items-center justify-between gap-4">
-        {/* Wordmark */}
-        <Link
-          href="/"
-          className="font-display text-xl tracking-tight text-ink"
-          aria-label={`${SITE.name} home`}
-        >
-          Cali<span className="text-ink/60">Lawyer</span>
-        </Link>
+    <header className="on-dark sticky top-0 z-40 border-b border-gold/40 bg-ink/95 backdrop-blur">
+      <div className="container-site flex min-h-20 items-center justify-between gap-4 py-2">
+        <Logo priority className="h-11 w-auto md:h-14" />
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-[0.95rem] font-semibold text-ink/80 transition-colors duration-[var(--motion-fast)] hover:text-ink"
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
+          <Link
+            href="/lemon-law"
+            className="text-sm font-semibold text-white hover:text-gold"
+          >
+            Lemon Law
+          </Link>
+          <div
+            className="relative"
+            onMouseEnter={() => setInjuryOpen(true)}
+            onMouseLeave={() => setInjuryOpen(false)}
+          >
+            <button
+              type="button"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-white hover:text-gold"
+              aria-expanded={injuryOpen}
+              aria-controls="injury-menu"
+              onClick={() => setInjuryOpen((value) => !value)}
             >
-              {item.label}
-            </Link>
-          ))}
+              Personal Injury
+              <Chevron open={injuryOpen} />
+            </button>
+            {injuryOpen ? (
+              <div
+                id="injury-menu"
+                className="absolute left-0 top-full z-50 w-72 pt-3"
+              >
+                <ul className="rounded-[var(--radius-md)] border border-charcoal bg-charcoal py-2 shadow-2xl">
+                  <li>
+                    <Link
+                      href="/injury"
+                      className="block px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/5"
+                      onClick={() => setInjuryOpen(false)}
+                    >
+                      Overview
+                    </Link>
+                  </li>
+                  {INJURY_LINKS.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="block px-4 py-2.5 text-sm text-bone hover:bg-white/5 hover:text-white"
+                        onClick={() => setInjuryOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+          {NAV.filter((item) => item.href !== "/lemon-law" && item.href !== "/injury").map(
+            (item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-semibold text-white hover:text-gold"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
 
-        {/* Always-on click-to-call (desktop) */}
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href={SITE.phoneHref}
-            className="group inline-flex items-center gap-2 text-ink"
-            aria-label={`Call ${SITE.name} at ${SITE.phoneDisplay}`}
+            className="text-right"
+            aria-label={`Call or text ${SITE.name} at ${SITE.phoneDisplay}`}
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-pill)] bg-ink text-white transition-transform duration-[var(--motion-fast)] group-hover:scale-105">
-              <PhoneIcon />
+            <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-bone">
+              Call / text 24/7
             </span>
-            <span className="figure text-[0.95rem] font-semibold">
+            <span className="figure text-sm font-semibold text-white">
               {SITE.phoneDisplay}
             </span>
           </a>
-          <LinkButton href="/injury#lead-form" size="md">
+          <button
+            type="button"
+            onClick={review}
+            className="inline-flex min-h-11 items-center rounded-[var(--radius-pill)] bg-white px-5 text-sm font-semibold text-ink hover:bg-gold"
+          >
             Free case review
-          </LinkButton>
+          </button>
         </div>
 
-        {/* Mobile: call + menu toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <a
             href={SITE.phoneHref}
-            className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-pill)] bg-ink text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-pill)] bg-gold text-ink"
             aria-label={`Call ${SITE.name} at ${SITE.phoneDisplay}`}
           >
             <PhoneIcon />
           </a>
           <button
             type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-sm)] text-ink"
+            onClick={() => setOpen((value) => !value)}
+            className="flex h-11 w-11 items-center justify-center text-white"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
           >
-            <span className="relative block h-4 w-6">
-              <span
-                className={`absolute left-0 top-0 h-0.5 w-6 bg-ink transition-transform duration-[var(--motion-fast)] ${
-                  open ? "translate-y-2 rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-[7px] h-0.5 w-6 bg-ink transition-opacity duration-[var(--motion-fast)] ${
-                  open ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-[14px] h-0.5 w-6 bg-ink transition-transform duration-[var(--motion-fast)] ${
-                  open ? "-translate-y-2 -rotate-45" : ""
-                }`}
-              />
-            </span>
+            <MenuIcon open={open} />
           </button>
         </div>
       </div>
 
-      {/* Mobile menu panel */}
-      {open && (
-        <div
-          id="mobile-menu"
-          className="border-t border-bone bg-paper md:hidden"
-        >
-          <nav
-            className="container-site flex flex-col gap-1 py-4"
-            aria-label="Mobile"
-          >
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-[var(--radius-sm)] px-2 py-3 text-lg font-semibold text-ink hover:bg-ink/[0.06]"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="mt-3 flex flex-col gap-3">
-              <LinkButton
-                href="/injury#lead-form"
-                size="lg"
-                onClick={() => setOpen(false)}
+      {open ? (
+        <div id="mobile-menu" className="max-h-[80vh] overflow-y-auto border-t border-charcoal bg-ink lg:hidden">
+          <nav className="container-site flex flex-col py-2" aria-label="Mobile">
+            <Link href="/lemon-law" onClick={() => setOpen(false)} className="py-3 font-semibold text-white">
+              Lemon Law
+            </Link>
+            <Link href="/injury" onClick={() => setOpen(false)} className="py-3 font-semibold text-white">
+              Personal Injury
+            </Link>
+            <div className="border-l border-charcoal pl-4">
+              {INJURY_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-2.5 text-sm text-bone"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            {NAV.filter((item) => item.href !== "/lemon-law" && item.href !== "/injury").map(
+              (item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="py-3 font-semibold text-white"
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
+            <div className="flex flex-col gap-3 py-4">
+              <LinkButton href={SITE.phoneHref} variant="secondary" size="lg" onDark>
+                Call {SITE.phoneDisplay}
+              </LinkButton>
+              <button
+                type="button"
+                onClick={review}
+                className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-pill)] bg-gold px-5 font-semibold text-ink"
               >
                 Free case review
-              </LinkButton>
-              <a
-                href={SITE.phoneHref}
-                className="figure text-center text-lg font-semibold text-ink"
-              >
-                {SITE.phoneDisplay}
-              </a>
+              </button>
             </div>
           </nav>
         </div>
-      )}
+      ) : null}
     </header>
+  );
+}
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="16"
+      height="16"
+      fill="none"
+      aria-hidden="true"
+      className={`transition-transform duration-[var(--motion-fast)] ${open ? "rotate-180" : ""}`}
+    >
+      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" />
+    </svg>
+  );
+}
+
+function MenuIcon({ open }: { open: boolean }) {
+  return (
+    <span className="relative block h-4 w-6">
+      <span className={`absolute left-0 top-0 h-0.5 w-6 bg-white transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
+      <span className={`absolute left-0 top-[7px] h-0.5 w-6 bg-white transition-opacity ${open ? "opacity-0" : ""}`} />
+      <span className={`absolute left-0 top-[14px] h-0.5 w-6 bg-white transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+    </span>
   );
 }

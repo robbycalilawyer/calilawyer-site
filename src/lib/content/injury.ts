@@ -1,5 +1,6 @@
 import type { PracticeAreaContent } from "./types";
-import { PLACEHOLDER } from "@/lib/site";
+import { CALIFORNIA_LOCATIONS, PLACEHOLDER_TESTIMONIALS } from "./shared";
+import { INJURY_LINKS, PLACEHOLDER } from "@/lib/site";
 
 export const injuryContent: PracticeAreaContent = {
   slug: "injury",
@@ -7,178 +8,181 @@ export const injuryContent: PracticeAreaContent = {
   formPractice: "injury",
 
   hero: {
-    eyebrow: "California Personal Injury",
-    headline: "You focus on healing. We handle the fight.",
-    sub: "After a serious injury, the insurance company goes to work the same day — protecting their money, not your recovery. We even the odds, so a bad moment doesn’t become a lifelong setback.",
+    eyebrow: "Plaintiff representation",
+    headline: "California personal injury attorneys built for pressure.",
+    sub: "Insurance companies rely on delay, denial, and low offers. We rely on the records, the medicine, and a file that can be tried — so the evaluation of your claim happens under real leverage.",
     stats: [
       { value: PLACEHOLDER.settlements, label: "Recovered for clients" },
       { value: PLACEHOLDER.years, label: "Years fighting for the injured" },
-      { value: "24/7", label: "We answer, day or night" },
+      { value: "24/7", label: "Case review requests" },
     ],
   },
 
   intro: [
-    "An injury changes your days fast. There’s pain, missed work, a car you can’t drive, and a phone that won’t stop ringing with adjusters who sound friendly right up until they make a lowball offer.",
-    "Our job is to take that weight off you. We investigate what happened, document the full cost of your injuries, deal with the insurance companies directly, and push your claim toward the outcome it deserves — by settlement when that’s best, and by trial when it isn’t.",
+    "The other side starts the same day you are hurt. An adjuster sounds helpful, asks for a recorded statement, and floats a number before you know what the injury will cost. That sequence is a playbook, not a courtesy.",
+    "CaliLawyer reviews crashes, rideshare collisions, trucking wrecks, motorcycle and pedestrian injuries, dog bites, premises claims, catastrophic injuries, and wrongful death. We gather the evidence, document the damages, and deal with the carrier directly.",
   ],
 
   legalCallout: {
     title: "Important legal information",
-    body: `California generally gives you a limited window to file a personal injury claim, and that window can be shorter when a government entity is involved. Evidence disappears, memories fade, and vehicles get repaired. The sooner we start, the more we can protect. ${PLACEHOLDER.disclaimer}`,
+    body: `California generally limits the time to file a personal injury claim, and the window can be shorter when a government entity is involved. Evidence disappears, memories fade, and vehicles get repaired. ${PLACEHOLDER.disclaimer} ${PLACEHOLDER.noFee}`,
   },
 
   worth: {
-    title: "What your case may be worth",
-    body: "Every case is different, and no lawyer can promise a number. What we can do is make sure nothing that belongs in your claim gets left out. A full accounting usually includes:",
+    title: "How compensation is evaluated",
+    body: "No lawyer can promise a number. A complete claim usually accounts for more than the first medical bill. Depending on the facts, that picture can include:",
     items: [
       {
-        label: "Medical bills",
+        label: "Medical care",
         detail:
-          "Past and future treatment — ER, surgery, therapy, medication, and ongoing care.",
+          "Past and future treatment — emergency care, surgery, therapy, medication, and ongoing needs.",
       },
       {
         label: "Lost income",
         detail:
-          "Wages you’ve already lost and your reduced ability to earn going forward.",
+          "Wages already lost and a reduced ability to earn going forward.",
       },
       {
         label: "Pain and suffering",
         detail:
-          "The physical pain, limitations, and disruption the injury forced into your life.",
+          "The physical limits and disruption the injury forced into daily life.",
       },
       {
         label: "Property damage",
-        detail:
-          "Repair or replacement of your vehicle and other property.",
+        detail: "Repair or replacement of a vehicle and other damaged property.",
       },
       {
         label: "Out-of-pocket costs",
         detail:
-          "Mileage, equipment, home modifications, and the small costs that add up.",
+          "Mileage, equipment, home changes, and the smaller costs that add up.",
       },
     ],
   },
 
   handle: {
-    title: "What we handle",
+    title: "What to do now",
     items: [
-      "Car, truck, and motorcycle collisions",
-      "Rideshare and commercial vehicle crashes",
-      "Pedestrian and bicycle injuries",
-      "Slip, trip, and fall injuries",
-      "Dog bites and animal attacks",
-      "Wrongful death claims",
+      "Get medical care, even if you feel steady in the moment.",
+      "Photograph the scene, vehicles, hazards, and visible injuries.",
+      "Save witness names, incident reports, and any video you already have.",
+      "Do not give a recorded statement before we have talked.",
+      "Call while evidence still exists — cameras overwrite and vehicles get repaired.",
+      "Keep every bill, wage record, and out-of-pocket receipt.",
     ],
   },
 
   scenarios: {
     title: "Situations we see every week",
     items: [
-      "A rear-end crash left you with neck and back pain that won’t quit.",
-      "The other driver’s insurer is offering far less than your bills.",
+      "A rear-end crash left neck and back pain that will not quit.",
+      "The insurer’s first offer does not cover the medical bills.",
       "You were hit by an uninsured or hit-and-run driver.",
-      "An adjuster is pressuring you to give a recorded statement.",
-      "You’re not sure whose fault it was — or who to even call.",
-      "A loved one was seriously hurt and can’t advocate for themselves.",
+      "An adjuster is pushing for a recorded statement.",
+      "Fault is disputed and you are not sure who to call.",
+      "A loved one was seriously hurt and cannot manage the claim.",
     ],
+  },
+
+  tactics: {
+    title: "The insurance playbook",
+    intro:
+      "The moment you are injured, the at-fault party’s insurer can start a process aimed at paying less. These are three moves we see, and how the file answers them.",
+    items: [
+      {
+        tactic: "Recorded statements",
+        reality:
+          "Adjusters ask questions that can pin fault on you or shrink the injury.",
+        counter:
+          "We handle the communication. You do not have to speak to their adjuster.",
+      },
+      {
+        tactic: "Quick settlements",
+        reality:
+          "A fast check often arrives before anyone knows the full medical picture.",
+        counter:
+          "We wait until the treatment picture is clear enough to demand a real number.",
+      },
+      {
+        tactic: "Delay",
+        reality:
+          "A slow file is a file that misses deadlines or wears people out.",
+        counter:
+          "We put the claim on a schedule and file suit when stalling is the strategy.",
+      },
+    ],
+  },
+
+  related: {
+    title: "Cases we handle",
+    intro:
+      "Choose the injury type to see what makes that claim different, what evidence to preserve, and which damages tend to matter.",
+    items: INJURY_LINKS.map((item) => ({
+      href: item.href,
+      title: item.label,
+      description: item.description,
+    })),
   },
 
   process: [
     {
       step: "01",
       title: "Tell us what happened",
-      body: "A free, no-pressure conversation. We listen, answer your questions, and tell you honestly whether you have a case.",
+      body: "A free, confidential review. We listen, look at what you already have, and tell you honestly whether we can help.",
     },
     {
       step: "02",
       title: "We build and press the claim",
-      body: "We gather evidence, work with your medical providers, calculate the full value, and take over every conversation with the insurance company.",
+      body: "Records, photos, witnesses, and medical documentation. Then we take over the conversations with the insurer.",
     },
     {
       step: "03",
-      title: "You get paid",
-      body: `We negotiate hard for a fair settlement and go to trial if they won’t be fair. ${PLACEHOLDER.noFee}`,
+      title: "Resolution with leverage",
+      body: `Settlement when the number is fair. Litigation when it is not. ${PLACEHOLDER.noFee}`,
     },
   ],
 
   whyUs: {
-    title: "Why injured Californians call us",
-    body: "We’re selective about the cases we take so we can be relentless on the ones we do. You get a real attorney’s attention — not a claim number in a queue.",
+    title: "Why injured Californians call",
+    body: "Documents first. Strategy second. Pressure always. You get a lawyer’s attention on a file built to be tried, not a claim number in a queue.",
     stats: [
       { value: PLACEHOLDER.settlements, label: "Recovered for clients" },
-      { value: "$0", label: "Upfront cost to start" },
+      { value: "Free", label: "Case review" },
       { value: PLACEHOLDER.years, label: "Years in practice" },
     ],
   },
 
-  testimonials: [
-    {
-      quote:
-        "They took over everything with the insurance company the day I called. I actually got to rest and heal instead of arguing on the phone.",
-      name: "Marcus D.",
-      context: "Rear-end collision client",
-    },
-    {
-      quote:
-        "The first offer was insulting. My attorney wasn’t having it, and the final result was many times higher. I never felt like just another file.",
-      name: "Priya S.",
-      context: "Intersection crash client",
-    },
-    {
-      quote:
-        "Straight answers, no runaround. They explained every step and always called me back the same day.",
-      name: "Elena R.",
-      context: "Pedestrian injury client",
-    },
-  ],
+  testimonials: PLACEHOLDER_TESTIMONIALS,
 
   faqs: [
     {
       q: "How much does it cost to hire you?",
-      a: `Nothing upfront. We work on a contingency basis, which means our fee comes out of the recovery we win for you — not your pocket. ${PLACEHOLDER.noFee}`,
+      a: `Nothing is due to start a review. Fee structure depends on a written agreement. ${PLACEHOLDER.noFee}`,
     },
     {
       q: "Should I talk to the other driver’s insurance company?",
-      a: "It’s best not to give a recorded statement before you’ve spoken with us. Adjusters are trained to get you to say things that reduce your claim. Let us handle those conversations.",
+      a: "It is best not to give a recorded statement first. Adjusters are trained to collect statements that reduce claims. Let us handle those calls.",
     },
     {
       q: "How long do I have to file a claim?",
-      a: `California sets a deadline (the statute of limitations) for injury claims, and it can be shorter when a government entity is involved. Because the exact deadline depends on your facts, call as soon as you can. ${PLACEHOLDER.disclaimer}`,
+      a: `California sets a deadline for injury claims, and it can be shorter when a public entity is involved. The exact date depends on your facts, so call while the file is still intact. ${PLACEHOLDER.disclaimer}`,
     },
     {
       q: "What if I was partly at fault?",
-      a: "California follows a comparative fault rule, so you may still recover even if you were partly responsible — your recovery is reduced by your share. Don’t assume you have no case; let us evaluate it.",
+      a: "California uses comparative fault. You may still recover if you were partly responsible, with the recovery reduced by your share. Do not assume you have no case.",
     },
     {
       q: "How long will my case take?",
-      a: "It depends on the severity of your injuries and whether the insurer negotiates fairly. Some cases resolve in months; serious cases that go to trial take longer. We move as fast as your health and your case allow.",
+      a: "It depends on the injury and whether the insurer negotiates in good faith. Some files resolve in months. Serious cases that are tried take longer. We move as fast as your health and the evidence allow.",
     },
   ],
 
   locations: {
+    ...CALIFORNIA_LOCATIONS,
     heading: "Serving injured clients across California",
-    cities: [
-      "Los Angeles",
-      "San Diego",
-      "San Jose",
-      "San Francisco",
-      "Fresno",
-      "Sacramento",
-      "Long Beach",
-      "Oakland",
-      "Bakersfield",
-      "Anaheim",
-      "Riverside",
-      "Santa Ana",
-      "Irvine",
-      "Stockton",
-      "Chula Vista",
-      "Fremont",
-    ],
   },
 
   finalCta: {
-    headline: "Talk to someone who’s on your side.",
-    sub: "The call is free, the advice is honest, and there’s no obligation. Find out where you stand.",
+    headline: "Tell us what happened. We’ll tell you the next step.",
+    sub: "The review is free, confidential, and not a retainer. Find out where the claim actually stands.",
   },
 };

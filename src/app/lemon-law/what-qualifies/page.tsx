@@ -1,19 +1,22 @@
-import type { Metadata } from "next";
 import { PracticeArea } from "@/components/PracticeArea";
 import { lemonLawContent } from "@/lib/content/lemon-law";
 import type { PracticeAreaContent } from "@/lib/content/types";
+import { pageMeta } from "@/lib/seo";
 import { PLACEHOLDER } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "What Qualifies as a Lemon in California?",
   description:
-    "Wondering if your vehicle qualifies under California lemon law? Learn the repair-attempt and time-in-shop signals — and get a free review of your repair orders.",
-};
+    "Repair attempts, days out of service, and warranty signals for a California lemon law review. Send the repair orders for a free look.",
+  path: "/lemon-law/what-qualifies",
+});
 
 // Reuses the same PracticeArea template as the /lemon-law hub; only
 // the content object changes to focus on qualification.
 const whatQualifiesContent: PracticeAreaContent = {
   ...lemonLawContent,
+  breadcrumb: { href: "/lemon-law", label: "Lemon law" },
+  related: undefined,
   hero: {
     ...lemonLawContent.hero,
     eyebrow: "What Qualifies",

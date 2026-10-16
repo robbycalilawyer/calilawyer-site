@@ -1,4 +1,5 @@
 import type { PracticeAreaContent } from "./types";
+import { CALIFORNIA_LOCATIONS, PLACEHOLDER_TESTIMONIALS } from "./shared";
 import { PLACEHOLDER } from "@/lib/site";
 
 export const lemonLawContent: PracticeAreaContent = {
@@ -7,178 +8,158 @@ export const lemonLawContent: PracticeAreaContent = {
   formPractice: "lemon-law",
 
   hero: {
-    eyebrow: "California Lemon Law",
-    headline: "Your car keeps breaking. The law is on your side.",
-    sub: "If your vehicle has spent weeks in the shop for the same defect and still isn’t right, California’s lemon law may entitle you to a refund or a replacement — and the manufacturer pays the attorney’s fees.",
+    eyebrow: "Consumer protection",
+    headline: "California lemon law attorneys for defective vehicles.",
+    sub: "If your vehicle keeps going back to the dealer for warranty repairs, we can review the repair history and explain the options. When the manufacturer cannot fix a covered defect, the path may be a buyback, a replacement, or cash — and in qualifying cases they pay the attorney’s fees.",
     stats: [
       { value: PLACEHOLDER.settlements, label: "Recovered for owners" },
       { value: PLACEHOLDER.years, label: "Years handling lemon claims" },
-      { value: "$0", label: "Manufacturer typically pays fees" },
+      { value: "Free", label: "Repair-history review" },
     ],
   },
 
   intro: [
-    "You bought or leased a vehicle expecting it to work. Instead you’ve got a check-engine light that won’t stay off, a transmission that slips, or electronics that keep failing — and repair visit after repair visit hasn’t fixed it.",
-    "California’s lemon law (the Song-Beverly Consumer Warranty Act) exists for exactly this. When a manufacturer can’t repair a covered defect after a reasonable number of tries, they may owe you a buyback or a replacement vehicle. We handle the claim end to end, and in qualifying cases the manufacturer — not you — pays our fees.",
+    "You bought or leased a vehicle that was supposed to work. Instead there is a warning light that returns, a transmission that slips, or electronics that fail — and another visit has not fixed it.",
+    "California’s lemon law, the Song-Beverly Consumer Warranty Act, is built for that pattern. After a reasonable number of repair attempts, or enough days out of service, the manufacturer may owe a repurchase or a replacement. We handle the manufacturer. You keep the repair orders.",
   ],
 
   legalCallout: {
-    title: "Important legal information",
-    body: `California’s lemon law generally applies to vehicles still under the manufacturer’s warranty, and specific timelines and requirements apply to your situation. Keep every repair order — those documents are the backbone of a lemon claim. ${PLACEHOLDER.disclaimer}`,
+    title: "Attorney fee provision",
+    body: `California lemon law includes a fee-shifting rule. In a successful qualifying claim, the manufacturer may have to pay reasonable attorney’s fees and costs, separate from what you recover. That is not a promise about your vehicle. ${PLACEHOLDER.noFee} ${PLACEHOLDER.disclaimer}`,
   },
 
   worth: {
-    title: "What a lemon claim may recover",
-    body: "Depending on your facts, a successful claim can mean getting your money back, a comparable new vehicle, or cash to keep the car. Relief can include:",
+    title: "What you may be able to recover",
+    body: "Song-Beverly remedies depend on the facts. A successful claim generally pushes the manufacturer toward one of these outcomes:",
     items: [
       {
-        label: "Buyback (refund)",
+        label: "Buyback (repurchase)",
         detail:
-          "Return the vehicle for a refund of what you paid, less a statutory mileage offset for use before the first repair attempt.",
+          "A refund path for what you paid, subject to the statutory mileage offset for use before the first repair attempt.",
       },
       {
-        label: "Replacement vehicle",
+        label: "Vehicle replacement",
         detail:
-          "A comparable new vehicle in place of your defective one, if you’d rather keep driving than get a refund.",
+          "A comparable new vehicle when you would rather keep driving than unwind the deal.",
       },
       {
-        label: "Cash-and-keep settlement",
+        label: "Cash compensation",
         detail:
-          "In some cases, a payment that lets you keep the vehicle and walk away compensated.",
+          "In some matters, a payment that lets you keep the vehicle and addresses the diminished value.",
       },
       {
         label: "Incidental costs",
         detail:
-          "Towing, rental cars, and related out-of-pocket expenses tied to the defect.",
+          "Towing, rental cars, and related out-of-pocket costs tied to the defect.",
       },
       {
         label: "Attorney’s fees",
         detail:
-          "In qualifying cases the manufacturer pays reasonable attorney’s fees and costs — separate from your recovery.",
+          "Where the statute applies, reasonable fees and costs are shifted to the manufacturer rather than taken from your recovery.",
       },
     ],
   },
 
   handle: {
-    title: "Vehicles and defects we handle",
+    title: "Common lemon law defects",
     items: [
-      "New and many used vehicles under warranty",
-      "Cars, trucks, SUVs, and vans",
-      "Leased and financed vehicles",
-      "Engine, transmission, and drivetrain defects",
-      "Electrical, infotainment, and sensor failures",
-      "Braking, steering, and safety-system defects",
+      "Engine failure or stalling",
+      "Transmission jerking or slipping",
+      "Electrical system failures",
+      "Braking system defects",
+      "Steering and suspension issues",
+      "Infotainment screen crashes",
+      "Battery and EV charging failures",
+      "Severe water leaks",
     ],
   },
 
   scenarios: {
-    title: "Sound familiar?",
+    title: "Documents to gather",
     items: [
-      "The same problem has been “fixed” three or more times and it’s back.",
-      "Your vehicle has been in the shop for weeks, adding up over time.",
-      "A defect is serious enough that you don’t feel safe driving it.",
-      "The dealer keeps saying they “can’t reproduce” the issue.",
-      "You’re still making payments on a car you can’t rely on.",
-      "The manufacturer offered a small goodwill payment to make you go away.",
+      "Purchase or lease contract",
+      "Current registration",
+      "Every dealer repair order",
+      "Tow and rental receipts",
+      "Written messages with the manufacturer",
+      "Warranty booklet or remaining-coverage proof",
+    ],
+  },
+
+  related: {
+    title: "Not sure it qualifies?",
+    intro:
+      "There is no single repair count that decides every file. Start with the signals, then send the paperwork.",
+    items: [
+      {
+        href: "/lemon-law/what-qualifies",
+        title: "What qualifies",
+        description:
+          "Repair attempts, days out of service, safety defects, and the warranty window.",
+      },
     ],
   },
 
   process: [
     {
       step: "01",
-      title: "Send us your repair orders",
-      body: "A free case review. Share your repair history and we’ll tell you honestly whether your vehicle likely qualifies.",
+      title: "Send the repair orders",
+      body: "A free review of the vehicle, the warranty, and the visit history. We tell you whether the file is worth pressing.",
     },
     {
       step: "02",
       title: "We take on the manufacturer",
-      body: "We build the claim, handle all communication with the manufacturer, and demand the buyback, replacement, or settlement you’re owed.",
+      body: "We build the demand, handle the manufacturer’s process, and bypass the dealer runaround.",
     },
     {
       step: "03",
-      title: "You get made whole",
-      body: `We push for the best available outcome — and in qualifying cases the manufacturer pays our fees, not you. ${PLACEHOLDER.noFee}`,
+      title: "Buyback, replacement, or cash",
+      body: `We push for the remedy the facts support. ${PLACEHOLDER.noFee}`,
     },
   ],
 
   whyUs: {
-    title: "Why California drivers choose us",
-    body: "Lemon law is technical and deadline-driven. We know how manufacturers evaluate claims, and we use that to move yours faster and push for full relief.",
+    title: "Manufacturer accountability",
+    body: "Manufacturers have internal paths for delaying a buyback. We know the paperwork they ask for and we do not let a goodwill check close a file that should be a repurchase.",
     stats: [
       { value: PLACEHOLDER.settlements, label: "Recovered for owners" },
-      { value: "$0", label: "Out-of-pocket to start" },
+      { value: "Free", label: "Case review" },
       { value: PLACEHOLDER.years, label: "Years in practice" },
     ],
   },
 
-  testimonials: [
-    {
-      quote:
-        "Four trips to the dealer for the same transmission problem and they kept stalling. The firm got me a full buyback and I didn’t pay a dime.",
-      name: "Danielle W.",
-      context: "SUV buyback client",
-    },
-    {
-      quote:
-        "I thought I was stuck with the payments on a car I couldn’t trust. They handled the manufacturer and got me into a replacement.",
-      name: "Andre T.",
-      context: "Replacement vehicle client",
-    },
-    {
-      quote:
-        "They made a frustrating situation simple. I sent my repair orders and they did the rest.",
-      name: "Sofia M.",
-      context: "Electrical defect client",
-    },
-  ],
+  testimonials: PLACEHOLDER_TESTIMONIALS,
 
   faqs: [
     {
       q: "How do I know if my car is a lemon?",
-      a: "Generally, a vehicle may qualify if it has a covered defect the manufacturer hasn’t been able to repair after a reasonable number of attempts, or if it’s been out of service for an extended time for repairs — all while under warranty. Send us your repair orders and we’ll evaluate it for free.",
+      a: "A vehicle may qualify when a covered defect is not repaired after a reasonable number of attempts, or when it has been out of service for repairs for a substantial time, while the manufacturer’s warranty applies. Send the repair orders and we will review them.",
     },
     {
       q: "What does it cost me?",
-      a: `In qualifying cases under California’s lemon law, the manufacturer pays reasonable attorney’s fees and costs — separate from what you recover. That means you can pursue a claim with no upfront cost. ${PLACEHOLDER.noFee}`,
+      a: `The review is free. Fee-shifting may require the manufacturer to pay reasonable attorney’s fees if the claim succeeds. ${PLACEHOLDER.noFee}`,
     },
     {
-      q: "Do I have to keep making my car payments?",
-      a: "Yes — keep making payments and keep the vehicle maintained while your claim is pending. Stopping payments can hurt you. We’ll advise you on your specific situation.",
+      q: "Do I have to keep making payments?",
+      a: "Yes. Keep the payments current and the vehicle maintained while a claim is pending. Stopping payments can hurt the file. We will talk through your specific contract.",
     },
     {
       q: "What if I bought the car used?",
-      a: "Many used vehicles still under the manufacturer’s original warranty can qualify. Certified pre-owned and vehicles with remaining factory warranty are worth reviewing. Let us look at your paperwork.",
+      a: "Many used vehicles still covered by the manufacturer’s original warranty can be reviewed, including some certified pre-owned cars. The remaining warranty and the repair orders decide it, not the word “used.”",
     },
     {
       q: "How long does a lemon law claim take?",
-      a: "Some claims resolve in a few months once the manufacturer sees a well-documented case; others take longer if they resist. We keep things moving and keep you updated at every step.",
+      a: "A documented file can move in a few months. A manufacturer that resists takes longer. We keep you updated and we do not wait on the dealer to volunteer a buyback.",
     },
   ],
 
   locations: {
+    ...CALIFORNIA_LOCATIONS,
     heading: "Helping vehicle owners across California",
-    cities: [
-      "Los Angeles",
-      "San Diego",
-      "San Jose",
-      "San Francisco",
-      "Fresno",
-      "Sacramento",
-      "Long Beach",
-      "Oakland",
-      "Bakersfield",
-      "Anaheim",
-      "Riverside",
-      "Santa Ana",
-      "Irvine",
-      "Stockton",
-      "Chula Vista",
-      "Fremont",
-    ],
   },
 
   finalCta: {
-    headline: "Stop fighting your car alone.",
-    sub: "Send us your repair orders and we’ll tell you where you stand — free, and with no obligation.",
+    headline: "Stop fighting the dealer alone.",
+    sub: "Send the repair history. We will tell you whether the manufacturer should be buying the vehicle back.",
   },
 };

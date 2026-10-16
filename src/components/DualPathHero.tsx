@@ -11,17 +11,17 @@ interface Door {
 const LEFT: Door = {
   href: "/injury",
   eyebrow: "Personal Injury",
-  headline: "Injured in an accident?",
-  sub: "You’re hurt, the bills are stacking up, and an adjuster is already calling. We deal with them so you can heal.",
-  cta: "Get help with my injury",
+  headline: "You were hurt. Someone else is responsible.",
+  sub: "Crashes, rideshare, trucking, motorcycle, pedestrian, dog bites, premises liability, and wrongful death. We put pressure on the insurance company.",
+  cta: "Review my injury claim",
 };
 
 const RIGHT: Door = {
   href: "/lemon-law",
-  eyebrow: "California Lemon Law",
-  headline: "Stuck with a lemon?",
-  sub: "Same shop, same problem, no fix. If your vehicle keeps failing, the manufacturer may owe you a refund or replacement.",
-  cta: "See if my car qualifies",
+  eyebrow: "Lemon Law",
+  headline: "The dealer cannot fix it.",
+  sub: "Repeat repairs, warranty trouble, and manufacturer delay. We review the paperwork for a buyback, a replacement, or cash.",
+  cta: "Check my lemon law case",
 };
 
 function Arrow() {
@@ -83,7 +83,7 @@ export function DualPathHero() {
     >
       <div className="container-site">
         <p className="pt-10 text-center text-sm font-semibold uppercase tracking-[0.12em] text-bone md:pt-14">
-          Two very different problems. One firm that fights for you.
+          Two practice areas. One standard: relentless.
         </p>
       </div>
 

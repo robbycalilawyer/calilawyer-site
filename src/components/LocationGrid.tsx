@@ -39,7 +39,7 @@ export function LocationGrid({
               className={`flex min-h-11 items-center rounded-[var(--radius-md)] border px-4 text-[0.95rem] font-semibold transition-colors duration-[var(--motion-fast)] ${
                 isDark
                   ? "on-dark border-charcoal text-bone hover:border-gold hover:text-white"
-                  : "border-bone bg-white text-ink hover:border-ink"
+                  : "border-bone bg-white text-ink"
               }`}
             >
               {city}

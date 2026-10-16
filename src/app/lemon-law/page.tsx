@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { PracticeArea } from "@/components/PracticeArea";
 import { lemonLawContent } from "@/lib/content/lemon-law";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "California Lemon Law Attorneys",
   description:
-    "Stuck with a defective vehicle? California lemon law may entitle you to a refund or replacement — and the manufacturer pays the fees. Free case review.",
-};
+    "California lemon law matters for defective vehicles, repeat warranty repairs, buybacks, and replacements. Free consultation from the Glendale office.",
+  path: "/lemon-law",
+});
 
 export default function LemonLawPage() {
   return <PracticeArea content={lemonLawContent} />;

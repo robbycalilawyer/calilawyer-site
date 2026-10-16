@@ -47,7 +47,7 @@ export function Testimonial({
   quote,
   name,
   context,
-  rating = 5,
+  rating,
   tone = "light",
 }: TestimonialProps) {
   const isDark = tone === "dark";
@@ -59,7 +59,7 @@ export function Testimonial({
           : "border-bone bg-white"
       }`}
     >
-      <Stars rating={rating} tone={tone} />
+      {rating ? <Stars rating={rating} tone={tone} /> : null}
       <blockquote
         className={`mt-4 font-display text-lg leading-snug ${
           isDark ? "text-white" : "text-ink"

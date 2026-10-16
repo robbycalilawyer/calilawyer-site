@@ -8,6 +8,9 @@ export interface PracticeAreaContent {
   /** Which funnel the inline LeadForm belongs to. */
   formPractice: "injury" | "lemon-law";
 
+  /** Optional link back to the practice hub, shown above the hero eyebrow. */
+  breadcrumb?: { href: string; label: string };
+
   hero: {
     eyebrow: string;
     headline: string;
@@ -45,10 +48,24 @@ export interface PracticeAreaContent {
     items: string[];
   };
 
-  /** Common scenarios. */
+  /** Common scenarios, or an evidence list on child pages. */
   scenarios: {
     title: string;
     items: string[];
+  };
+
+  /** Optional insurance-playbook block used by the injury hub. */
+  tactics?: {
+    title: string;
+    intro: string;
+    items: { tactic: string; reality: string; counter: string }[];
+  };
+
+  /** Optional cards linking to child practice pages. */
+  related?: {
+    title: string;
+    intro?: string;
+    items: { href: string; title: string; description: string }[];
   };
 
   /** 3-step process. */

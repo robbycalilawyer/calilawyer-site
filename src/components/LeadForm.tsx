@@ -1,8 +1,14 @@
 "use client";
 
 import { useId, useState } from "react";
-import { PLACEHOLDER } from "@/lib/site";
+import { FEE_TERMS, SITE } from "@/lib/site";
 import { Button } from "./Button";
+import {
+  CaseTypeField,
+  LemonFields,
+  type CaseType,
+  type Ownership,
+} from "./LeadFormExtras";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -17,7 +23,11 @@ interface Fields {
   phone: string;
   email: string;
   details: string;
-  consent: boolean;
+  caseType: CaseType;
+  vehicle: string;
+  ownership: Ownership;
+  repairVisits: string;
+  daysOut: string;
 }
 
 const EMPTY: Fields = {
@@ -25,12 +35,16 @@ const EMPTY: Fields = {
   phone: "",
   email: "",
   details: "",
-  consent: false,
+  caseType: "Not Sure",
+  vehicle: "",
+  ownership: "",
+  repairVisits: "",
+  daysOut: "",
 };
 
 type FieldErrors = Partial<Record<keyof Fields, string>>;
 
-function validate(f: Fields): FieldErrors {
+function validate(f: Fields, practice: LeadFormProps["practice"]): FieldErrors {
   const e: FieldErrors = {};
   if (!f.name.trim()) e.name = "Please enter your name.";
   const phoneDigits = f.phone.replace(/\D/g, "");
@@ -40,7 +54,12 @@ function validate(f: Fields): FieldErrors {
   if (!f.email.trim()) e.email = "Please enter an email address.";
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email))
     e.email = "Enter a valid email address.";
-  if (!f.consent) e.consent = "Please agree before submitting.";
+  if (practice === "lemon-law") {
+    if (!f.vehicle.trim()) e.vehicle = "Enter the year, make, and model.";
+    if (!f.ownership) e.ownership = "Tell us whether you purchased or leased.";
+    if (!f.repairVisits) e.repairVisits = "Select the approximate repair visits.";
+    if (!f.daysOut) e.daysOut = "Select how long it has been out of service.";
+  }
   return e;
 }
 
@@ -66,7 +85,7 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const found = validate(fields);
+    const found = validate(fields, practice);
     setErrors(found);
     if (Object.keys(found).length > 0) {
       // Move focus to the first field with an error.
@@ -78,34 +97,35 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
     setStatus("loading");
     setSubmitError(null);
 
-    const payload = {
-      ...fields,
-      practice: PRACTICE_LABEL[practice],
-      submittedAtIso: new Date().toISOString(),
-    };
-
-    const endpoint = process.env.LEAD_ENDPOINT;
+    const body = new URLSearchParams({
+      "form-name": "lead",
+      "bot-field": "",
+      name: fields.name,
+      phone: fields.phone,
+      email: fields.email,
+      details: fields.details,
+      caseType: fields.caseType,
+      vehicle: fields.vehicle,
+      ownership: fields.ownership,
+      repairVisits: fields.repairVisits,
+      daysOut: fields.daysOut,
+      practice:
+        practice === "general" ? fields.caseType : PRACTICE_LABEL[practice],
+    });
 
     try {
-      if (endpoint) {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error(`Request failed (${res.status})`);
-      } else {
-        // No endpoint configured: log the payload and show success.
-        console.info("[LeadForm] No LEAD_ENDPOINT set. Payload:", payload);
-      }
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
       setStatus("success");
       setFields(EMPTY);
-    } catch (err) {
+    } catch {
       setStatus("error");
       setSubmitError(
-        err instanceof Error
-          ? "We couldn't send your request. Please call us or try again."
-          : "Something went wrong. Please try again.",
+        `We couldn't send your request. Call ${SITE.phoneDisplay} or try again.`,
       );
     }
   }
@@ -135,11 +155,12 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
         <h3
           className={`h-card mt-5 ${isDark ? "text-white" : "text-ink"}`}
         >
-          Thanks — we’ve got it.
+          Request received
         </h3>
         <p className="mt-3 text-[0.975rem] leading-relaxed">
-          A member of our team will reach out shortly to talk through your
-          situation. If it’s urgent, call us now and ask for intake.
+          Your request has been received. A team member will contact you
+          shortly to discuss your case. This doesn’t create an
+          attorney-client relationship.
         </p>
         <div className="mt-6">
           <Button
@@ -250,6 +271,38 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
           </div>
         </div>
 
+        {practice === "general" ? (
+          <CaseTypeField
+            uid={uid}
+            isDark={isDark}
+            labelCls={labelCls}
+            inputCls={inputBase}
+            errorCls={() => ""}
+            errorText={() => null}
+            value={fields.caseType}
+            onChange={(value) => update("caseType", value)}
+          />
+        ) : null}
+
+        {practice === "lemon-law" ? (
+          <LemonFields
+            uid={uid}
+            isDark={isDark}
+            labelCls={labelCls}
+            inputCls={inputBase}
+            errorCls={(key) => (errors[key as keyof Fields] ? errRing : "")}
+            errorText={(key) => fieldError(key as keyof Fields)}
+            vehicle={fields.vehicle}
+            ownership={fields.ownership}
+            repairVisits={fields.repairVisits}
+            daysOut={fields.daysOut}
+            onVehicle={(value) => update("vehicle", value)}
+            onOwnership={(value) => update("ownership", value)}
+            onVisits={(value) => update("repairVisits", value)}
+            onDays={(value) => update("daysOut", value)}
+          />
+        ) : null}
+
         {/* Details */}
         <div>
           <label htmlFor={`${uid}-details`} className={labelCls}>
@@ -267,35 +320,6 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
             className={`${inputBase} resize-y`}
             placeholder="A few sentences about your situation."
           />
-        </div>
-
-        {/* Consent */}
-        <div>
-          <label
-            htmlFor={`${uid}-consent`}
-            className={`flex cursor-pointer items-start gap-3 text-sm leading-relaxed ${
-              isDark ? "text-bone" : "text-ink/80"
-            }`}
-          >
-            <input
-              id={`${uid}-consent`}
-              name="consent"
-              type="checkbox"
-              checked={fields.consent}
-              onChange={(e) => update("consent", e.target.checked)}
-              aria-invalid={!!errors.consent}
-              aria-describedby={
-                errors.consent ? `${uid}-consent-error` : undefined
-              }
-              className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--color-gold)]"
-            />
-            <span>
-              {PLACEHOLDER.tcpa} I agree to be contacted about my inquiry by
-              phone, text, or email. Message/data rates may apply. This does not
-              create an attorney–client relationship.
-            </span>
-          </label>
-          {fieldError("consent")}
         </div>
 
         {/* Submit-level error */}
@@ -319,7 +343,7 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
           loading={status === "loading"}
           className="w-full"
         >
-          {status === "loading" ? "Sending…" : "Request my free review"}
+          {status === "loading" ? "Sending…" : "Request my free consultation"}
         </Button>
 
         <p
@@ -327,8 +351,8 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
             isDark ? "text-bone/70" : "text-ink/55"
           }`}
         >
-          {PLACEHOLDER.noFee} Submitting this form does not create an
-          attorney–client relationship.
+          {FEE_TERMS} Free consultation. Submitting this form doesn’t create an
+          attorney-client relationship.
         </p>
       </div>
     </form>

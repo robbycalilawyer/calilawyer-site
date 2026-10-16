@@ -1,32 +1,35 @@
-import type { Metadata } from "next";
 import { PracticeArea } from "@/components/PracticeArea";
 import { lemonLawContent } from "@/lib/content/lemon-law";
 import type { PracticeAreaContent } from "@/lib/content/types";
-import { PLACEHOLDER } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
+import { FEE_TERMS } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "What Qualifies as a Lemon in California?",
+export const metadata = pageMeta({
+  title: "What qualifies as a lemon in California",
   description:
-    "Wondering if your vehicle qualifies under California lemon law? Learn the repair-attempt and time-in-shop signals — and get a free review of your repair orders.",
-};
+    "Repair attempts, days out of service, and warranty signals for a California lemon law matter. Free consultation.",
+  path: "/lemon-law/what-qualifies",
+});
 
 // Reuses the same PracticeArea template as the /lemon-law hub; only
 // the content object changes to focus on qualification.
 const whatQualifiesContent: PracticeAreaContent = {
   ...lemonLawContent,
+  breadcrumb: { href: "/lemon-law", label: "Lemon law" },
+  related: undefined,
   hero: {
     ...lemonLawContent.hero,
     eyebrow: "What Qualifies",
     headline: "Does your vehicle actually qualify as a lemon?",
-    sub: "There’s no single magic number — it comes down to your repair history and warranty. Here’s what tends to matter, and how to find out for sure.",
+    sub: "There's no single repair count. It comes down to your repair history and the warranty. Here's what usually matters.",
   },
   intro: [
-    "The most common question we hear is simple: “Is my car a lemon?” The honest answer is that it depends on the details — but there are clear signals that make a claim worth reviewing.",
-    "Generally, a vehicle may qualify when it has a covered defect the manufacturer hasn’t fixed after a reasonable number of repair attempts, or when it’s been out of service for repairs for an extended period — all while under the manufacturer’s warranty. The strongest evidence is your paperwork.",
+    "The question we hear most is “Is my car a lemon?” It depends on the details, and there are clear signals that make a claim worth reviewing.",
+    "A vehicle may qualify when it has a covered defect the manufacturer hasn't fixed after a reasonable number of repair attempts, or when it's been out of service for repairs for a long stretch, while the manufacturer's warranty still applies. The strongest evidence is your paperwork.",
   ],
   worth: {
     title: "Signals your vehicle may qualify",
-    body: "If several of these describe your situation, it’s worth a free review of your repair orders:",
+    body: "If several of these describe your situation, a free consultation can start with your repair orders:",
     items: [
       {
         label: "Repeat repair attempts",
@@ -51,7 +54,7 @@ const whatQualifiesContent: PracticeAreaContent = {
       {
         label: "Documented history",
         detail:
-          "You have repair orders showing each visit — the backbone of any lemon claim.",
+          "You have repair orders for each visit. Those orders are the core of a lemon claim.",
       },
     ],
   },
@@ -62,7 +65,7 @@ const whatQualifiesContent: PracticeAreaContent = {
       "Weeks of cumulative downtime waiting on repairs.",
       "A dealer that keeps saying it “can’t reproduce” the problem.",
       "A serious safety defect after only one or two attempts.",
-      "A certified pre-owned car with remaining factory warranty.",
+      "Used vehicles may qualify, case by case.",
       "A leased vehicle with a persistent, documented issue.",
     ],
   },
@@ -75,7 +78,7 @@ const whatQualifiesContent: PracticeAreaContent = {
   ],
   finalCta: {
     headline: "Not sure if you qualify? Let us look.",
-    sub: `Send us your repair orders and we’ll tell you honestly whether you have a claim — free, with no obligation. ${PLACEHOLDER.noFee}`,
+    sub: `Send us your repair orders and we’ll tell you honestly whether you have a claim. Free consultation. ${FEE_TERMS}`,
   },
 };
 

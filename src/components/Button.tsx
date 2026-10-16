@@ -48,8 +48,7 @@ function classes({
     // Gold fill, ink text — the single accent, used for the primary action.
     primary: [
       "bg-gold text-ink",
-      "hover:bg-[color-mix(in_srgb,var(--color-gold)_88%,black)]",
-      "shadow-[0_1px_0_0_rgba(0,0,0,0.08)]",
+      "hover:brightness-95",
     ].join(" "),
     // Outlined. Ink outline on light; bone outline on dark.
     secondary: onDark

@@ -5,5 +5,25 @@
     <meta name="robots" content="noindex" />
     <title>Forms</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Static form for Netlify's build parser. The visible form posts here. -->
+    <form name="lead" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="lead" />
+      <p hidden>
+        <label>
+          Don’t fill this out: <input name="bot-field" />
+        </label>
+      </p>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <textarea name="details"></textarea>
+      <input type="text" name="caseType" />
+      <input type="text" name="vehicle" />
+      <input type="text" name="ownership" />
+      <input type="text" name="repairVisits" />
+      <input type="text" name="daysOut" />
+      <input type="text" name="practice" />
+    </form>
+  </body>
 </html>

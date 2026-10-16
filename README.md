@@ -55,15 +55,11 @@ Components reference tokens only.
 
 ## Lead form
 
-`LeadForm` is client-side only. It POSTs to `process.env.LEAD_ENDPOINT`
-(exposed at build time via `next.config.ts`). If unset, it shows the success
-state and logs the payload. No email or CRM is connected. Lemon-law forms
-collect vehicle facts. The repair-order upload is a labeled placeholder.
-
-```bash
-# optional
-LEAD_ENDPOINT="https://example.com/leads" npm run build
-```
+`LeadForm` posts url-encoded fields to `/__forms.html` as Netlify form `lead`.
+Success is shown only after a 2xx response. A failed post tells the visitor to
+call (310) 331-0310. `public/__forms.html` is the static form Netlify detects
+at deploy, and it is `noindex`. Lemon-law forms collect vehicle facts. The
+repair-order upload is a labeled placeholder.
 
 ## Approved firm facts
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { FEE_TERMS } from "@/lib/site";
+import { FEE_TERMS, SITE } from "@/lib/site";
 import { Button } from "./Button";
 import {
   CaseTypeField,
@@ -97,35 +97,35 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
     setStatus("loading");
     setSubmitError(null);
 
-    const payload = {
-      ...fields,
+    const body = new URLSearchParams({
+      "form-name": "lead",
+      "bot-field": "",
+      name: fields.name,
+      phone: fields.phone,
+      email: fields.email,
+      details: fields.details,
+      caseType: fields.caseType,
+      vehicle: fields.vehicle,
+      ownership: fields.ownership,
+      repairVisits: fields.repairVisits,
+      daysOut: fields.daysOut,
       practice:
         practice === "general" ? fields.caseType : PRACTICE_LABEL[practice],
-      submittedAtIso: new Date().toISOString(),
-    };
-
-    const endpoint = process.env.LEAD_ENDPOINT;
+    });
 
     try {
-      if (endpoint) {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error(`Request failed (${res.status})`);
-      } else {
-        // No endpoint configured: log the payload and show success.
-        console.info("LeadForm: No LEAD_ENDPOINT set.", payload);
-      }
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
       setStatus("success");
       setFields(EMPTY);
-    } catch (err) {
+    } catch {
       setStatus("error");
       setSubmitError(
-        err instanceof Error
-          ? "We couldn't send your request. Please call us or try again."
-          : "Something went wrong. Please try again.",
+        `We couldn't send your request. Call ${SITE.phoneDisplay} or try again.`,
       );
     }
   }

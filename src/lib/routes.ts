@@ -31,7 +31,6 @@ export const SITEMAP_ROUTES: {
     priority: 0.8,
     changeFrequency: "monthly",
   },
-  { path: "/results", priority: 0.6, changeFrequency: "monthly" },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },
   { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" },

@@ -7,7 +7,7 @@ import { openCaseModal } from "@/components/CaseReviewModal";
 
 const CHIPS = [
   "Free consultation",
-  "Serving all of California",
+  "Based in Glendale",
   "Lemon law + injury",
   "Fee terms in writing",
 ];
@@ -35,7 +35,7 @@ export function HomeHero() {
             California’s lemon law &amp; injury firm.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone">
-            CaliLawyer fights for people hurt by negligence and consumers stuck
+            CaliLawyer.com fights for people hurt by negligence and consumers stuck
             with defective vehicles — with trial-ready pressure, direct client
             contact, and statewide California reach.
           </p>

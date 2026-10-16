@@ -102,7 +102,7 @@ export function CaseReviewModal() {
             type="button"
             onClick={() => setOpen(false)}
             className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-pill)] text-white hover:bg-white/10"
-            aria-label="Close case review"
+            aria-label="Close"
           >
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
               <path

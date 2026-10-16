@@ -37,7 +37,7 @@ export function buildAccident(spec: AccidentSpec): PracticeAreaContent {
       items: spec.damages,
     },
     handle: {
-      title: "How CaliLawyer helps",
+      title: "How CaliLawyer.com helps",
       items: spec.help,
     },
     scenarios: {

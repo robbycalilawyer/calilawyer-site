@@ -4,7 +4,7 @@ import { openCaseModal } from "./CaseReviewModal";
 
 /**
  * Desktop case-review button. Hidden on small screens, where the
- * bottom bar already offers Call, Text, and Free Review.
+ * bottom bar already offers Call, Text, and Free consultation.
  */
 export function FloatingCTA() {
   return (
@@ -21,7 +21,7 @@ export function FloatingCTA() {
           strokeLinejoin="round"
         />
       </svg>
-      Start case review
+      Start free consultation
     </button>
   );
 }

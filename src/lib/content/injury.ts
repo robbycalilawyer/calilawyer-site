@@ -21,7 +21,7 @@ export const injuryContent: PracticeAreaContent = {
 
   legalCallout: {
     title: "Important legal information",
-    body: `A personal injury lawsuit is generally due within two years under CCP §335.1. A claim against a public entity is generally due within six months under Gov. Code §911.2. Evidence disappears, memories fade, and vehicles get repaired. ${FEE_TERMS} Free consultation.`,
+    body: `Generally 2 years from the injury (CCP §335.1). Claims against a public entity generally must be presented within 6 months (Gov. Code §911.2). Evidence disappears, memories fade, and vehicles get repaired. ${FEE_TERMS} Free consultation.`,
   },
 
   worth: {
@@ -156,7 +156,7 @@ export const injuryContent: PracticeAreaContent = {
     },
     {
       q: "How long do I have to file a claim?",
-      a: "A personal injury lawsuit is generally due within two years under CCP §335.1. A claim against a public entity is generally due within six months under Gov. Code §911.2.",
+      a: "Generally 2 years from the injury (CCP §335.1). Claims against a public entity generally must be presented within 6 months (Gov. Code §911.2).",
     },
     {
       q: "What if I was partly at fault?",

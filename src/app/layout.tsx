@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: "/assets/og-image.png",
         width: 1200,
         height: 630,
-        alt: "CaliLawyer — California lemon law and personal injury",
+        alt: "CaliLawyer.com — California lemon law and personal injury",
       },
     ],
   },

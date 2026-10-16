@@ -69,7 +69,7 @@ export function HomeBands() {
 
       <section className="bg-white">
         <div className="container-site py-16 md:py-24">
-          <span className="eyebrow text-ink/60">The CaliLawyer advantage</span>
+          <span className="eyebrow text-ink/60">The CaliLawyer.com advantage</span>
           <h2 className="h-section mt-3 max-w-2xl text-ink">Pressure where it counts.</h2>
           <p className="mt-4 max-w-2xl text-lg text-ink/75">
             The other side has a playbook. So do we. The work is the record,

@@ -147,6 +147,19 @@ for (const path of UNPUBLISHED) {
   if (existsSync(fileFor(path))) fail(`unpublished route was exported: ${path}`);
 }
 
+if (!existsSync(resolve(root, "404.html"))) fail("out/404.html was not exported");
+const rules = [
+  readFileSync(resolve("public/_redirects"), "utf8"),
+  existsSync(resolve("netlify.toml")) ? readFileSync(resolve("netlify.toml"), "utf8") : "",
+].join("\n");
+if (/\/\*\s+\S*index\.html\s+200/.test(rules)) {
+  fail("a catch-all rewrite would serve index.html with status 200");
+}
+for (const path of UNPUBLISHED) {
+  if (rules.includes(path)) fail(`${path} is in a redirect or rewrite rule`);
+}
+if (/\b410\b/.test(rules)) fail("a redirect rule uses 410");
+
 const robots = readFileSync(resolve(root, "robots.txt"), "utf8");
 for (const agent of ["GPTBot", "Google-Extended", "OAI-SearchBot", "PerplexityBot", "ClaudeBot"]) {
   if (!robots.includes(agent)) fail(`robots.txt missing ${agent}`);

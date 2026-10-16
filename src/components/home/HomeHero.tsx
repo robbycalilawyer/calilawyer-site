@@ -45,7 +45,7 @@ export function HomeHero() {
               onClick={openCaseModal}
               className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-pill)] bg-gold px-7 py-3 font-semibold text-ink"
             >
-              Start free case review
+              Start free consultation
             </button>
             <a
               href={SITE.phoneHref}

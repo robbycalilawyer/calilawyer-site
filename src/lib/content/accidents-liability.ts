@@ -126,7 +126,7 @@ export const dogBite = {
       },
     ],
     finalHeadline: "Photograph the wound and call before it heals unseen.",
-    finalSub: "A free review can start with the animal-control report and the first photos.",
+    finalSub: "A free consultation can start with the animal-control report and the first photos.",
   }),
 };
 

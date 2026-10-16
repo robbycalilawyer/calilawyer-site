@@ -28,7 +28,7 @@ export default function FaqPage() {
           <div className="mt-12 rounded-[var(--radius-lg)] border border-ink bg-white p-8">
             <h2 className="font-display text-3xl text-ink">Still have questions?</h2>
             <p className="mt-3 text-ink/75">
-              Send the facts. The review is free and it does not make you a client.
+              Send the facts. Free consultation, and it does not make you a client.
             </p>
             <Link
               href="/contact"

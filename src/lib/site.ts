@@ -1,23 +1,37 @@
 /**
  * Site-wide constants. Single source of truth for firm identity,
  * phone number, and navigation so components never hardcode them.
- *
- * Factual claims that need attorney review stay as bracketed
- * placeholders. They render literally — they are not filled with
- * invented figures.
  */
 
 export const SITE = {
-  name: "CaliLawyer",
-  legalName: "CaliLawyer, APC",
+  name: "CaliLawyer.com",
+  legalName: "CaliLawyer.com",
   url: "https://calilawyer.com",
-  /** Display form of the vanity intake line from the second-version brand. */
-  phoneDisplay: "(800) CALI-LAW",
-  phoneHref: "tel:+18002254529",
-  smsHref: "sms:+18002254529",
-  phoneE164: "+1-800-225-4529",
+  phoneDisplay: "(310) 331-0310",
+  phoneHref: "tel:+13103310310",
+  smsHref: "sms:+13103310310",
+  phoneE164: "+13103310310",
   email: "intake@calilawyer.com",
-  addressLine: "Serving all of California",
+  addressLine: "315 Arden Ave, Ste 10, Glendale, CA 91203",
+} as const;
+
+export const OFFICE = {
+  street: "315 Arden Ave, Ste 10",
+  city: "Glendale",
+  region: "CA",
+  postalCode: "91203",
+  display: "315 Arden Ave, Ste 10, Glendale, CA 91203",
+} as const;
+
+/** Approved fee line. No percentage and no costs explanation. */
+export const FEE_TERMS = "We handle cases on contingency.";
+
+export const LANGUAGES = ["English", "Armenian", "Spanish"] as const;
+export const LANGUAGE_CODES = ["en", "hy", "es"] as const;
+
+export const ATTORNEY = {
+  name: "Rober A. Terziyan",
+  barNumber: "351959",
 } as const;
 
 export const NAV = [
@@ -84,6 +98,7 @@ export const INJURY_LINKS = [
 ] as const;
 
 export const SERVICE_CITIES = [
+  "Glendale",
   "Los Angeles",
   "Orange County",
   "San Diego",
@@ -95,32 +110,6 @@ export const SERVICE_CITIES = [
   "Fresno",
   "Bakersfield",
   "Ventura",
-  "Glendale",
   "Long Beach",
   "Oakland",
 ] as const;
-
-/**
- * Bracketed placeholders left for attorney review. Centralized so
- * review is a single find-and-replace pass.
- */
-export const PLACEHOLDER = {
-  settlements: "[SETTLEMENTS RECOVERED]",
-  clients: "[CLIENTS HELPED]",
-  years: "[YEARS IN PRACTICE]",
-  result: "[RESULT AMOUNT]",
-  noFee:
-    "[NO-FEE PHRASING — suggested: No fee unless we recover compensation for you. Costs and case expenses may still apply depending on your written agreement.]",
-  tcpa: "[TCPA CONSENT LANGUAGE]",
-  disclaimer: "[ATTORNEY ADVERTISING DISCLAIMER]",
-  attorney: "[RESPONSIBLE ATTORNEY]",
-  barNumber: "[BAR NUMBER]",
-  office: "[OFFICE ADDRESS]",
-  languages:
-    "[LANGUAGES — confirm before publishing. Export copy: We speak Armenian and Spanish. Se habla Español.]",
-  testimonial:
-    "[CLIENT TESTIMONIAL — replace with a verified review and written permission.]",
-  clientName: "[CLIENT NAME]",
-  admissions:
-    "[BAR ADMISSIONS — confirm before publishing. Export lists State Bar of California and the U.S. District Court for the Central District of California.]",
-} as const;

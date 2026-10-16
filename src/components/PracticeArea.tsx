@@ -3,9 +3,7 @@ import type { PracticeAreaContent } from "@/lib/content/types";
 import { SITE } from "@/lib/site";
 import { faqSchema } from "@/lib/schema";
 import { LinkButton } from "./Button";
-import { StatCounter } from "./StatCounter";
 import { Accordion } from "./Accordion";
-import { Testimonial } from "./Testimonial";
 import { LocationGrid } from "./LocationGrid";
 import { LeadForm } from "./LeadForm";
 import { JsonLd } from "./JsonLd";
@@ -73,7 +71,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <LinkButton href="#lead-form" size="lg">
-                Get my free case review
+                Get my free consultation
               </LinkButton>
               <LinkButton
                 href={SITE.phoneHref}
@@ -86,21 +84,6 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
             </div>
           </div>
 
-          <dl className="grid gap-6 border-t border-charcoal pt-8 sm:grid-cols-3 md:grid-cols-1 md:border-l md:border-t-0 md:pl-10 md:pt-0">
-            {c.hero.stats.map((s) => (
-              <div key={s.label}>
-                <StatCounter
-                  value={s.value}
-                  label={s.label}
-                  to={s.to}
-                  prefix={s.prefix}
-                  suffix={s.suffix}
-                  tone="dark"
-                  size="sm"
-                />
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
 
@@ -225,42 +208,6 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
               {c.whyUs.body}
             </p>
           </div>
-          <dl className="mt-12 grid gap-8 sm:grid-cols-3">
-            {c.whyUs.stats.map((s) => (
-              <div
-                key={s.label}
-                className="rounded-[var(--radius-lg)] border border-bone bg-paper p-7"
-              >
-                <StatCounter
-                  value={s.value}
-                  label={s.label}
-                  to={s.to}
-                  suffix={s.suffix}
-                  tone="light"
-                  size="sm"
-                />
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* ---------- Testimonials ---------- */}
-      <section className="bg-paper">
-        <div className="container-site py-16 md:py-20">
-          <h2 className="h-section text-ink">What clients say</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {c.testimonials.map((t) => (
-              <Testimonial
-                key={t.name}
-                quote={t.quote}
-                name={t.name}
-                context={t.context}
-                rating={t.rating}
-                tone="light"
-              />
-            ))}
-          </div>
         </div>
       </section>
 
@@ -278,13 +225,13 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
       <section id="lead-form" className="on-dark scroll-mt-20 bg-ink">
         <div className="container-site grid gap-12 py-16 md:grid-cols-[1fr_1.1fr] md:items-center md:py-24">
           <div>
-            <span className="eyebrow text-bone">Free case review</span>
+            <span className="eyebrow text-bone">Free consultation</span>
             <h2 className="h-section mt-4 text-white">
               Tell us what happened.
             </h2>
             <p className="mt-4 max-w-md text-lg leading-relaxed text-bone">
-              A few details is all it takes to get started. We’ll review your
-              situation and reach out — no cost, no obligation.
+              A few details is all it takes to get started. Free consultation.
+              We handle cases on contingency.
             </p>
             <a
               href={SITE.phoneHref}
@@ -318,7 +265,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
           </div>
           <div className="flex flex-wrap gap-3">
             <LinkButton href="#lead-form" size="lg">
-              Start my free review
+              Start my free consultation
             </LinkButton>
             <LinkButton
               href={SITE.phoneHref}

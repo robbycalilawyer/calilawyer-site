@@ -1,11 +1,11 @@
 import { PageHero } from "@/components/PageHero";
-import { PLACEHOLDER, SITE } from "@/lib/site";
+import { ATTORNEY, FEE_TERMS, OFFICE, SITE } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Terms and Disclaimers",
   description:
-    "Attorney advertising notice, no attorney-client relationship from this website, and fee language pending review for CaliLawyer.",
+    "Attorney advertising notice for CaliLawyer.com. Sending a form does not create an attorney-client relationship. We handle cases on contingency.",
   path: "/terms",
 });
 
@@ -34,28 +34,22 @@ export default function TermsPage() {
           </p>
           <h2 className="h-card text-ink">Past results</h2>
           <p>
-            Any result described on this site is a placeholder (
-            {PLACEHOLDER.result}) until an attorney replaces it with a verified
-            outcome. Past results do not guarantee a future outcome. Every case
-            is different.
+            Case results are not published on this site. A past result is not a
+            prediction of a future outcome. Every case is different.
           </p>
-          <h2 className="h-card text-ink">Fees and costs</h2>
-          <p>{PLACEHOLDER.noFee}</p>
+          <h2 className="h-card text-ink">Fees</h2>
+          <p>{FEE_TERMS} Free consultation.</p>
           <h2 className="h-card text-ink">Attorney advertising</h2>
           <p>
-            {PLACEHOLDER.disclaimer} This website may be considered attorney
-            advertising. Hiring a lawyer is an important decision and should not
-            rest on an advertisement alone. Nothing here says the quality of
-            these legal services is greater than the quality of services from
-            other lawyers.
+            This website may be considered attorney advertising. Hiring a lawyer
+            is an important decision and should not rest on an advertisement
+            alone. Nothing here says the quality of these legal services is
+            greater than the quality of services from other lawyers.
           </p>
           <h2 className="h-card text-ink">Responsible attorney</h2>
           <p>
-            The attorney responsible for this website is {PLACEHOLDER.attorney},
-            California Bar No. {PLACEHOLDER.barNumber}. Principal office:{" "}
-            {PLACEHOLDER.office}. Lawyers of the firm are licensed in California
-            unless a page says otherwise — and that statement itself should be
-            confirmed before publishing.
+            The responsible attorney is {ATTORNEY.name}, State Bar of California
+            No. {ATTORNEY.barNumber}. Principal office: {OFFICE.display}.
           </p>
         </div>
       </section>

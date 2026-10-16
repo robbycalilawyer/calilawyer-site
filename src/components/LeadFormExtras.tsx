@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { PLACEHOLDER } from "@/lib/site";
 
 export type CaseType = "Lemon Law" | "Personal Injury" | "Not Sure";
 export type Ownership = "" | "purchase" | "lease";
@@ -151,8 +150,7 @@ export function LemonFields({
           Repair orders
         </p>
         <p className="mt-1">
-          [FILE UPLOAD — not connected.] Bring the dealer invoices to the
-          review. {PLACEHOLDER.disclaimer}
+          Bring the dealer invoices to the consultation.
         </p>
       </div>
     </div>

@@ -41,11 +41,11 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "CaliLawyer fights for people hurt by negligence and consumers stuck with defective vehicles. Free California case review for lemon law and personal injury.",
+    "CaliLawyer.com in Glendale fights for people hurt by negligence and consumers stuck with defective vehicles. Free consultation for lemon law and personal injury.",
   openGraph: {
     title: `${SITE.name} — California Personal Injury & Lemon Law Attorneys`,
     description:
-      "Trial-ready pressure for California lemon law and personal injury claims. Free case review, statewide representation.",
+      "Trial-ready pressure for California lemon law and personal injury claims. Free consultation. Office in Glendale.",
     type: "website",
     images: [
       {

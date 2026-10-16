@@ -92,7 +92,7 @@ export function CaseReviewModal() {
         <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-charcoal bg-charcoal px-6 py-4">
           <div>
             <h2 id={titleId} className="font-display text-2xl text-white">
-              Free case review
+              Free consultation
             </h2>
             <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-bone">
               Confidential. No obligation.

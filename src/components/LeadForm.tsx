@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { PLACEHOLDER } from "@/lib/site";
+import { FEE_TERMS } from "@/lib/site";
 import { Button } from "./Button";
 import {
   CaseTypeField,
@@ -119,7 +119,7 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
         if (!res.ok) throw new Error(`Request failed (${res.status})`);
       } else {
         // No endpoint configured: log the payload and show success.
-        console.info("[LeadForm] No LEAD_ENDPOINT set. Payload:", payload);
+        console.info("LeadForm: No LEAD_ENDPOINT set.", payload);
       }
       setStatus("success");
       setFields(EMPTY);
@@ -346,7 +346,7 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
               className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--color-gold)]"
             />
             <span>
-              {PLACEHOLDER.tcpa} By submitting, you agree to be contacted by
+              By submitting, you agree to be contacted by
               phone, text, or email. Message and data rates may apply. Reply
               STOP to opt out. This does not create an attorney–client
               relationship.
@@ -376,7 +376,7 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
           loading={status === "loading"}
           className="w-full"
         >
-          {status === "loading" ? "Sending…" : "Request my free review"}
+          {status === "loading" ? "Sending…" : "Request my free consultation"}
         </Button>
 
         <p
@@ -384,7 +384,7 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
             isDark ? "text-bone/70" : "text-ink/55"
           }`}
         >
-          {PLACEHOLDER.noFee} Submitting this form does not create an
+          {FEE_TERMS} Free consultation. Submitting this form does not create an
           attorney–client relationship.
         </p>
       </div>

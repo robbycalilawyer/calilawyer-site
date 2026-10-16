@@ -1,12 +1,12 @@
 import { LeadForm } from "@/components/LeadForm";
 import { PageHero } from "@/components/PageHero";
-import { PLACEHOLDER, SITE } from "@/lib/site";
+import { OFFICE, SITE } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Contact",
   description:
-    "Request a free, confidential CaliLawyer case review by form, phone, or text. Submitting a form does not create an attorney-client relationship.",
+    "Request a free consultation with CaliLawyer.com in Glendale by form, phone, or text. Submitting a form does not create an attorney-client relationship.",
   path: "/contact",
 });
 
@@ -15,7 +15,7 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Free case review."
+        title="Free consultation."
         sub="Strictly confidential. No obligation. Not a retainer."
       />
       <section className="bg-paper">
@@ -52,10 +52,10 @@ export default function ContactPage() {
             </ul>
             <p className="rounded-[var(--radius-lg)] border border-bone bg-white p-6 text-ink/80">
               <span className="font-semibold text-ink">Office: </span>
-              {PLACEHOLDER.office}
+              {OFFICE.display}
             </p>
             <p className="border-l-4 border-gold pl-4 text-sm leading-relaxed text-ink/70">
-              {PLACEHOLDER.tcpa} By submitting, you agree to be contacted by
+              By submitting, you agree to be contacted by
               phone, text, or email. Message and data rates may apply. Reply
               STOP to opt out. This does not create an attorney–client
               relationship.

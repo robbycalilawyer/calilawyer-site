@@ -1,7 +1,7 @@
 import type { FaqItem } from "@/components/Accordion";
-import { PLACEHOLDER, SITE } from "@/lib/site";
+import { ATTORNEY, FEE_TERMS, LANGUAGE_CODES, OFFICE, SITE } from "@/lib/site";
 
-/** LegalService + Attorney graph. Unverified identity fields stay bracketed. */
+/** LegalService + Attorney graph for the approved firm facts. */
 export function legalServiceSchema() {
   return {
     "@context": "https://schema.org",
@@ -16,25 +16,28 @@ export function legalServiceSchema() {
         email: SITE.email,
         image: `${SITE.url}/assets/og-image.png`,
         logo: `${SITE.url}/assets/CaliLawyer_Logo.png`,
-        areaServed: {
-          "@type": "State",
-          name: "California",
-        },
+        knowsLanguage: [...LANGUAGE_CODES],
+        areaServed: [
+          { "@type": "City", name: OFFICE.city },
+          { "@type": "State", name: "California" },
+        ],
         address: {
           "@type": "PostalAddress",
-          streetAddress: PLACEHOLDER.office,
-          addressRegion: "CA",
+          streetAddress: OFFICE.street,
+          addressLocality: OFFICE.city,
+          addressRegion: OFFICE.region,
+          postalCode: OFFICE.postalCode,
           addressCountry: "US",
         },
-        description:
-          "California firm reviewing lemon law claims and personal injury matters. Free case review. Figures, results, and credentials on this site are placeholders until attorney-verified.",
+        description: `CaliLawyer.com in Glendale reviews California lemon law and personal injury matters. Free consultation. ${FEE_TERMS}`,
       },
       {
         "@type": "Attorney",
         "@id": `${SITE.url}/#attorney`,
-        name: PLACEHOLDER.attorney,
-        identifier: PLACEHOLDER.barNumber,
+        name: ATTORNEY.name,
+        identifier: ATTORNEY.barNumber,
         worksFor: { "@id": `${SITE.url}/#firm` },
+        knowsLanguage: [...LANGUAGE_CODES],
         areaServed: "California",
         url: `${SITE.url}/about`,
       },

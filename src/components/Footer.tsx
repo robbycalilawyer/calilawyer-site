@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FIRM_LINKS, INJURY_LINKS, PLACEHOLDER, SITE } from "@/lib/site";
+import { ATTORNEY, FEE_TERMS, FIRM_LINKS, INJURY_LINKS, LANGUAGES, OFFICE, SITE } from "@/lib/site";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -67,14 +67,11 @@ export function Footer() {
           </nav>
 
           <div>
-            <h2 className="eyebrow text-bone">California</h2>
+            <h2 className="eyebrow text-bone">Glendale</h2>
             <p className="mt-4 text-sm leading-relaxed text-bone">
-              {SITE.addressLine}. Reviews are handled statewide, including Los
-              Angeles, Orange County, San Diego, the Inland Empire, Sacramento,
-              and the Bay Area.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-bone">
-              Office: {PLACEHOLDER.office}
+              Office: {OFFICE.display}. Consultations are also handled statewide,
+              including Los Angeles, Orange County, San Diego, the Inland Empire,
+              Sacramento, and the Bay Area.
             </p>
           </div>
         </div>
@@ -84,23 +81,19 @@ export function Footer() {
             Advertisement / Attorney Advertising
           </p>
           <p>
-            {PLACEHOLDER.disclaimer} This website is for informational purposes
-            only and does not create an attorney–client relationship. Submitting
-            a form does not create an attorney–client relationship. Do not
-            submit confidential or time-sensitive information through this
-            website.
-          </p>
-          <p>{PLACEHOLDER.noFee}</p>
-          <p>
-            Past results do not guarantee future outcomes. Each case depends on
-            its own facts and law. Result figures on this site are{" "}
-            {PLACEHOLDER.result} until an attorney verifies them.
+            This website is for informational purposes only and does not create
+            an attorney–client relationship. Submitting a form does not create
+            an attorney–client relationship. Do not submit confidential or
+            time-sensitive information through this website.
           </p>
           <p>
-            Responsible attorney: {PLACEHOLDER.attorney}, California Bar No.{" "}
-            {PLACEHOLDER.barNumber}. Office: {PLACEHOLDER.office}.
+            {FEE_TERMS} Free consultation.
           </p>
-          <p>{PLACEHOLDER.languages}</p>
+          <p>
+            Responsible attorney: {ATTORNEY.name}, State Bar of California No.{" "}
+            {ATTORNEY.barNumber}. Office: {OFFICE.display}. Languages:{" "}
+            {LANGUAGES.join(", ")}.
+          </p>
           <p className="flex flex-wrap gap-x-3 gap-y-1 pt-2 text-bone">
             <span>© {new Date().getFullYear()} {SITE.legalName}.</span>
             <Link href="/privacy" className="hover:text-white">Privacy</Link>

@@ -3,14 +3,9 @@ import Link from "next/link";
 import { Accordion } from "@/components/Accordion";
 import { DualPathHero } from "@/components/DualPathHero";
 import { LocationGrid } from "@/components/LocationGrid";
-import { ResultCard } from "@/components/ResultCard";
-import { StatCounter } from "@/components/StatCounter";
-import { Testimonial } from "@/components/Testimonial";
 import { BLOG_POSTS } from "@/lib/content/blog";
 import { SITE_FAQS } from "@/lib/content/faq";
-import { HOME_RESULTS } from "@/lib/content/results";
-import { PLACEHOLDER_TESTIMONIALS } from "@/lib/content/shared";
-import { PLACEHOLDER, SERVICE_CITIES, SITE } from "@/lib/site";
+import { SERVICE_CITIES, SITE } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { faqSchema } from "@/lib/schema";
 import { LinkButton } from "@/components/Button";
@@ -45,7 +40,7 @@ const WHY = [
 const STEPS = [
   {
     step: "01",
-    title: "Free case review",
+    title: "Free consultation",
     body: "A confidential look at the facts, the repair orders, or the medical records.",
   },
   {
@@ -69,20 +64,6 @@ export function HomeBands() {
   return (
     <>
       <JsonLd data={faqSchema(SITE_FAQS)} />
-
-      <section className="bg-gold text-ink">
-        <div className="container-site grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4">
-          <StatCounter value={PLACEHOLDER.settlements} label="Recovered for clients" size="sm" />
-          <StatCounter value={PLACEHOLDER.clients} label="Clients helped" size="sm" />
-          <StatCounter value={PLACEHOLDER.years} label="Years combined experience" size="sm" />
-          <div>
-            <p className="font-display text-2xl leading-tight sm:text-3xl">Trial-ready</p>
-            <p className="mt-2 text-sm font-semibold text-ink/70">
-              Built for high-stakes claims
-            </p>
-          </div>
-        </div>
-      </section>
 
       <DualPathHero />
 
@@ -126,35 +107,6 @@ export function HomeBands() {
         </div>
       </section>
 
-      <section className="bg-paper">
-        <div className="container-site py-16 md:py-24">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <h2 className="h-section text-ink">
-                Results require proof, pressure, and preparation.
-              </h2>
-              <p className="mt-4 text-lg text-ink/75">
-                Every figure below is {PLACEHOLDER.result}. Past results do not
-                guarantee future outcomes.
-              </p>
-            </div>
-            <LinkButton href="/results" variant="secondary">
-              View results
-            </LinkButton>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {HOME_RESULTS.map((result) => (
-              <ResultCard
-                key={result.type}
-                amount={result.amount}
-                caseType={result.type}
-                detail={result.detail}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white">
         <div className="container-site grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2">
           <div>
@@ -163,8 +115,8 @@ export function HomeBands() {
               California advocacy with a modern edge.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink/80">
-              Documents first. Strategy second. Pressure always. CaliLawyer is a
-              plaintiff practice for injury victims and consumers who are tired
+              Documents first. Strategy second. Pressure always. CaliLawyer.com is a
+              Glendale plaintiff practice for injury victims and consumers who are tired
               of being managed by a call center.
             </p>
             <div className="mt-8">
@@ -175,14 +127,14 @@ export function HomeBands() {
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-bone bg-ink">
               <Image
                 src="/assets/attorney-portrait.jpg"
-                alt="Attorney portrait placeholder. Replace with a verified photograph before publishing."
+                alt="Rober A. Terziyan"
                 width={1024}
                 height={1024}
                 className="aspect-[4/5] w-full object-cover grayscale"
               />
             </div>
             <figcaption className="mt-3 text-sm text-ink/60">
-              Portrait placeholder — replace with verified attorney photography.
+              Rober A. Terziyan
             </figcaption>
           </figure>
         </div>
@@ -191,24 +143,10 @@ export function HomeBands() {
       <section className="bg-paper">
         <div className="container-site py-16 md:py-20">
           <LocationGrid
-            heading="Serving clients across California"
+            heading="Glendale office. Serving clients across California"
             cities={[...SERVICE_CITIES]}
             hrefBase="/contact"
           />
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="container-site py-16 md:py-24">
-          <h2 className="h-section text-ink">Client voices</h2>
-          <p className="mt-4 max-w-2xl text-lg text-ink/75">
-            These cards are placeholders. They are not verified reviews.
-          </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {PLACEHOLDER_TESTIMONIALS.map((item, index) => (
-              <Testimonial key={`${item.context}-${index}`} {...item} />
-            ))}
-          </div>
         </div>
       </section>
 
@@ -254,7 +192,7 @@ export function HomeBands() {
           </h2>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <LinkButton href="/contact" size="lg">
-              Free case review
+              Free consultation
             </LinkButton>
             <LinkButton href={SITE.phoneHref} variant="secondary" size="lg" onDark>
               Call / text now

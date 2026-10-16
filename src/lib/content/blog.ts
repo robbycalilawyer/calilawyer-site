@@ -31,8 +31,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     title: "Is my used car covered by the lemon law?",
     category: "Lemon Law",
-    excerpt:
-      "A used vehicle can still be worth a review when the manufacturer’s original warranty was in effect. Certified pre-owned cars are a common example.",
+    excerpt: "Used vehicles may qualify, case by case.",
     date: "Dec 28, 2023",
   },
   {

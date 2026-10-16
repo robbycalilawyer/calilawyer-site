@@ -1,11 +1,11 @@
 import { PageHero } from "@/components/PageHero";
-import { PLACEHOLDER, SITE } from "@/lib/site";
+import { OFFICE, SITE } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Privacy Policy",
   description:
-    "How CaliLawyer handles information submitted through this marketing site. Placeholder policy pending a legal review before launch.",
+    "How CaliLawyer.com in Glendale handles information submitted through this site.",
   path: "/privacy",
 });
 
@@ -15,18 +15,17 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Privacy"
         title="Privacy policy"
-        sub="Placeholder policy for attorney review. Last updated October 16, 2026."
+        sub="Last updated October 16, 2026."
       />
       <section className="bg-paper">
         <div className="container-site max-w-3xl space-y-8 py-16 text-ink/80 md:py-20">
           <p>
-            This is a placeholder privacy policy for {SITE.name}. It must be
-            replaced with legally reviewed copy before the site is treated as
-            final.
+            This privacy policy describes how {SITE.name} handles information
+            sent through this website.
           </p>
           <h2 className="h-card text-ink">1. Information we collect</h2>
           <p>
-            We collect what you send when you request a case review or email
+            We collect what you send when you request a consultation or email
             the firm: name, phone, email, case type, and the description you
             choose to include.
           </p>
@@ -38,7 +37,7 @@ export default function PrivacyPage() {
           </p>
           <h2 className="h-card text-ink">3. Calls and texts</h2>
           <p>
-            {PLACEHOLDER.tcpa} If you submit a phone number, you agree we may
+            If you submit a phone number, you agree we may
             contact you by phone or text about that inquiry. Message and data
             rates may apply. Reply STOP to opt out of texts.
           </p>
@@ -56,8 +55,7 @@ export default function PrivacyPage() {
             forms.
           </p>
           <p>
-            Questions about this placeholder: {SITE.email}. Office:{" "}
-            {PLACEHOLDER.office}.
+            Questions: {SITE.email}. Office: {OFFICE.display}.
           </p>
         </div>
       </section>

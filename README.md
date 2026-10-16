@@ -64,12 +64,10 @@ collect vehicle facts. The repair-order upload is a labeled placeholder.
 LEAD_ENDPOINT="https://example.com/leads" npm run build
 ```
 
-## Content placeholders
+## Approved firm facts
 
-Factual claims stay bracketed for attorney review (`src/lib/site.ts`):
-`[SETTLEMENTS RECOVERED]`, `[CLIENTS HELPED]`, `[YEARS IN PRACTICE]`,
-`[RESULT AMOUNT]`, `[NO-FEE PHRASING]`, `[TCPA CONSENT LANGUAGE]`,
-`[ATTORNEY ADVERTISING DISCLAIMER]`, `[RESPONSIBLE ATTORNEY]`,
-`[BAR NUMBER]`, `[OFFICE ADDRESS]`. Testimonials, admissions, and result
-narratives are marked the same way. Do not replace them with invented
-figures.
+Phone `(310) 331-0310`, office `315 Arden Ave, Ste 10, Glendale, CA 91203`,
+firm name CaliLawyer.com, responsible attorney Rober A. Terziyan, State Bar of
+California No. 351959. Languages are English, Armenian, and Spanish. Fees are
+stated only as “We handle cases on contingency.” Consultations are free.
+Stats, case results, testimonials, and star ratings are not rendered.

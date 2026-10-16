@@ -124,7 +124,7 @@ export function Header() {
             onClick={review}
             className="inline-flex min-h-11 items-center rounded-[var(--radius-pill)] bg-white px-5 text-sm font-semibold text-ink hover:bg-gold"
           >
-            Free case review
+            Free consultation
           </button>
         </div>
 
@@ -191,7 +191,7 @@ export function Header() {
                 onClick={review}
                 className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-pill)] bg-gold px-5 font-semibold text-ink"
               >
-                Free case review
+                Free consultation
               </button>
             </div>
           </nav>

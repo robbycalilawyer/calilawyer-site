@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "California Lemon Law Attorneys",
   description:
-    "California lemon law review for defective vehicles, repeat warranty repairs, buybacks, and replacements. Free repair-history review.",
+    "California lemon law matters for defective vehicles, repeat warranty repairs, buybacks, and replacements. Free consultation from the Glendale office.",
   path: "/lemon-law",
 });
 

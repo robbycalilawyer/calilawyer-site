@@ -1,7 +1,7 @@
 import type { FaqItem } from "@/components/Accordion";
 import type { PracticeAreaContent } from "./types";
 import { injuryContent } from "./injury";
-import { PLACEHOLDER } from "@/lib/site";
+import { FEE_TERMS } from "@/lib/site";
 
 interface AccidentSpec {
   eyebrow: string;
@@ -58,6 +58,6 @@ export function sharedHelp(line: string) {
     "We take the adjuster’s calls so you do not have to.",
     "Medical records and wage loss are documented before a demand goes out.",
     "The file is built as if it will be tried.",
-    PLACEHOLDER.noFee,
+    FEE_TERMS,
   ];
 }

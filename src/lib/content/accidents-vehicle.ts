@@ -1,12 +1,12 @@
 import { buildAccident as build, sharedHelp } from "./accident-build";
-import { PLACEHOLDER } from "@/lib/site";
+import { FEE_TERMS } from "@/lib/site";
 
 export const carAccident = {
   aliasPath: "/car-accidents",
   meta: {
     title: "California Car Accident Attorneys",
     description:
-      "California car accident review for intersection, highway, and multi-car crashes. We preserve evidence and deal with the insurer. Free case review.",
+      "California car accident matters for intersection, highway, and multi-car crashes. We preserve evidence and deal with the insurer. Free consultation.",
     path: "/injury/car-accident",
   },
   content: build({
@@ -63,7 +63,7 @@ export const carAccident = {
       },
     ],
     finalHeadline: "Just been in a crash? Start the review today.",
-    finalSub: `The sooner the file is opened, the more evidence we can still reach. ${PLACEHOLDER.noFee}`,
+    finalSub: `The sooner the file is opened, the more evidence we can still reach. ${FEE_TERMS} Free consultation.`,
   }),
 };
 
@@ -78,9 +78,9 @@ export const truckAccident = {
   content: build({
     eyebrow: "Truck accidents",
     headline: "California truck accident attorneys.",
-    sub: "Commercial crashes are not oversized car cases. More defendants, federal safety rules, and a company team that can be at the scene before you leave the hospital.",
+    sub: "Commercial crashes are not oversized car cases. More defendants, safety rules for commercial trucks, and a company team that can be at the scene before you leave the hospital.",
     difference:
-      "A tractor-trailer wreck can involve the driver, the motor carrier, a freight broker, and a maintenance contractor. Federal hours-of-service and inspection rules often decide the file. Policy limits in these cases are a fact to verify, not a number we print: [COMMERCIAL POLICY LIMITS].",
+      "A tractor-trailer wreck can involve the driver, the motor carrier, a freight broker, and a maintenance contractor. Hours-of-service and inspection rules often decide the file. We do not print policy limits.",
     evidenceIntro:
       "Electronic logs and engine data can be overwritten. We send preservation demands for:",
     evidence: [
@@ -125,12 +125,12 @@ export const truckAccident = {
       },
       {
         q: "Why is a truck case investigated differently?",
-        a: "Federal safety rules and electronic data create a paper trail a passenger-car crash usually does not have. That trail disappears if nobody asks for it quickly.",
+        a: "Hours-of-service rules and electronic data create a paper trail a passenger-car crash usually does not have. That trail disappears if nobody asks for it quickly.",
       },
     ],
     finalHeadline: "A commercial rig hit you. Do not wait on their investigator.",
     finalSub:
-      "Preservation letters go out as soon as we are retained to send them. The review itself is free.",
+      "Preservation letters go out as soon as we are retained to send them. Free consultation.",
   }),
 };
 
@@ -212,7 +212,7 @@ export const rideshareAccident = {
     headline: "California rideshare accident attorneys.",
     sub: "Uber and Lyft crashes turn on app status. Waiting for a match and driving a passenger are not the same insurance question.",
     difference:
-      "The company’s policy position usually follows the driver’s status: app off, app on and waiting, or matched and on a trip. Which layer applies — and the limits of that layer — has to be confirmed for the date of the crash. [RIDESHARE POLICY LIMITS].",
+      "The company’s policy position usually follows the driver’s status: app off, app on and waiting, or matched and on a trip. Which layer applies has to be confirmed for the date of the crash. We do not print policy limits.",
     evidenceIntro:
       "App data is the coverage map. We look for it before it ages out of the company’s systems.",
     evidence: [

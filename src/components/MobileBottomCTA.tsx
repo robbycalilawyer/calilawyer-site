@@ -39,7 +39,7 @@ export function MobileBottomCTA() {
         >
           <ReviewIcon />
           <span className="text-[10px] font-semibold uppercase tracking-[0.14em]">
-            Free review
+            Free consultation
           </span>
         </button>
       </div>

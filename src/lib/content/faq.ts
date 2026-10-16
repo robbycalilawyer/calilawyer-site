@@ -1,11 +1,11 @@
 import type { FaqItem } from "@/components/Accordion";
-import { PLACEHOLDER } from "@/lib/site";
+import { FEE_TERMS } from "@/lib/site";
 
 /** Shared FAQ copy used on the home page and /faq. */
 export const SITE_FAQS: FaqItem[] = [
   {
     q: "Do I pay anything upfront?",
-    a: `Case reviews are free and there is no obligation. Personal injury and lemon law matters are often handled on contingency, and lemon law claims can involve fee-shifting if a manufacturer is required to pay reasonable attorney’s fees. ${PLACEHOLDER.noFee}`,
+    a: `Free consultation. ${FEE_TERMS} In a successful qualifying lemon law claim, the manufacturer may be ordered to pay reasonable attorney’s fees.`,
   },
   {
     q: "What is a California lemon law case?",
@@ -17,14 +17,14 @@ export const SITE_FAQS: FaqItem[] = [
   },
   {
     q: "Can I still call for a review if I am not sure I have a case?",
-    a: "Yes. Most people do not know the legal standard that applies to their facts. The review is free and confidential. We will tell you whether we see a path forward.",
+    a: "Yes. Most people do not know the legal standard that applies to their facts. Free consultation, and it is confidential. We will tell you whether we see a path forward.",
   },
   {
     q: "Do you handle cases throughout California?",
-    a: "Yes. We review matters statewide, including Los Angeles, Orange County, San Diego, the Inland Empire, Sacramento, and the Bay Area. Much of the process can be handled remotely.",
+    a: "Yes. The office is in Glendale, and we review matters statewide, including Los Angeles, Orange County, San Diego, the Inland Empire, Sacramento, and the Bay Area. Much of the process can be handled remotely.",
   },
   {
     q: "Does submitting a form make me a client?",
-    a: "No. A form, a call, or a free case review does not create an attorney–client relationship. That relationship begins only when you and the firm sign a written retainer.",
+    a: "No. A form, a call, or a free consultation does not create an attorney–client relationship. That relationship begins only when you and the firm sign a written retainer.",
   },
 ];

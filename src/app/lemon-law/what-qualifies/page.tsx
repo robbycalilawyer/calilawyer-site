@@ -2,12 +2,12 @@ import { PracticeArea } from "@/components/PracticeArea";
 import { lemonLawContent } from "@/lib/content/lemon-law";
 import type { PracticeAreaContent } from "@/lib/content/types";
 import { pageMeta } from "@/lib/seo";
-import { PLACEHOLDER } from "@/lib/site";
+import { FEE_TERMS } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "What Qualifies as a Lemon in California?",
   description:
-    "Repair attempts, days out of service, and warranty signals for a California lemon law review. Send the repair orders for a free look.",
+    "Repair attempts, days out of service, and warranty signals for a California lemon law matter. Free consultation.",
   path: "/lemon-law/what-qualifies",
 });
 
@@ -29,7 +29,7 @@ const whatQualifiesContent: PracticeAreaContent = {
   ],
   worth: {
     title: "Signals your vehicle may qualify",
-    body: "If several of these describe your situation, it’s worth a free review of your repair orders:",
+    body: "If several of these describe your situation, a free consultation can start with your repair orders:",
     items: [
       {
         label: "Repeat repair attempts",
@@ -65,7 +65,7 @@ const whatQualifiesContent: PracticeAreaContent = {
       "Weeks of cumulative downtime waiting on repairs.",
       "A dealer that keeps saying it “can’t reproduce” the problem.",
       "A serious safety defect after only one or two attempts.",
-      "A certified pre-owned car with remaining factory warranty.",
+      "Used vehicles may qualify, case by case.",
       "A leased vehicle with a persistent, documented issue.",
     ],
   },
@@ -78,7 +78,7 @@ const whatQualifiesContent: PracticeAreaContent = {
   ],
   finalCta: {
     headline: "Not sure if you qualify? Let us look.",
-    sub: `Send us your repair orders and we’ll tell you honestly whether you have a claim — free, with no obligation. ${PLACEHOLDER.noFee}`,
+    sub: `Send us your repair orders and we’ll tell you honestly whether you have a claim. Free consultation. ${FEE_TERMS}`,
   },
 };
 

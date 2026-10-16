@@ -1,6 +1,6 @@
 import type { PracticeAreaContent } from "./types";
-import { CALIFORNIA_LOCATIONS, PLACEHOLDER_TESTIMONIALS } from "./shared";
-import { INJURY_LINKS, PLACEHOLDER } from "@/lib/site";
+import { CALIFORNIA_LOCATIONS } from "./shared";
+import { FEE_TERMS, INJURY_LINKS } from "@/lib/site";
 
 export const injuryContent: PracticeAreaContent = {
   slug: "injury",
@@ -11,21 +11,17 @@ export const injuryContent: PracticeAreaContent = {
     eyebrow: "Plaintiff representation",
     headline: "California personal injury attorneys built for pressure.",
     sub: "Insurance companies rely on delay, denial, and low offers. We rely on the records, the medicine, and a file that can be tried — so the evaluation of your claim happens under real leverage.",
-    stats: [
-      { value: PLACEHOLDER.settlements, label: "Recovered for clients" },
-      { value: PLACEHOLDER.years, label: "Years fighting for the injured" },
-      { value: "24/7", label: "Case review requests" },
-    ],
+    stats: [],
   },
 
   intro: [
     "The other side starts the same day you are hurt. An adjuster sounds helpful, asks for a recorded statement, and floats a number before you know what the injury will cost. That sequence is a playbook, not a courtesy.",
-    "CaliLawyer reviews crashes, rideshare collisions, trucking wrecks, motorcycle and pedestrian injuries, dog bites, premises claims, catastrophic injuries, and wrongful death. We gather the evidence, document the damages, and deal with the carrier directly.",
+    "CaliLawyer.com, in Glendale, reviews crashes, rideshare collisions, trucking wrecks, motorcycle and pedestrian injuries, dog bites, premises claims, catastrophic injuries, and wrongful death. We gather the evidence, document the damages, and deal with the carrier directly.",
   ],
 
   legalCallout: {
     title: "Important legal information",
-    body: `California generally limits the time to file a personal injury claim, and the window can be shorter when a government entity is involved. Evidence disappears, memories fade, and vehicles get repaired. ${PLACEHOLDER.disclaimer} ${PLACEHOLDER.noFee}`,
+    body: `A personal injury lawsuit is generally due within two years under CCP §335.1. A claim against a public entity is generally due within six months under Gov. Code §911.2. Evidence disappears, memories fade, and vehicles get repaired. ${FEE_TERMS} Free consultation.`,
   },
 
   worth: {
@@ -127,7 +123,7 @@ export const injuryContent: PracticeAreaContent = {
     {
       step: "01",
       title: "Tell us what happened",
-      body: "A free, confidential review. We listen, look at what you already have, and tell you honestly whether we can help.",
+      body: "A free consultation. We listen, look at what you already have, and tell you honestly whether we can help.",
     },
     {
       step: "02",
@@ -137,26 +133,22 @@ export const injuryContent: PracticeAreaContent = {
     {
       step: "03",
       title: "Resolution with leverage",
-      body: `Settlement when the number is fair. Litigation when it is not. ${PLACEHOLDER.noFee}`,
+      body: `Settlement when the number is fair. Litigation when it is not. ${FEE_TERMS}`,
     },
   ],
 
   whyUs: {
     title: "Why injured Californians call",
     body: "Documents first. Strategy second. Pressure always. You get a lawyer’s attention on a file built to be tried, not a claim number in a queue.",
-    stats: [
-      { value: PLACEHOLDER.settlements, label: "Recovered for clients" },
-      { value: "Free", label: "Case review" },
-      { value: PLACEHOLDER.years, label: "Years in practice" },
-    ],
+    stats: [],
   },
 
-  testimonials: PLACEHOLDER_TESTIMONIALS,
+  testimonials: [],
 
   faqs: [
     {
       q: "How much does it cost to hire you?",
-      a: `Nothing is due to start a review. Fee structure depends on a written agreement. ${PLACEHOLDER.noFee}`,
+      a: `Free consultation. ${FEE_TERMS}`,
     },
     {
       q: "Should I talk to the other driver’s insurance company?",
@@ -164,7 +156,7 @@ export const injuryContent: PracticeAreaContent = {
     },
     {
       q: "How long do I have to file a claim?",
-      a: `California sets a deadline for injury claims, and it can be shorter when a public entity is involved. The exact date depends on your facts, so call while the file is still intact. ${PLACEHOLDER.disclaimer}`,
+      a: "A personal injury lawsuit is generally due within two years under CCP §335.1. A claim against a public entity is generally due within six months under Gov. Code §911.2.",
     },
     {
       q: "What if I was partly at fault?",
@@ -178,11 +170,11 @@ export const injuryContent: PracticeAreaContent = {
 
   locations: {
     ...CALIFORNIA_LOCATIONS,
-    heading: "Serving injured clients across California",
+    heading: "Glendale office. Serving injured clients across California",
   },
 
   finalCta: {
     headline: "Tell us what happened. We’ll tell you the next step.",
-    sub: "The review is free, confidential, and not a retainer. Find out where the claim actually stands.",
+    sub: "Free consultation. Confidential, and not a retainer. Find out where the claim actually stands.",
   },
 };

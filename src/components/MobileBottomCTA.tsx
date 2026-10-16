@@ -19,7 +19,7 @@ export function MobileBottomCTA() {
           className="flex min-h-14 flex-col items-center justify-center gap-0.5 border-r border-charcoal text-bone"
         >
           <PhoneIcon />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em]">
+          <span className="text-sm font-semibold">
             Call
           </span>
         </a>
@@ -28,7 +28,7 @@ export function MobileBottomCTA() {
           className="flex min-h-14 flex-col items-center justify-center gap-0.5 border-r border-charcoal text-bone"
         >
           <TextIcon />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em]">
+          <span className="text-sm font-semibold">
             Text
           </span>
         </a>
@@ -38,7 +38,7 @@ export function MobileBottomCTA() {
           className="flex min-h-14 flex-col items-center justify-center gap-0.5 bg-gold font-semibold text-ink"
         >
           <ReviewIcon />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em]">
+          <span className="text-sm font-semibold">
             Free consultation
           </span>
         </button>

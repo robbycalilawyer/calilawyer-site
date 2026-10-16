@@ -9,13 +9,13 @@ export const injuryContent: PracticeAreaContent = {
 
   hero: {
     eyebrow: "Plaintiff representation",
-    headline: "California personal injury attorneys built for pressure.",
-    sub: "Insurance companies rely on delay, denial, and low offers. We rely on the records, the medicine, and a file that can be tried — so the evaluation of your claim happens under real leverage.",
+    headline: "California personal injury lawyers in Glendale.",
+    sub: "Insurers delay, deny, and offer less than the bills. We build the file from the records and the medical care, then we ask for a number that matches it.",
     stats: [],
   },
 
   intro: [
-    "The other side starts the same day you are hurt. An adjuster sounds helpful and floats a number before you know what the injury will cost. That sequence is a playbook, not a courtesy.",
+    "The other side starts the same day you're hurt. An adjuster sounds helpful and names a number before you know what the injury will cost. That's a tactic, not a favor.",
     "CaliLawyer.com, in Glendale, reviews crashes, rideshare collisions, trucking wrecks, motorcycle and pedestrian injuries, dog bites, premises claims, catastrophic injuries, and wrongful death. We gather the evidence, document the damages, and deal with the carrier directly.",
   ],
 
@@ -31,7 +31,7 @@ export const injuryContent: PracticeAreaContent = {
       {
         label: "Medical care",
         detail:
-          "Past and future treatment — emergency care, surgery, therapy, medication, and ongoing needs.",
+          "Past and future treatment, including emergency care, surgery, therapy, medication, and ongoing needs.",
       },
       {
         label: "Lost income",
@@ -61,7 +61,7 @@ export const injuryContent: PracticeAreaContent = {
       "Get medical care, even if you feel steady in the moment.",
       "Photograph the scene, vehicles, hazards, and visible injuries.",
       "Save witness names, incident reports, and any video you already have.",
-      "Call while evidence still exists — cameras overwrite and vehicles get repaired.",
+      "Call while the evidence still exists. Cameras overwrite, and vehicles get repaired.",
       "Keep every bill, wage record, and out-of-pocket receipt.",
     ],
   },
@@ -78,7 +78,7 @@ export const injuryContent: PracticeAreaContent = {
   },
 
   tactics: {
-    title: "The insurance playbook",
+    title: "What insurers do",
     intro:
       "The moment you are injured, the at-fault party’s insurer can start a process aimed at paying less. These are three moves we see, and how the file answers them.",
     items: [
@@ -123,14 +123,14 @@ export const injuryContent: PracticeAreaContent = {
     },
     {
       step: "03",
-      title: "Resolution with leverage",
-      body: `Settlement when the number is fair. Litigation when it is not. ${FEE_TERMS}`,
+      title: "Resolution",
+      body: `Settlement when the number is fair. Court when it isn't. ${FEE_TERMS}`,
     },
   ],
 
   whyUs: {
     title: "Why injured Californians call",
-    body: "Documents first. Strategy second. Pressure always. You get a lawyer’s attention on a file built to be tried, not a claim number in a queue.",
+    body: "You get a lawyer on a file built from the records, not a claim number in a queue.",
     stats: [],
   },
 

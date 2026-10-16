@@ -4,9 +4,9 @@ import { ATTORNEY, LANGUAGES, OFFICE } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "About the Firm",
+  title: "About the firm",
   description:
-    "CaliLawyer.com is a Glendale plaintiff firm for injury victims and consumers with defective vehicles. Free consultation.",
+    "CaliLawyer.com is a Glendale firm for injury cases and lemon law. Free consultation. We handle cases on contingency.",
   path: "/about",
 });
 
@@ -14,32 +14,27 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our firm"
-        title="California advocacy with a modern edge."
-        sub="We built CaliLawyer.com because injury victims and consumers deserve the same attention manufacturers and insurers buy by the hour."
+        eyebrow="The firm"
+        title="A Glendale office for California cases."
+        sub="CaliLawyer.com reviews injury cases and lemon law claims. Free consultation. We handle cases on contingency."
       />
       <section className="bg-white">
-        <div className="container-site grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2">
+        <div className="container-site grid items-center gap-12 py-20 md:py-32 lg:grid-cols-2">
           <div className="space-y-5 text-lg leading-relaxed text-ink/80">
-            <h2 className="h-section text-ink">A plaintiff firm built for Californians.</h2>
+            <h2 className="h-section text-ink">What the office does.</h2>
             <p>
-              The practice is modern on purpose: clear updates, a real person
-              on the file, and pressure that comes from documents rather than
-              volume.
+              You get updates in plain language and a person on the file. The
+              work starts with the documents, not a guess about what the case
+              is worth.
             </p>
             <p>
-              <strong>Documents first. Strategy second. Pressure always.</strong>{" "}
-              We do not guess at value. We collect the record, then we ask the
-              other side to answer it.
-            </p>
-            <p>
-              Whether the other side is a manufacturer sitting on a warranty
-              file or a carrier sitting on a crash, the job is the same: level
-              the information.
+              We collect the record, then we ask the other side to answer it.
+              That other side might be a manufacturer with a warranty file or
+              an insurer with a crash.
             </p>
           </div>
           <figure>
-            <div className="overflow-hidden rounded-[var(--radius-lg)] border border-bone bg-ink">
+            <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink">
               <Image
                 src="/assets/attorney-portrait.jpg"
                 alt="Rober A. Terziyan"
@@ -55,9 +50,9 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="bg-paper">
-        <div className="container-site max-w-3xl py-16 md:py-24">
+        <div className="container-site max-w-3xl py-20 md:py-32">
           <h2 className="h-section text-ink">Credentials and admissions</h2>
-          <dl className="mt-8 space-y-6 rounded-[var(--radius-lg)] border border-bone bg-white p-6 md:p-8">
+          <dl className="mt-8 space-y-6 rounded-[var(--radius-lg)] bg-white p-6 md:p-8">
             <div>
               <dt className="font-semibold text-ink">Responsible attorney</dt>
               <dd className="mt-1 text-ink/75">

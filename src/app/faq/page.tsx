@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Frequently Asked Questions",
   description:
-    "Answers about California lemon law reviews, injury claims, fees, and what a form submission does not do. Not legal advice.",
+    "Answers about California lemon law, injury claims, and fees. A form doesn’t make you a client. Not legal advice.",
   path: "/faq",
 });
 
@@ -23,12 +23,12 @@ export default function FaqPage() {
         sub="Clear answers. Not a case evaluation, and not legal advice about your facts."
       />
       <section className="bg-paper">
-        <div className="container-site max-w-3xl py-16 md:py-24">
+        <div className="container-site max-w-3xl py-20 md:py-32">
           <Accordion items={SITE_FAQS} />
           <div className="mt-12 rounded-[var(--radius-lg)] border border-ink bg-white p-8">
             <h2 className="font-display text-3xl text-ink">Still have questions?</h2>
             <p className="mt-3 text-ink/75">
-              Send the facts. Free consultation, and it does not make you a client.
+              Send the facts. Free consultation, and it doesn’t make you a client.
             </p>
             <Link
               href="/contact"

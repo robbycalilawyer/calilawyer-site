@@ -17,7 +17,7 @@ export const SITE_FAQS: FaqItem[] = [
   },
   {
     q: "Can I still call for a review if I am not sure I have a case?",
-    a: "Yes. Most people do not know the legal standard that applies to their facts. Free consultation, and it is confidential. We will tell you whether we see a path forward.",
+    a: "Yes. Most people don't know the legal standard that applies to their facts. Free consultation, and it's confidential. We'll tell you if we see a path forward.",
   },
   {
     q: "Do you handle cases throughout California?",
@@ -25,6 +25,6 @@ export const SITE_FAQS: FaqItem[] = [
   },
   {
     q: "Does submitting a form make me a client?",
-    a: "No. A form, a call, or a free consultation does not create an attorney–client relationship. That relationship begins only when you and the firm sign a written retainer.",
+    a: "No. A form, a call, or a free consultation doesn't create an attorney-client relationship. That starts only when you and the firm sign a written retainer.",
   },
 ];

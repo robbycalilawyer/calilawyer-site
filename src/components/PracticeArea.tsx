@@ -89,7 +89,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
 
       {/* ---------- Narrative intro ---------- */}
       <section className="bg-paper">
-        <div className="container-site max-w-3xl py-16 md:py-20">
+        <div className="container-site max-w-3xl py-20 md:py-28">
           <div className="space-y-5 text-lg leading-relaxed text-ink/85">
             {c.intro.map((p, i) => (
               <p key={i}>{p}</p>
@@ -108,7 +108,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
 
       {/* ---------- What your case may be worth ---------- */}
       <section className="bg-white">
-        <div className="container-site py-16 md:py-20">
+        <div className="container-site py-20 md:py-28">
           <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:items-start">
             <div className="md:sticky md:top-24">
               <h2 className="h-section text-ink">{c.worth.title}</h2>
@@ -120,7 +120,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
               {c.worth.items.map((item) => (
                 <li
                   key={item.label}
-                  className="flex gap-4 rounded-[var(--radius-md)] border border-bone bg-paper p-5"
+                  className="flex gap-4 rounded-[var(--radius-md)] bg-paper p-5"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-pill)] bg-gold text-ink">
                     <CheckIcon />
@@ -141,7 +141,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
       {/* ---------- What we handle + common scenarios ---------- */}
       <section className="bg-paper">
         <div className="container-site grid gap-10 py-16 md:grid-cols-2 md:py-20">
-          <div className="rounded-[var(--radius-lg)] border border-bone bg-white p-7 md:p-8">
+          <div className="rounded-[var(--radius-lg)] bg-white p-7 md:p-8">
             <h2 className="h-card text-ink">{c.handle.title}</h2>
             <ul className="mt-6 space-y-3">
               {c.handle.items.map((item) => (
@@ -154,7 +154,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
               ))}
             </ul>
           </div>
-          <div className="rounded-[var(--radius-lg)] border border-bone bg-white p-7 md:p-8">
+          <div className="rounded-[var(--radius-lg)] bg-white p-7 md:p-8">
             <h2 className="h-card text-ink">{c.scenarios.title}</h2>
             <ul className="mt-6 space-y-3">
               {c.scenarios.items.map((item) => (
@@ -175,7 +175,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
 
       {/* ---------- 3-step process ---------- */}
       <section className="on-dark bg-charcoal">
-        <div className="container-site py-16 md:py-24">
+        <div className="container-site py-20 md:py-32">
           <h2 className="h-section max-w-2xl text-white">How it works</h2>
           <p className="mt-4 max-w-xl text-lg text-bone">
             Three steps, and we do the heavy lifting on all of them.
@@ -201,7 +201,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
 
       {/* ---------- Why us (stats) ---------- */}
       <section className="bg-white">
-        <div className="container-site py-16 md:py-20">
+        <div className="container-site py-20 md:py-28">
           <div className="max-w-2xl">
             <h2 className="h-section text-ink">{c.whyUs.title}</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink/80">
@@ -213,7 +213,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
 
       {/* ---------- FAQ ---------- */}
       <section className="bg-white">
-        <div className="container-site max-w-3xl py-16 md:py-20">
+        <div className="container-site max-w-3xl py-20 md:py-28">
           <h2 className="h-section text-ink">Common questions</h2>
           <div className="mt-8">
             <Accordion items={c.faqs} tone="light" />
@@ -246,7 +246,7 @@ export function PracticeArea({ content }: { content: PracticeAreaContent }) {
 
       {/* ---------- Location grid ---------- */}
       <section className="bg-paper">
-        <div className="container-site py-16 md:py-20">
+        <div className="container-site py-20 md:py-28">
           <LocationGrid
             heading={c.locations.heading}
             cities={c.locations.cities}

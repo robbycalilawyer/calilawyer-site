@@ -37,7 +37,7 @@ export function Header() {
   }
 
   return (
-    <header className="on-dark sticky top-0 z-40 border-b border-gold/40 bg-ink/95 backdrop-blur">
+    <header className="on-dark sticky top-0 z-40 bg-ink">
       <div className="container-site flex min-h-20 items-center justify-between gap-4 py-2">
         <Logo priority className="h-11 w-auto md:h-14" />
 
@@ -112,8 +112,8 @@ export function Header() {
             className="text-right"
             aria-label={`Call or text ${SITE.name} at ${SITE.phoneDisplay}`}
           >
-            <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-bone">
-              Call / text 24/7
+            <span className="block text-sm font-semibold text-bone">
+              Call or text
             </span>
             <span className="figure text-sm font-semibold text-white">
               {SITE.phoneDisplay}

@@ -76,7 +76,7 @@ export const dogBite = {
   content: build({
     eyebrow: "Dog bites",
     headline: "California dog bite attorneys.",
-    sub: "A bite can mean infection, nerve damage, and scarring that a homeowner’s carrier would rather call a scratch. The legal standard is narrower than people think — and it still has to fit your facts.",
+    sub: "A bite can mean infection, nerve damage, and scarring that a homeowner's insurer would rather call a scratch. The legal standard is narrower than people think, and it still has to fit your facts.",
     difference:
       "California generally applies strict liability when a dog bites someone in a public place, or lawfully on private property. You often do not have to prove the owner already knew the dog was dangerous. There are exceptions, including trespass, and this page is not a ruling on your bite.",
     evidenceIntro:
@@ -141,7 +141,7 @@ export const slipAndFall = {
   content: build({
     eyebrow: "Slip and Fall Lawyer",
     headline: "Slip and Fall Lawyer in Glendale",
-    sub: "Premises cases are won or lost on notice. Someone has to show the owner created the hazard, or knew about it — or should have — and failed to fix it or warn you.",
+    sub: "These cases turn on notice. Someone has to show the owner created the hazard, knew about it, or should have known, and didn't fix it or warn you.",
     difference:
       "A wet floor is not automatically a lawsuit. The file has to prove notice and a failure to act. Property owners delete surveillance and “lose” sweep logs. Speed matters more here than in almost any other injury claim.",
     evidenceIntro:
@@ -178,7 +178,7 @@ export const slipAndFall = {
       },
     ],
     help: sharedHelp(
-      "We focus the claim on notice — who knew, how long the hazard sat, and what the logs say.",
+      "We focus the claim on notice: who knew, how long the hazard sat, and what the logs say.",
     ),
     faqs: [
       {

@@ -81,9 +81,9 @@ export function Footer() {
             Advertisement / Attorney Advertising
           </p>
           <p>
-            This website is for informational purposes only and does not create
-            an attorney–client relationship. Submitting a form does not create
-            an attorney–client relationship. Do not submit confidential or
+            This website is for information only and doesn’t create
+            an attorney-client relationship. Submitting a form doesn’t create
+            an attorney-client relationship. Do not submit confidential or
             time-sensitive information through this website.
           </p>
           <p>

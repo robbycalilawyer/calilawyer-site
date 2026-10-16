@@ -12,51 +12,47 @@ import { LinkButton } from "@/components/Button";
 
 const WHY = [
   {
-    title: "Evidence-first intake",
-    body: "Repair orders, medical records, and video are requested before the other side writes the file.",
+    title: "Records first",
+    body: "We ask for repair orders, medical records, and video before the other side writes the file.",
   },
   {
-    title: "Manufacturer accountability",
-    body: "Dealer visits are not a strategy. We take the warranty file to the company that has to answer it.",
+    title: "The manufacturer, not just the dealer",
+    body: "We take the warranty file to the company that has to answer it.",
   },
   {
-    title: "Insurance-company pressure",
-    body: "Adjusters minimize injuries. We document treatment and losses before a number is discussed.",
+    title: "The insurance file",
+    body: "We document treatment and lost wages before anyone talks about a number.",
   },
   {
-    title: "Damages documentation",
-    body: "Bills, wages, and future care are organized so a demand reads like a trial exhibit.",
+    title: "Damages in one place",
+    body: "Bills, wages, and future care go in the file so the demand is specific.",
   },
   {
-    title: "Negotiation with leverage",
-    body: "We negotiate from a file that can be filed. A low offer does not close the case.",
+    title: "A file that can be filed",
+    body: "We negotiate from a file that can be filed. A low offer doesn’t close the case.",
   },
   {
-    title: "California-wide access",
-    body: "The review does not depend on which county the crash, the bite, or the dealership was in.",
+    title: "Anywhere in California",
+    body: "The review doesn’t depend on the county of the crash, the bite, or the dealership.",
   },
 ];
 
 const STEPS = [
   {
-    step: "01",
     title: "Free consultation",
     body: "A confidential look at the facts, the repair orders, or the medical records.",
   },
   {
-    step: "02",
-    title: "Evidence and records",
-    body: "We secure the documents the other side would rather see late.",
+    title: "Records",
+    body: "We get the documents the other side would rather see late.",
   },
   {
-    step: "03",
-    title: "Demand and leverage",
-    body: "A demand backed by a file prepared as if a judge will read it.",
+    title: "The demand",
+    body: "A demand from a file prepared as if a judge will read it.",
   },
   {
-    step: "04",
     title: "Resolution",
-    body: "Settlement when it is fair. Litigation when it is not. You hear from us either way.",
+    body: "Settlement when it’s fair. Court when it isn’t. You’ll hear from us either way.",
   },
 ];
 
@@ -68,21 +64,19 @@ export function HomeBands() {
       <DualPathHero />
 
       <section className="bg-white">
-        <div className="container-site py-16 md:py-24">
-          <span className="eyebrow text-ink/60">The CaliLawyer.com advantage</span>
-          <h2 className="h-section mt-3 max-w-2xl text-ink">Pressure where it counts.</h2>
-          <p className="mt-4 max-w-2xl text-lg text-ink/75">
-            The other side has a playbook. So do we. The work is the record,
-            then the strategy, then the pressure.
+        <div className="container-site py-20 md:py-32">
+          <h2 className="h-section max-w-2xl text-ink">The file comes first.</h2>
+          <p className="mt-4 max-w-2xl text-lg text-ink">
+            We start with the records. Then we decide what to ask for.
           </p>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2">
             {WHY.map((item) => (
               <li
                 key={item.title}
-                className="rounded-[var(--radius-lg)] border border-bone bg-paper p-6 transition-colors duration-[var(--motion-base)] hover:border-ink"
+                className="rounded-[var(--radius-lg)] bg-paper p-6"
               >
                 <h3 className="font-display text-2xl text-ink">{item.title}</h3>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/75">{item.body}</p>
+                <p className="mt-3 text-base leading-relaxed text-ink">{item.body}</p>
               </li>
             ))}
           </ul>
@@ -90,17 +84,13 @@ export function HomeBands() {
       </section>
 
       <section className="on-dark bg-ink">
-        <div className="container-site py-16 md:py-24">
-          <h2 className="h-section max-w-3xl text-white">
-            From first call to full-court pressure.
-          </h2>
-          <p className="mt-4 text-lg text-bone">The other side has a playbook. So do we.</p>
-          <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="container-site py-20 md:py-32">
+          <h2 className="h-section max-w-3xl text-white">What happens after you call.</h2>
+          <ol className="mt-12 grid gap-10 md:grid-cols-2">
             {STEPS.map((item) => (
-              <li key={item.step} className="border-t border-gold pt-5">
-                <span className="figure text-3xl text-gold">{item.step}</span>
-                <h3 className="mt-3 text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-bone">{item.body}</p>
+              <li key={item.title}>
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-base leading-relaxed text-bone">{item.body}</p>
               </li>
             ))}
           </ol>
@@ -108,23 +98,20 @@ export function HomeBands() {
       </section>
 
       <section className="bg-white">
-        <div className="container-site grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2">
+        <div className="container-site grid items-center gap-12 py-20 md:py-32 lg:grid-cols-2">
           <div>
-            <span className="eyebrow text-ink/60">The firm</span>
-            <h2 className="h-section mt-3 text-ink">
-              California advocacy with a modern edge.
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-ink/80">
-              Documents first. Strategy second. Pressure always. CaliLawyer.com is a
-              Glendale plaintiff practice for injury victims and consumers who are tired
-              of being managed by a call center.
+            <h2 className="h-section text-ink">A Glendale office for California cases.</h2>
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink">
+              CaliLawyer.com reviews injury cases and lemon law claims. You talk
+              to the firm, not a call center. Free consultation. We handle cases
+              on contingency.
             </p>
             <div className="mt-8">
               <LinkButton href="/about">About the firm</LinkButton>
             </div>
           </div>
           <figure>
-            <div className="overflow-hidden rounded-[var(--radius-lg)] border border-bone bg-ink">
+            <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink">
               <Image
                 src="/assets/attorney-portrait.jpg"
                 alt="Rober A. Terziyan"
@@ -141,7 +128,7 @@ export function HomeBands() {
       </section>
 
       <section className="bg-paper">
-        <div className="container-site py-16 md:py-20">
+        <div className="container-site py-20 md:py-28">
           <LocationGrid
             heading="Glendale office. Serving clients across California"
             cities={[...SERVICE_CITIES]}
@@ -151,7 +138,7 @@ export function HomeBands() {
       </section>
 
       <section className="bg-paper">
-        <div className="container-site py-16 md:py-24">
+        <div className="container-site py-20 md:py-32">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
               <h2 className="h-section text-ink">
@@ -164,8 +151,8 @@ export function HomeBands() {
           </div>
           <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {BLOG_POSTS.slice(0, 3).map((post) => (
-              <li key={post.title} className="rounded-[var(--radius-lg)] border border-bone bg-white p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink/60">
+              <li key={post.title} className="rounded-[var(--radius-lg)] bg-white p-6">
+                <p className="text-sm font-semibold text-ink">
                   {post.category}
                 </p>
                 <h3 className="mt-3 font-display text-2xl text-ink">{post.title}</h3>
@@ -177,7 +164,7 @@ export function HomeBands() {
       </section>
 
       <section className="bg-white">
-        <div className="container-site max-w-3xl py-16 md:py-20">
+        <div className="container-site max-w-3xl py-20 md:py-28">
           <h2 className="h-section text-ink">Questions, answered.</h2>
           <div className="mt-8">
             <Accordion items={SITE_FAQS} />
@@ -186,7 +173,7 @@ export function HomeBands() {
       </section>
 
       <section className="on-dark bg-charcoal">
-        <div className="container-site py-16 md:py-24">
+        <div className="container-site py-20 md:py-32">
           <h2 className="h-hero max-w-3xl text-white">
             Tell us what happened. We’ll tell you the next step.
           </h2>

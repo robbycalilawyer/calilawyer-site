@@ -49,7 +49,6 @@ function classes({
     primary: [
       "bg-gold text-ink",
       "hover:brightness-95",
-      "shadow-[0_1px_0_0_rgba(0,0,0,0.08)]",
     ].join(" "),
     // Outlined. Ink outline on light; bone outline on dark.
     secondary: onDark

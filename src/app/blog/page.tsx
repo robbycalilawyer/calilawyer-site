@@ -19,15 +19,15 @@ export default function BlogPage() {
         sub="Know the process before the other side calls. These cards are previews, not finished articles."
       />
       <section className="bg-paper">
-        <div className="container-site py-16 md:py-20">
+        <div className="container-site py-20 md:py-28">
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {BLOG_POSTS.map((post) => (
               <li
                 key={post.title}
-                className="flex flex-col rounded-[var(--radius-lg)] border border-bone bg-white p-6"
+                className="flex flex-col rounded-[var(--radius-lg)] bg-white p-6"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-ink">
+                  <p className="text-sm font-semibold text-ink">
                     {post.category}
                   </p>
                   <p className="figure text-xs text-ink/50">{post.date}</p>

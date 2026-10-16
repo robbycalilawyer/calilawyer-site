@@ -31,20 +31,20 @@ export default function PrivacyPage() {
           </p>
           <h2 className="h-card text-ink">2. How we use it</h2>
           <p>
-            We use that information to review the inquiry, respond, and — only
-            if you later sign a retainer — provide legal services. We also use
+            We use that information to review the inquiry, respond, and, only
+            if you later sign a retainer, provide legal services. We also use
             it to meet legal duties that apply to the firm.
           </p>
           <h2 className="h-card text-ink">3. Sharing</h2>
           <p>
-            We do not sell personal information. We share it with people inside
+            We don’t sell personal information. We share it with people inside
             the firm and with service providers needed to operate the practice
             or evaluate the inquiry.
           </p>
-          <h2 className="h-card text-ink">4. Attorney–client privilege</h2>
+          <h2 className="h-card text-ink">4. Attorney-client privilege</h2>
           <p>
-            Information sent through this website is not privileged until a
-            written retainer creates an attorney–client relationship. Do not
+            Information sent through this website isn’t privileged until a
+            written retainer creates an attorney-client relationship. Don’t
             send highly confidential or time-sensitive information through the
             forms.
           </p>

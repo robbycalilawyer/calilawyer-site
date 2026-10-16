@@ -7,13 +7,13 @@
    ============================================================ */
 
 :root {
-  /* --- Brand colors (the six) --- */
-  --color-ink: #000000;
-  --color-charcoal: #333333;
-  --color-bone: #c7c5be;
-  --color-paper: #f5f4f1;
-  --color-gold: #ffc800;
-  --color-white: #ffffff;
+  /* One warm family. Ink is off-black. Gold is the only accent. */
+  --color-ink: #1c1b19;
+  --color-charcoal: #3c3935;
+  --color-bone: #d8d4cc;
+  --color-paper: #f6f4f0;
+  --color-gold: #e6b31a;
+  --color-white: #fffcf8;
 
   /* --- Radii --- */
   --radius-sm: 6px;
@@ -98,36 +98,39 @@ body {
 
 .h-hero {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  text-wrap: balance;
 }
 .h-section {
   font-family: var(--font-display);
-  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  font-weight: 400;
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  text-wrap: balance;
 }
 .h-card {
   font-family: var(--font-display);
   font-size: clamp(1.375rem, 2vw, 1.75rem);
   line-height: 1.15;
-  font-weight: 400;
+  font-weight: 500;
+  text-wrap: balance;
 }
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
 }
 .figure {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-feature-settings: "tnum" 1;
-  letter-spacing: -0.02em;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
 }
 
 /* ---------- Focus states (WCAG 2.2 AA) ----------

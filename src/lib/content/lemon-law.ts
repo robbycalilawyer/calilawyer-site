@@ -15,7 +15,7 @@ export const lemonLawContent: PracticeAreaContent = {
   },
 
   intro: [
-    "You bought or leased a vehicle that was supposed to work. Instead there is a warning light that returns, a transmission that slips, or electronics that fail — and another visit has not fixed it.",
+    "You bought or leased a vehicle that was supposed to work. A warning light comes back, a transmission slips, or the electronics fail, and another visit hasn't fixed it.",
     "California’s lemon law, the Song-Beverly Consumer Warranty Act, is built for that pattern. After a reasonable number of repair attempts, or enough days out of service, the manufacturer may owe a repurchase or a replacement. We handle the manufacturer. You keep the repair orders.",
   ],
 
@@ -115,7 +115,7 @@ export const lemonLawContent: PracticeAreaContent = {
 
   whyUs: {
     title: "Manufacturer accountability",
-    body: "Manufacturers have internal paths for delaying a buyback. We know the paperwork they ask for and we do not let a goodwill check close a file that should be a repurchase.",
+    body: "Manufacturers have ways to slow a buyback. We know the paperwork they ask for, and we don't let a goodwill check close a file that should be a repurchase.",
     stats: [],
   },
 
@@ -124,7 +124,7 @@ export const lemonLawContent: PracticeAreaContent = {
   faqs: [
     {
       q: "How do I know if my car is a lemon?",
-      a: "A vehicle may qualify when a covered defect is not repaired after a reasonable number of attempts, or when it has been out of service for repairs for a substantial time, while the manufacturer’s warranty applies. Send the repair orders and we will review them.",
+      a: "A vehicle may qualify when a covered defect isn't repaired after a reasonable number of attempts, or when it's been out of service for repairs for a substantial time, while the manufacturer’s warranty applies. Send the repair orders and we'll review them.",
     },
     {
       q: "What does it cost me?",
@@ -140,7 +140,7 @@ export const lemonLawContent: PracticeAreaContent = {
     },
     {
       q: "How long does a lemon law claim take?",
-      a: "A documented file can move in a few months. A manufacturer that resists takes longer. We keep you updated and we do not wait on the dealer to volunteer a buyback.",
+      a: "A documented file can move in a few months. A manufacturer that resists takes longer. We keep you updated, and we don't wait on the dealer to offer a buyback.",
     },
   ],
 

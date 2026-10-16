@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Terms and Disclaimers",
   description:
-    "Attorney advertising notice for CaliLawyer.com. Sending a form does not create an attorney-client relationship. We handle cases on contingency.",
+    "Attorney advertising notice for CaliLawyer.com. Sending a form doesn’t create an attorney-client relationship. We handle cases on contingency.",
   path: "/terms",
 });
 
@@ -26,9 +26,9 @@ export default function TermsPage() {
             county or your facts. Do not act, or wait, based only on a page
             here.
           </p>
-          <h2 className="h-card text-ink">No attorney–client relationship</h2>
+          <h2 className="h-card text-ink">No attorney-client relationship</h2>
           <p>
-            Sending a form, an email, or a text does not make you a client of{" "}
+            Sending a form, an email, or a text doesn’t make you a client of{" "}
             {SITE.name}. A relationship starts only when both sides sign a
             written representation agreement.
           </p>

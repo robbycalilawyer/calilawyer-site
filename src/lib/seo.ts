@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const OG_ALT = "CaliLawyer.com — California lemon law and personal injury";
+const OG_ALT = "CaliLawyer.com, California lemon law and personal injury";
 
 /** Per-route title, description, canonical, and social cards. */
 export function pageMeta({

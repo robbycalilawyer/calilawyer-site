@@ -3,9 +3,9 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "California’s Lemon Law & Injury Firm",
+  title: "California lemon law and injury law",
   description:
-    "CaliLawyer.com in Glendale reviews California lemon law claims and personal injury cases. Free consultation.",
+    "CaliLawyer.com in Glendale reviews California lemon law and personal injury cases. Free consultation. We handle cases on contingency.",
   path: "/",
 });
 

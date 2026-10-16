@@ -22,7 +22,7 @@ export function Logo({
     <Link href="/" className="inline-flex shrink-0 items-center">
       <Image
         src={src}
-        alt="CaliLawyer.com — California's Injury Firm"
+        alt="CaliLawyer.com"
         width={2000}
         height={1008}
         priority={priority}

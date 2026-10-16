@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Contact",
   description:
-    "Request a free consultation with CaliLawyer.com in Glendale by form, phone, or text. Submitting a form does not create an attorney-client relationship.",
+    "Request a free consultation with CaliLawyer.com in Glendale by form, phone, or text. A form doesn’t create an attorney-client relationship.",
   path: "/contact",
 });
 
@@ -22,16 +22,16 @@ export default function ContactPage() {
         <div className="container-site grid items-start gap-12 py-16 lg:grid-cols-[1fr_1.05fr] md:py-20">
           <div className="space-y-8">
             <div>
-              <h2 className="h-section text-ink">Get answers on the facts you have.</h2>
-              <p className="mt-4 text-lg leading-relaxed text-ink/75">
-                Share as much as you are comfortable sharing. A team member
-                reviews it and contacts you. Do not send confidential or
-                time-sensitive information you cannot also say out loud.
+              <h2 className="h-section text-ink">Tell us what you know so far.</h2>
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink">
+                Share as much as you’re comfortable sharing. Someone at the
+                firm reviews it and contacts you. Don’t send confidential or
+                time-sensitive information you can’t also say out loud.
               </p>
             </div>
             <ul className="grid gap-4 sm:grid-cols-2">
-              <li className="rounded-[var(--radius-lg)] border border-bone bg-white p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink/60">
+              <li className="rounded-[var(--radius-lg)] bg-white p-6">
+                <p className="text-sm font-semibold text-ink/60">
                   Call / text
                 </p>
                 <a href={SITE.phoneHref} className="figure mt-2 block text-2xl text-ink">
@@ -41,8 +41,8 @@ export default function ContactPage() {
                   Send a text
                 </a>
               </li>
-              <li className="rounded-[var(--radius-lg)] border border-bone bg-white p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink/60">
+              <li className="rounded-[var(--radius-lg)] bg-white p-6">
+                <p className="text-sm font-semibold text-ink/60">
                   Email
                 </p>
                 <a href={`mailto:${SITE.email}`} className="mt-2 block font-semibold text-ink">
@@ -50,7 +50,7 @@ export default function ContactPage() {
                 </a>
               </li>
             </ul>
-            <p className="rounded-[var(--radius-lg)] border border-bone bg-white p-6 text-ink/80">
+            <p className="rounded-[var(--radius-lg)] bg-white p-6 text-ink/80">
               <span className="font-semibold text-ink">Office: </span>
               {OFFICE.display}
             </p>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -26,33 +26,25 @@ const hanken = Hanken_Grotesk({
   weight: ["400", "600", "700"],
 });
 
-// DATA / FIGURES — settlement amounts, case numbers, stats.
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["500"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://calilawyer.com"),
   title: {
-    default: `${SITE.name} — California Personal Injury & Lemon Law Attorneys`,
+    default: `${SITE.name} | California personal injury and lemon law`,
     template: `%s | ${SITE.name}`,
   },
   description:
-    "CaliLawyer.com in Glendale fights for people hurt by negligence and consumers stuck with defective vehicles. Free consultation for lemon law and personal injury.",
+    "CaliLawyer.com in Glendale reviews California lemon law and personal injury cases. Free consultation. We handle cases on contingency.",
   openGraph: {
-    title: `${SITE.name} — California Personal Injury & Lemon Law Attorneys`,
+    title: `${SITE.name} | California personal injury and lemon law`,
     description:
-      "Trial-ready pressure for California lemon law and personal injury claims. Free consultation. Office in Glendale.",
+      "CaliLawyer.com in Glendale reviews California lemon law and personal injury cases. Free consultation.",
     type: "website",
     images: [
       {
         url: "/assets/og-image.png",
         width: 1200,
         height: 630,
-        alt: "CaliLawyer.com — California lemon law and personal injury",
+        alt: "CaliLawyer.com, California lemon law and personal injury",
       },
     ],
   },
@@ -77,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${hanken.variable} ${jetbrains.variable} antialiased`}
+        className={`${fraunces.variable} ${hanken.variable} antialiased`}
       >
         <JsonLd data={legalServiceSchema()} />
         <a

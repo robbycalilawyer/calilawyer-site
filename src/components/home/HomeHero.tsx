@@ -1,29 +1,26 @@
 "use client";
 
 import { SITE } from "@/lib/site";
+import { Button, LinkButton } from "@/components/Button";
 import { LeadForm } from "@/components/LeadForm";
 import { SlashMotif } from "@/components/SlashMotif";
 import { openCaseModal } from "@/components/CaseReviewModal";
 
 const CHIPS = [
   "Free consultation",
-  "Based in Glendale",
-  "Lemon law + injury",
-  "Fee terms in writing",
+  "Glendale office",
+  "Lemon law and injury",
+  "English, Armenian, Spanish",
 ];
 
 export function HomeHero() {
   return (
     <section className="on-dark relative overflow-hidden bg-ink">
       <div
-        className="slash-pattern pointer-events-none absolute inset-0 opacity-50"
+        className="slash-pattern pointer-events-none absolute inset-0 opacity-25"
         aria-hidden="true"
       />
-      <div
-        className="pointer-events-none absolute -right-24 -top-32 h-[32rem] w-[32rem] rounded-full bg-gold/15 blur-3xl"
-        aria-hidden="true"
-      />
-      <div className="container-site relative grid items-start gap-12 py-14 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
+      <div className="container-site relative grid items-start gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
         <div>
           <div className="flex items-center gap-4">
             <SlashMotif />
@@ -31,35 +28,24 @@ export function HomeHero() {
               California lemon law + personal injury
             </span>
           </div>
-          <h1 className="h-hero mt-6 text-white">
-            California’s lemon law &amp; injury firm.
+          <h1 className="h-hero mt-5 text-white">
+            California lemon law and injury law.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone">
-            CaliLawyer.com fights for people hurt by negligence and consumers stuck
-            with defective vehicles — with trial-ready pressure, direct client
-            contact, and statewide California reach.
+            CaliLawyer.com in Glendale reviews defective vehicles and injury
+            cases. Free consultation. We handle cases on contingency.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={openCaseModal}
-              className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-pill)] bg-gold px-7 py-3 font-semibold text-ink"
-            >
-              Start free consultation
-            </button>
-            <a
-              href={SITE.phoneHref}
-              className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-pill)] border-2 border-bone/70 px-7 py-3 font-semibold text-white hover:border-white hover:bg-white/10"
-            >
-              Call / text now
-            </a>
+            <Button type="button" onClick={openCaseModal} size="lg">
+              Free consultation
+            </Button>
+            <LinkButton href={SITE.phoneHref} variant="secondary" size="lg" onDark>
+              Call or text
+            </LinkButton>
           </div>
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-3 border-t border-white/10 pt-6">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2">
             {CHIPS.map((chip) => (
-              <li
-                key={chip}
-                className="text-xs font-semibold uppercase tracking-[0.12em] text-bone"
-              >
+              <li key={chip} className="text-sm font-semibold text-bone">
                 {chip}
               </li>
             ))}

@@ -23,10 +23,10 @@ export function ResultsExplorer() {
               type="button"
               aria-pressed={selected}
               onClick={() => setFilter(category)}
-              className={`min-h-11 rounded-[var(--radius-pill)] border px-4 text-xs font-bold uppercase tracking-[0.12em] ${
+              className={`min-h-11 rounded-[var(--radius-pill)] border px-4 text-sm font-semibold ${
                 selected
                   ? "border-ink bg-ink text-white"
-                  : "border-bone bg-white text-ink hover:border-ink"
+                  : "border-bone bg-white text-ink"
               }`}
             >
               {category}
@@ -39,9 +39,9 @@ export function ResultsExplorer() {
         {visible.map((result) => (
           <li
             key={`${result.category}-${result.type}`}
-            className="flex flex-col rounded-[var(--radius-lg)] border border-bone bg-white p-6"
+            className="flex flex-col rounded-[var(--radius-lg)] bg-white p-6"
           >
-            <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-ink/60">
+            <p className="text-sm font-semibold text-ink/60">
               {result.category}
             </p>
             <p className="figure mt-4 text-3xl text-ink">{result.amount}</p>

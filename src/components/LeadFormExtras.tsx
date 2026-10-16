@@ -117,7 +117,7 @@ export function LemonFields({
             className={`${inputCls} ${errorCls("repairVisits")}`}
           >
             <option value="">Select</option>
-            <option value="1-2">1–2 visits</option>
+            <option value="1-2">1-2 visits</option>
             <option value="3+">3 or more visits</option>
           </select>
           {errorText("repairVisits")}

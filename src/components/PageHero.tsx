@@ -11,10 +11,10 @@ export function PageHero({ eyebrow, title, sub }: PageHeroProps) {
   return (
     <section className="on-dark relative overflow-hidden bg-ink">
       <div
-        className="slash-pattern pointer-events-none absolute inset-0 opacity-60"
+        className="slash-pattern pointer-events-none absolute inset-0 opacity-25"
         aria-hidden="true"
       />
-      <div className="container-site relative py-16 md:py-24">
+      <div className="container-site relative py-20 md:py-28">
         <div className="flex items-center gap-4">
           <SlashMotif />
           {eyebrow ? <span className="eyebrow text-bone">{eyebrow}</span> : null}

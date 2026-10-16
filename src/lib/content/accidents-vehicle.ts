@@ -50,7 +50,7 @@ export const carAccident = {
       },
     ],
     help: sharedHelp(
-      "We answer the fault argument with the report, the video, and the damage pattern — not with a guess.",
+      "We answer the fault argument with the report, the video, and the damage pattern, not with a guess.",
     ),
     faqs: [
       {

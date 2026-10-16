@@ -159,8 +159,8 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
         </h3>
         <p className="mt-3 text-[0.975rem] leading-relaxed">
           Your request has been received. A team member will contact you
-          shortly to discuss your case. This does not create an
-          attorney–client relationship.
+          shortly to discuss your case. This doesn’t create an
+          attorney-client relationship.
         </p>
         <div className="mt-6">
           <Button
@@ -351,8 +351,8 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
             isDark ? "text-bone/70" : "text-ink/55"
           }`}
         >
-          {FEE_TERMS} Free consultation. Submitting this form does not create an
-          attorney–client relationship.
+          {FEE_TERMS} Free consultation. Submitting this form doesn’t create an
+          attorney-client relationship.
         </p>
       </div>
     </form>

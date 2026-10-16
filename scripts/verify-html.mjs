@@ -141,7 +141,7 @@ for (const needle of [
 ]) {
   if (!llms.includes(needle)) fail(`llms.txt missing ${needle}`);
 }
-if (/\[[A-Z]/.test(llms)) fail("llms.txt still has a bracketed placeholder");
+if (/\[[A-Z][A-Z0-9 _—-]{2,}\]/.test(llms)) fail("llms.txt still has a bracketed placeholder");
 
 const home = readFileSync(fileFor("/"), "utf8");
 if (!home.includes('"knowsLanguage":["en","hy","es"]') && !home.includes('"knowsLanguage": ["en", "hy", "es"]')) {

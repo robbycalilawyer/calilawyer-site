@@ -133,14 +133,14 @@ export const dogBite = {
 export const slipAndFall = {
   aliasPath: "/slip-and-fall",
   meta: {
-    title: "California Slip and Fall Attorneys",
+    title: "Slip and Fall Lawyer in Glendale, CA",
     description:
       "Premises-liability reviews for slip, trip, and fall injuries in California stores, buildings, and walkways. Video and maintenance logs come first.",
     path: "/injury/premises-liability",
   },
   content: build({
-    eyebrow: "Slip and fall",
-    headline: "California slip and fall attorneys.",
+    eyebrow: "Slip and Fall Lawyer",
+    headline: "Slip and Fall Lawyer in Glendale",
     sub: "Premises cases are won or lost on notice. Someone has to show the owner created the hazard, or knew about it — or should have — and failed to fix it or warn you.",
     difference:
       "A wet floor is not automatically a lawsuit. The file has to prove notice and a failure to act. Property owners delete surveillance and “lose” sweep logs. Speed matters more here than in almost any other injury claim.",

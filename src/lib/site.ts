@@ -89,7 +89,7 @@ export const INJURY_LINKS = [
     description: "Strict-liability reviews, scarring, and nerve damage.",
   },
   {
-    label: "Slip and fall",
+    label: "Slip and Fall Lawyer",
     href: "/injury/premises-liability",
     description:
       "Premises liability, unsafe conditions, and negligent property owners.",

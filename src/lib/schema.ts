@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/components/Accordion";
+import { ATTORNEY_ALT, ATTORNEY_PHOTO } from "@/lib/attorney-photo";
 import {
   ATTORNEY,
   FEE_TERMS,
@@ -62,6 +63,13 @@ export function personSchema() {
     jobTitle: "Attorney",
     identifier: ATTORNEY.barNumber,
     url: `${SITE.url}${ATTORNEY.path}`,
+    image: {
+      "@type": "ImageObject",
+      url: `${SITE.url}${ATTORNEY_PHOTO.src}`,
+      width: ATTORNEY_PHOTO.width,
+      height: ATTORNEY_PHOTO.height,
+      caption: ATTORNEY_ALT,
+    },
     worksFor: { "@id": FIRM_ID },
     knowsLanguage: [...LANGUAGE_CODES],
     address: {

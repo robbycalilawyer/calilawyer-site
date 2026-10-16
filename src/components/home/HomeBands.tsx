@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { AttorneyFigure } from "@/components/AttorneyPortrait";
 import { Accordion } from "@/components/Accordion";
 import { DualPathHero } from "@/components/DualPathHero";
 import { LocationGrid } from "@/components/LocationGrid";
@@ -110,20 +110,7 @@ export function HomeBands() {
               <LinkButton href="/about">About the firm</LinkButton>
             </div>
           </div>
-          <figure>
-            <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink">
-              <Image
-                src="/assets/attorney-portrait.jpg"
-                alt="Rober A. Terziyan"
-                width={1024}
-                height={1024}
-                className="aspect-[4/5] w-full object-cover grayscale"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-ink/60">
-              Rober A. Terziyan
-            </figcaption>
-          </figure>
+          <AttorneyFigure />
         </div>
       </section>
 

@@ -106,7 +106,13 @@ for (const loc of locs) {
 }
 if (trailing.size > 1) fail("canonical paths mix trailing slashes");
 
-const FORBIDDEN_HTML = ["pending fact-check", "Copy pending", "Last reviewed by"];
+const FORBIDDEN_HTML = [
+  "pending fact-check",
+  "Copy pending",
+  "Last reviewed by",
+  "Question 1",
+  "reviewedBy",
+];
 
 function walkHtml(dir) {
   const found = [];
@@ -223,6 +229,15 @@ for (const path of UNPUBLISHED) {
   if (rules.includes(path)) fail(`${path} is in a redirect or rewrite rule`);
 }
 if (/\b410\b/.test(rules)) fail("a redirect rule uses 410");
+if (!/^\/personal-injury\s+\/injury\s+301\s*$/m.test(rules)) {
+  fail("missing /personal-injury /injury 301");
+}
+if (
+  existsSync(resolve(root, "personal-injury.html")) ||
+  existsSync(resolve(root, "personal-injury/index.html"))
+) {
+  fail("personal-injury alias was exported");
+}
 
 const robots = readFileSync(resolve(root, "robots.txt"), "utf8");
 for (const agent of ["GPTBot", "Google-Extended", "OAI-SearchBot", "PerplexityBot", "ClaudeBot"]) {

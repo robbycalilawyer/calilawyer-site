@@ -3,7 +3,7 @@ import { injuryContent } from "@/lib/content/injury";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "California Personal Injury Attorneys",
+  title: "Personal Injury Lawyer in Glendale, CA",
   description:
     "Injury work from the Glendale office, including crashes, premises claims, dog bites, and catastrophic injuries. Free consultation. You're not a client until a retainer is signed.",
   path: "/injury",

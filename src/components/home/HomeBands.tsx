@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { AttorneyFigure } from "@/components/AttorneyPortrait";
 import { Accordion } from "@/components/Accordion";
 import { DualPathHero } from "@/components/DualPathHero";
 import { LocationGrid } from "@/components/LocationGrid";
-import { BLOG_POSTS } from "@/lib/content/blog";
 import { SITE_FAQS } from "@/lib/content/faq";
 import { SERVICE_CITIES, SITE } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
@@ -121,32 +119,6 @@ export function HomeBands() {
             cities={[...SERVICE_CITIES]}
             hrefBase="/contact"
           />
-        </div>
-      </section>
-
-      <section className="bg-paper">
-        <div className="container-site py-20 md:py-32">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <h2 className="h-section text-ink">
-                Know the process before the other side calls.
-              </h2>
-            </div>
-            <Link href="/blog" className="font-semibold text-ink">
-              <span className="border-b-2 border-gold pb-0.5">Read resources</span>
-            </Link>
-          </div>
-          <ul className="mt-10 grid gap-6 md:grid-cols-3">
-            {BLOG_POSTS.slice(0, 3).map((post) => (
-              <li key={post.title} className="rounded-[var(--radius-lg)] bg-white p-6">
-                <p className="text-sm font-semibold text-ink">
-                  {post.category}
-                </p>
-                <h3 className="mt-3 font-display text-2xl text-ink">{post.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/70">{post.excerpt}</p>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

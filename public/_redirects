@@ -1,9 +1,17 @@
 # Old paths. Forced so exported alias HTML does not shadow the 301.
 # Each destination is the final URL, so nothing hops twice.
-# Destinations are absolute so a www or deploy-host request lands on the apex.
+# Most destinations are absolute so a www or deploy-host request lands on the apex.
+# /personal-injury is the exception: www and the production host are absolute,
+# and every other host uses /injury so the preview stays a single hop.
 
-/personal-injury                 https://calilawyer.com/injury                              301!
-/personal-injury/                https://calilawyer.com/injury                              301!
+# One hop to /injury. www and the production Netlify host are named first
+# so they do not stop on an intermediate URL.
+https://www.calilawyer.com/personal-injury                 https://calilawyer.com/injury    301
+https://www.calilawyer.com/personal-injury/                https://calilawyer.com/injury    301
+https://regal-dragon-239a4a.netlify.app/personal-injury    https://calilawyer.com/injury    301
+https://regal-dragon-239a4a.netlify.app/personal-injury/   https://calilawyer.com/injury    301
+/personal-injury /injury 301
+/personal-injury/ /injury 301
 
 /car-accidents                   https://calilawyer.com/injury/car-accidents                301!
 /car-accidents/                  https://calilawyer.com/injury/car-accidents                301!

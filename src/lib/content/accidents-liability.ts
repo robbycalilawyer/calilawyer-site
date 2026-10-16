@@ -3,14 +3,14 @@ import { buildAccident as build, sharedHelp } from "./accident-build";
 export const pedestrianAccident = {
   aliasPath: "/pedestrian-accidents",
   meta: {
-    title: "California Pedestrian Accident Attorneys",
+    title: "Pedestrian Accident Lawyer in Glendale, CA",
     description:
       "Pedestrian injury reviews after crosswalk and hit-and-run crashes in California. We secure video and the driver’s records early.",
     path: "/injury/pedestrian-accidents",
   },
   content: build({
     eyebrow: "Pedestrian accidents",
-    headline: "California pedestrian accident attorneys.",
+    headline: "California pedestrian accident lawyer.",
     sub: "A person on foot doesn't have a bumper or an airbag. These injuries are severe, and the defense still looks for a reason the pedestrian was “wrong.”",
     difference:
       "Expect an argument about the crosswalk, the signal, or a phone in your hand. Those facts can matter under comparative fault.",
@@ -68,14 +68,14 @@ export const pedestrianAccident = {
 export const dogBite = {
   aliasPath: "/dog-bites",
   meta: {
-    title: "California Dog Bite Attorneys",
+    title: "Dog Bite Lawyer in Glendale, CA",
     description:
       "California dog-bite reviews under the state’s strict-liability rules. We document wounds, animal-control reports, and the owner’s insurance.",
     path: "/injury/dog-bites",
   },
   content: build({
     eyebrow: "Dog bites",
-    headline: "California dog bite attorneys.",
+    headline: "California dog bite lawyer.",
     sub: "A bite can mean infection, nerve damage, and scarring that a homeowner's insurer would rather call a scratch. The legal standard is narrower than people think, and it still has to fit your facts.",
     difference:
       "California generally applies strict liability when a dog bites someone in a public place, or lawfully on private property. You often don't have to prove the owner already knew the dog was dangerous. There are exceptions, including trespass, and this page isn't a ruling on your bite.",

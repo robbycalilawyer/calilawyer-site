@@ -65,7 +65,7 @@ const whatQualifiesContent: PracticeAreaContent = {
       "Three or more repair visits for the same unresolved defect.",
       "Weeks of cumulative downtime waiting on repairs.",
       "A dealer that keeps saying it “can’t reproduce” the problem.",
-      "A serious safety defect after only one or two attempts.",
+      "A serious safety defect after two repair attempts.",
       "Used vehicles may qualify, case by case.",
       "A leased vehicle with a persistent, documented issue.",
     ],

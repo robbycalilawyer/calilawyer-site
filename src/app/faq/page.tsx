@@ -38,7 +38,7 @@ export default function FaqPage() {
               href="/contact"
               className="mt-6 inline-flex min-h-11 items-center rounded-[var(--radius-pill)] bg-gold px-6 font-semibold text-ink"
             >
-              Contact the team
+              Contact the office
             </Link>
           </div>
         </div>

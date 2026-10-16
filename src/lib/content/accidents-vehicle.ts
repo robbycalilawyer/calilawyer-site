@@ -4,14 +4,14 @@ import { FEE_TERMS } from "@/lib/site";
 export const carAccident = {
   aliasPath: "/car-accidents",
   meta: {
-    title: "California Car Accident Attorneys",
+    title: "Car Accident Lawyer in Glendale, CA",
     description:
       "California car accident matters for intersection, highway, and multi-car crashes. We preserve evidence and deal with the insurer. Free consultation.",
     path: "/injury/car-accidents",
   },
   content: build({
     eyebrow: "Car accidents",
-    headline: "California car accident attorneys.",
+    headline: "California car accident lawyer.",
     sub: "High-speed collisions, intersection crashes, and highway wrecks. The insurer will look for a way to share the blame. We build the file before that story hardens.",
     difference:
       "California car cases sit on comparative negligence. A carrier can reduce what it pays by assigning you a share of fault.",
@@ -70,14 +70,14 @@ export const carAccident = {
 export const truckAccident = {
   aliasPath: "/truck-accidents",
   meta: {
-    title: "California Truck Accident Attorneys",
+    title: "Truck Accident Lawyer in Glendale, CA",
     description:
       "Commercial truck and tractor-trailer injury reviews in California. We pursue driver logs, maintenance records, and the companies behind the rig.",
     path: "/injury/truck-accidents",
   },
   content: build({
     eyebrow: "Truck accidents",
-    headline: "California truck accident attorneys.",
+    headline: "California truck accident lawyer.",
     sub: "Commercial crashes are not oversized car cases. More defendants, safety rules for commercial trucks, and a company team that can be at the scene before you leave the hospital.",
     difference:
       "A tractor-trailer wreck can involve the driver, the motor carrier, a freight broker, and a maintenance contractor. Hours-of-service and inspection rules often decide the file. We don't print policy limits.",
@@ -137,14 +137,14 @@ export const truckAccident = {
 export const motorcycleAccident = {
   aliasPath: "/motorcycle-accidents",
   meta: {
-    title: "California Motorcycle Accident Attorneys",
+    title: "Motorcycle Accident Lawyer in Glendale, CA",
     description:
       "Motorcycle crash reviews for riders blamed before the evidence is in. We document gear, roadway marks, and the other driver’s attention.",
     path: "/injury/motorcycle-accidents",
   },
   content: build({
     eyebrow: "Motorcycle accidents",
-    headline: "California motorcycle accident attorneys.",
+    headline: "California motorcycle accident lawyer.",
     sub: "Riders are often treated as reckless before anyone looks at the lane, the turn, or the driver’s phone. The injuries are worse because the bike doesn't absorb the hit.",
     difference:
       "Bias is part of the defense. Adjusters and, later, jurors may assume the rider was splitting lanes unsafely or speeding. The equipment and the roadway usually tell a more specific story.",
@@ -202,14 +202,14 @@ export const motorcycleAccident = {
 export const rideshareAccident = {
   aliasPath: "/rideshare-accidents",
   meta: {
-    title: "California Rideshare Accident Attorneys",
+    title: "Rideshare Accident Lawyer in Glendale, CA",
     description:
       "Uber and Lyft injury reviews in California. Coverage often depends on whether the driver was waiting for a ride or already on a trip.",
     path: "/injury/rideshare-accidents",
   },
   content: build({
     eyebrow: "Rideshare accidents",
-    headline: "California rideshare accident attorneys.",
+    headline: "California rideshare accident lawyer.",
     sub: "Uber and Lyft crashes turn on app status. Waiting for a match and driving a passenger are not the same insurance question.",
     difference:
       "The company’s policy position usually follows the driver’s status: app off, app on and waiting, or matched and on a trip. Which layer applies has to be confirmed for the date of the crash. We don't print policy limits.",

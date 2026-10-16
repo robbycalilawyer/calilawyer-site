@@ -12,7 +12,7 @@ const LEFT: Door = {
   href: "/injury",
   eyebrow: "Personal Injury",
   headline: "You were hurt. Someone else is responsible.",
-  sub: "If a driver, a property owner, or someone's dog caused the injury, call us. We'll put the pressure on the insurer.",
+  sub: "We'll deal with the insurer for you.",
   cta: "Review my injury claim",
 };
 
@@ -82,8 +82,8 @@ export function DualPathHero() {
       className="relative bg-ink"
     >
       <div className="container-site">
-        <p className="pt-10 text-center text-sm font-semibold uppercase tracking-[0.12em] text-bone md:pt-14">
-          Two practice areas. One standard: relentless.
+        <p className="pt-10 text-center text-base text-bone md:pt-14">
+          Two practice areas: lemon law and personal injury.
         </p>
       </div>
 

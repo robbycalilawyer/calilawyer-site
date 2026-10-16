@@ -72,11 +72,11 @@ Stats, case results, testimonials, and star ratings are not rendered.
 
 ## Answer pages
 
-Guides, city pages, fee pages, and `/attorneys/robby-terziyan` are
-static App Router routes. Injury fee and case-type URLs live under `/injury`
-(`/injury/attorney-fees`, `/injury/car-accidents`, `/injury/premises-liability`).
-City injury pages are `/{city}/injury-lawyer`. Their unfinished body text says
-“Copy pending fact-check.” The approved firm facts above are already in the
+Placeholder guides, city pages, fee pages, and `/attorneys/robby-terziyan`
+are kept under `src/unpublished` and `src/lib/content/geo`. They are not
+App Router routes, not in the sitemap, and not in `llms.txt`. Live injury
+case-type URLs stay under `/injury` (`/injury/car-accidents`,
+`/injury/premises-liability`). The approved firm facts above are in the
 header, footer, and JSON-LD.
 
 `public/llms.txt` and `src/app/robots.ts` allow the answer-engine crawlers.

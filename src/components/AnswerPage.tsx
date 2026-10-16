@@ -7,7 +7,6 @@ import { PageHero } from "@/components/PageHero";
 import type { GeoPage } from "@/lib/content/geo/types";
 import { ATTORNEY_PROFILE_SIZES } from "@/lib/attorney-photo";
 import { articleSchema, cityServiceSchema, faqSchema } from "@/lib/schema";
-import { ATTORNEY } from "@/lib/site";
 
 function crumbsFor(page: GeoPage): Crumb[] {
   const root = page.path.split("/").filter(Boolean)[0];
@@ -50,8 +49,7 @@ export function AnswerPage({ page }: { page: GeoPage }) {
           ) : null}
           <p className="text-lg leading-relaxed text-ink">{page.answer}</p>
           <p className="mt-4 text-sm text-ink/70">
-            Last reviewed by {ATTORNEY.name}. This is general information. It isn’t
-            legal advice.
+            This is general information. It isn’t legal advice.
           </p>
 
           {page.table ? (

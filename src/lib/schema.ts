@@ -62,7 +62,7 @@ export function personSchema() {
     name: ATTORNEY.name,
     jobTitle: "Attorney",
     identifier: ATTORNEY.barNumber,
-    url: `${SITE.url}${ATTORNEY.path}`,
+    url: `${SITE.url}/about`,
     image: {
       "@type": "ImageObject",
       url: `${SITE.url}${ATTORNEY_PHOTO.src}`,
@@ -136,7 +136,6 @@ export function articleSchema(page: {
     datePublished: "2026-10-16",
     dateModified: "2026-10-16",
     author: { "@id": PERSON_ID },
-    reviewedBy: { "@id": PERSON_ID },
     publisher: { "@id": FIRM_ID },
     mainEntityOfPage: `${SITE.url}${page.path}`,
   };

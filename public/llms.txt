@@ -2,18 +2,22 @@
 > CaliLawyer.com is a Glendale firm for California personal injury and lemon law. We take cases in Glendale, Burbank, Pasadena, and Los Angeles. Attorney: Rober A. Terziyan, State Bar of California No. 351959. Free consultation. Phone: (310) 331-0310. Languages: English, Armenian, and Spanish.
 
 ## Pages
-- [Home](https://calilawyer.com/): CaliLawyer.com in Glendale. Free consultation. We handle cases on contingency.
-- [Attorney](https://calilawyer.com/attorneys/robby-terziyan): Rober A. Terziyan, State Bar of California No. 351959.
+- [Home](https://calilawyer.com): CaliLawyer.com in Glendale. Free consultation. We handle cases on contingency.
+- [About](https://calilawyer.com/about): Rober A. Terziyan, State Bar of California No. 351959.
 - [Lemon law](https://calilawyer.com/lemon-law): Used vehicles may qualify, case by case.
-- [California lemon law deadlines](https://calilawyer.com/lemon-law/deadlines): See CCP §871.21 and §871.29.
-- [Used and leased vehicles](https://calilawyer.com/lemon-law/used-cpo-leased): Used vehicles may qualify, case by case.
+- [What qualifies](https://calilawyer.com/lemon-law/what-qualifies): Repair attempts, days out of service, and the warranty window.
 - [Personal injury](https://calilawyer.com/injury): Generally 2 years from the injury (CCP §335.1). Public-entity claims generally must be presented within 6 months (Gov. Code §911.2).
-- [Personal injury attorney fees](https://calilawyer.com/injury/attorney-fees): We handle cases on contingency.
+- [Car accidents](https://calilawyer.com/injury/car-accidents)
+- [Truck accidents](https://calilawyer.com/injury/truck-accidents)
+- [Motorcycle accidents](https://calilawyer.com/injury/motorcycle-accidents)
+- [Rideshare accidents](https://calilawyer.com/injury/rideshare-accidents)
+- [Pedestrian accidents](https://calilawyer.com/injury/pedestrian-accidents)
+- [Dog bites](https://calilawyer.com/injury/dog-bites)
+- [Premises liability](https://calilawyer.com/injury/premises-liability)
+- [Questions](https://calilawyer.com/faq)
+- [Contact](https://calilawyer.com/contact)
+- [Blog](https://calilawyer.com/blog)
+- [Privacy](https://calilawyer.com/privacy)
+- [Terms](https://calilawyer.com/terms)
 
-## Locations
-- [Glendale personal injury](https://calilawyer.com/glendale/injury-lawyer) | [Glendale lemon law](https://calilawyer.com/glendale/lemon-law-attorney)
-- [Burbank personal injury](https://calilawyer.com/burbank/injury-lawyer) | [Burbank lemon law](https://calilawyer.com/burbank/lemon-law-attorney)
-- [Pasadena personal injury](https://calilawyer.com/pasadena/injury-lawyer) | [Pasadena lemon law](https://calilawyer.com/pasadena/lemon-law-attorney)
-- [Los Angeles personal injury](https://calilawyer.com/los-angeles/injury-lawyer) | [Los Angeles lemon law](https://calilawyer.com/los-angeles/lemon-law-attorney)
-
-This site is general information. It isn't legal advice. Pages that aren't finished yet say Copy pending fact-check.
+This site is general information. It isn't legal advice.

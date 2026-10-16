@@ -9,7 +9,7 @@ export const injuryContent: PracticeAreaContent = {
 
   hero: {
     eyebrow: "Plaintiff representation",
-    headline: "California personal injury lawyers in Glendale.",
+    headline: "California personal injury lawyer in Glendale.",
     sub: "Insurers delay, deny, and offer less than the bills. We build the file from the records and the medical care, then we ask for a number that matches it.",
     stats: [],
   },
@@ -124,7 +124,7 @@ export const injuryContent: PracticeAreaContent = {
     {
       step: "03",
       title: "Resolution",
-      body: `Settlement when the number is fair. Court when it isn't. ${FEE_TERMS}`,
+      body: "We prepare every case as if it may go to trial.",
     },
   ],
 

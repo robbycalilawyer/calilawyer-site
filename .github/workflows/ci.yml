@@ -22,6 +22,9 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Install taste-skill
+        run: npm run install-taste-skill
+
       - name: Lint
         run: npm run lint
 

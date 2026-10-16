@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AttorneyFigure } from "@/components/AttorneyPortrait";
 import { PageHero } from "@/components/PageHero";
 import { ATTORNEY, LANGUAGES, OFFICE } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
@@ -37,20 +37,7 @@ export default function AboutPage() {
               an insurer with a crash.
             </p>
           </div>
-          <figure>
-            <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink">
-              <Image
-                src="/assets/attorney-portrait.jpg"
-                alt="Rober A. Terziyan"
-                width={1024}
-                height={1024}
-                className="aspect-[4/5] w-full object-cover grayscale"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-ink/60">
-              Rober A. Terziyan
-            </figcaption>
-          </figure>
+          <AttorneyFigure />
         </div>
       </section>
       <section className="bg-paper">

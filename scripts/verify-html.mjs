@@ -21,6 +21,17 @@ function strip(html) {
     .replace(/&amp;/g, "&");
 }
 
+function portraitTag(html) {
+  const match = html.match(
+    /<img[^>]*alt="Rober A. Terziyan, attorney at CaliLawyer.com"[^>]*>/,
+  );
+  if (!match) {
+    fail("missing attorney portrait img");
+    return "";
+  }
+  return match[0];
+}
+
 function fileFor(urlPath) {
   if (urlPath === "/") return resolve(root, "index.html");
   const clean = urlPath.replace(/\/$/, "");
@@ -167,6 +178,14 @@ if (!home.includes('"postalCode":"91203"') && !home.includes('"postalCode": "912
   fail("home schema postal code is not 91203");
 }
 if (!home.includes("Rober A. Terziyan")) fail("home schema is missing the attorney name");
+if (!home.includes("/assets/attorney/robby-terziyan-800.png")) {
+  fail("home schema is missing the attorney portrait");
+}
+if (home.includes("attorney-portrait.jpg")) fail("home still uses the old portrait");
+const homePortrait = portraitTag(home);
+if (!homePortrait.includes('loading="lazy"') || homePortrait.includes("fetchpriority")) {
+  fail("home portrait should lazy-load below the fold");
+}
 
 const attorney = readFileSync(fileFor("/attorneys/robby-terziyan"), "utf8");
 if (!attorney.includes("robby-terziyan#person")) fail("person @id is not the terziyan URL");
@@ -174,6 +193,25 @@ if (!strip(attorney).includes("Copy pending fact-check.")) {
   fail("attorney page is missing the fact-check note");
 }
 if (!attorney.includes("Rober A. Terziyan")) fail("attorney page is missing the attorney name");
+if (!attorney.includes("robby-terziyan-og.png")) {
+  fail("attorney page social card is not the headshot");
+}
+if (attorney.includes("attorney-portrait.jpg")) fail("attorney page still uses the old portrait");
+const attorneyPortrait = portraitTag(attorney);
+if (!/fetchpriority="high"/i.test(attorneyPortrait) || !attorneyPortrait.includes('loading="eager"')) {
+  fail("attorney portrait is not prioritized");
+}
+const about = readFileSync(fileFor("/about"), "utf8");
+const aboutPortrait = portraitTag(about);
+if (!aboutPortrait.includes('loading="lazy"') || /fetchpriority/i.test(aboutPortrait)) {
+  fail("about portrait should lazy-load; only a sliver is in the first viewport");
+}
+if (!aboutPortrait.includes('width="800"') || !aboutPortrait.includes('height="1000"')) {
+  fail("about portrait is missing width and height");
+}
+if (!about.includes("image/avif") || !about.includes("image/webp")) {
+  fail("about portrait is missing avif or webp");
+}
 if (!attorney.includes('"knowsLanguage":["en","hy","es"]') && !attorney.includes('"knowsLanguage": ["en", "hy", "es"]')) {
   fail("attorney schema is missing knowsLanguage codes");
 }

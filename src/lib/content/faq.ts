@@ -17,7 +17,7 @@ export const SITE_FAQS: FaqItem[] = [
   },
   {
     q: "Can I still call for a review if I am not sure I have a case?",
-    a: "Yes. Most people don't know the legal standard that applies to their facts. Free consultation, and it's confidential. We'll tell you if we see a path forward.",
+    a: "Yes. Most people don't know the legal standard that applies to their facts. Free consultation. We'll tell you if we see a path forward.",
   },
   {
     q: "Do you handle cases throughout California?",

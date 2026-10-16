@@ -1,5 +1,3 @@
-import { GEO_PAGES } from "@/lib/content/geo";
-
 /** Canonical public routes. Alias URLs from the Vite export are not listed. */
 export const SITEMAP_ROUTES: {
   path: string;
@@ -39,9 +37,4 @@ export const SITEMAP_ROUTES: {
   { path: "/blog", priority: 0.5, changeFrequency: "weekly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
-  ...GEO_PAGES.map((page) => ({
-    path: page.path,
-    priority: page.kind === "article" ? 0.8 : 0.7,
-    changeFrequency: "monthly" as const,
-  })),
 ];

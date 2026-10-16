@@ -2,7 +2,7 @@
  * Checks the static export the way the post-deploy curl loop would,
  * without calling the live host. Run after `npm run build`.
  */
-import { readFileSync, existsSync, statSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 const root = resolve("out");
@@ -47,27 +47,28 @@ const sitemap = readFileSync(sitemapPath, "utf8");
 if (!sitemap.includes("<urlset") || sitemap.includes("<!DOCTYPE html")) {
   fail("sitemap.xml is not a urlset");
 }
-const PENDING_PREFIXES = [
-  "/guides/",
+const UNPUBLISHED = [
+  "/guides/california-personal-injury-statute-of-limitations",
+  "/guides/california-comparative-fault",
   "/lemon-law/song-beverly-act-explained",
   "/lemon-law/deadlines",
   "/lemon-law/attorney-fees",
   "/lemon-law/used-cpo-leased",
   "/lemon-law/ev-tesla",
   "/injury/attorney-fees",
-  "/glendale/",
-  "/burbank/",
-  "/pasadena/",
-  "/los-angeles/",
-  "/attorneys/",
+  "/glendale/injury-lawyer",
+  "/glendale/lemon-law-attorney",
+  "/burbank/injury-lawyer",
+  "/burbank/lemon-law-attorney",
+  "/pasadena/injury-lawyer",
+  "/pasadena/lemon-law-attorney",
+  "/los-angeles/injury-lawyer",
+  "/los-angeles/lemon-law-attorney",
+  "/attorneys/robby-terziyan",
 ];
 
-function isPendingPage(path) {
-  return PENDING_PREFIXES.some((prefix) => path === prefix || path.startsWith(prefix));
-}
-
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
-if (locs.length < 20) fail(`sitemap has only ${locs.length} URLs`);
+if (locs.length < 17) fail(`sitemap has only ${locs.length} URLs`);
 
 const trailing = new Set();
 for (const loc of locs) {
@@ -88,8 +89,8 @@ for (const loc of locs) {
   if (!html.includes("application/ld+json")) fail(`${path} has no JSON-LD`);
   const canonical = html.match(/rel="canonical" href="([^"]+)"/);
   if (!canonical) fail(`${path} has no canonical`);
-  else if (!canonical[1].startsWith("https://calilawyer.com")) {
-    fail(`${path} canonical is not absolute https: ${canonical[1]}`);
+  else if (canonical[1] !== loc) {
+    fail(`${path} canonical ${canonical[1]} does not match sitemap loc ${loc}`);
   }
   if (/attorneys\/robby(?!-terziyan)/.test(html)) fail(`${path} still links /attorneys/robby`);
   if (html.includes("Central District of California")) fail(`${path} claims a Central District admission`);
@@ -101,14 +102,6 @@ for (const loc of locs) {
     /\bCPO\b/.test(html)
   ) {
     fail(`${path} still has a retired claim`);
-  }
-  if (isPendingPage(path)) {
-    if (!visible.includes("Copy pending fact-check.")) {
-      fail(`${path} is missing the fact-check note`);
-    }
-    if (/Rodriguez|issued with the sale|years of experience/i.test(visible)) {
-      fail(`${path} still contains brief copy`);
-    }
   }
   const faq = html.includes('"@type":"FAQPage"') || html.includes('"@type": "FAQPage"');
   if (faq) {
@@ -130,6 +123,30 @@ for (const loc of locs) {
 }
 if (trailing.size > 1) fail("canonical paths mix trailing slashes");
 
+const FORBIDDEN_HTML = ["pending fact-check", "Copy pending", "Last reviewed by"];
+
+function walkHtml(dir) {
+  const found = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const file = resolve(dir, entry.name);
+    if (entry.isDirectory()) found.push(...walkHtml(file));
+    else if (entry.name.endsWith(".html")) found.push(file);
+  }
+  return found;
+}
+
+for (const file of walkHtml(root)) {
+  const html = readFileSync(file, "utf8");
+  for (const needle of FORBIDDEN_HTML) {
+    if (html.includes(needle)) fail(`${file} contains ${JSON.stringify(needle)}`);
+  }
+}
+
+for (const path of UNPUBLISHED) {
+  if (sitemap.includes(path)) fail(`sitemap still lists ${path}`);
+  if (existsSync(fileFor(path))) fail(`unpublished route was exported: ${path}`);
+}
+
 const robots = readFileSync(resolve(root, "robots.txt"), "utf8");
 for (const agent of ["GPTBot", "Google-Extended", "OAI-SearchBot", "PerplexityBot", "ClaudeBot"]) {
   if (!robots.includes(agent)) fail(`robots.txt missing ${agent}`);
@@ -140,31 +157,28 @@ if (!/User-Agent: Google-Extended\s+Allow: \//i.test(robots)) fail("Google-Exten
 const llms = readFileSync(resolve(root, "llms.txt"), "utf8");
 if (!llms.startsWith("# CaliLawyer.com")) fail("llms.txt missing title");
 for (const needle of [
-  "](https://calilawyer.com/)",
+  "](https://calilawyer.com)",
+  "](https://calilawyer.com/about)",
   "](https://calilawyer.com/lemon-law)",
+  "](https://calilawyer.com/lemon-law/what-qualifies)",
   "](https://calilawyer.com/injury):",
-  "/lemon-law/deadlines",
-  "/lemon-law/used-cpo-leased",
-  "/injury/attorney-fees",
-  "/attorneys/robby-terziyan",
-  "/glendale/injury-lawyer",
-  "/glendale/lemon-law-attorney",
-  "/burbank/injury-lawyer",
-  "/burbank/lemon-law-attorney",
-  "/pasadena/injury-lawyer",
-  "/pasadena/lemon-law-attorney",
-  "/los-angeles/injury-lawyer",
-  "/los-angeles/lemon-law-attorney",
-  "CCP §871.21",
-  "§871.29",
   "Rober A. Terziyan",
   "351959",
   "(310) 331-0310",
   "CaliLawyer.com",
   "Used vehicles may qualify, case by case.",
-  "Copy pending fact-check.",
 ]) {
   if (!llms.includes(needle)) fail(`llms.txt missing ${needle}`);
+}
+for (const path of UNPUBLISHED) {
+  if (llms.includes(path)) fail(`llms.txt still lists ${path}`);
+}
+for (const needle of FORBIDDEN_HTML) {
+  if (llms.includes(needle)) fail(`llms.txt contains ${JSON.stringify(needle)}`);
+}
+const llmsUrls = [...llms.matchAll(/\]\((https:\/\/calilawyer\.com[^)]*)\)/g)].map((match) => match[1]);
+for (const url of llmsUrls) {
+  if (!locs.includes(url)) fail(`llms.txt lists a URL that is not in the sitemap: ${url}`);
 }
 if (/\[[A-Z][A-Z0-9 _—-]{2,}\]/.test(llms)) fail("llms.txt still has a bracketed placeholder");
 
@@ -186,21 +200,13 @@ const homePortrait = portraitTag(home);
 if (!homePortrait.includes('loading="lazy"') || homePortrait.includes("fetchpriority")) {
   fail("home portrait should lazy-load below the fold");
 }
+if (!home.includes("https://calilawyer.com/about#person")) {
+  fail("home schema person @id is not the about page");
+}
+if (home.includes("/attorneys/robby-terziyan")) {
+  fail("home still links the unpublished attorney profile");
+}
 
-const attorney = readFileSync(fileFor("/attorneys/robby-terziyan"), "utf8");
-if (!attorney.includes("robby-terziyan#person")) fail("person @id is not the terziyan URL");
-if (!strip(attorney).includes("Copy pending fact-check.")) {
-  fail("attorney page is missing the fact-check note");
-}
-if (!attorney.includes("Rober A. Terziyan")) fail("attorney page is missing the attorney name");
-if (!attorney.includes("robby-terziyan-og.png")) {
-  fail("attorney page social card is not the headshot");
-}
-if (attorney.includes("attorney-portrait.jpg")) fail("attorney page still uses the old portrait");
-const attorneyPortrait = portraitTag(attorney);
-if (!/fetchpriority="high"/i.test(attorneyPortrait) || !attorneyPortrait.includes('loading="eager"')) {
-  fail("attorney portrait is not prioritized");
-}
 const about = readFileSync(fileFor("/about"), "utf8");
 const aboutPortrait = portraitTag(about);
 if (!aboutPortrait.includes('loading="lazy"') || /fetchpriority/i.test(aboutPortrait)) {
@@ -212,19 +218,13 @@ if (!aboutPortrait.includes('width="800"') || !aboutPortrait.includes('height="1
 if (!about.includes("image/avif") || !about.includes("image/webp")) {
   fail("about portrait is missing avif or webp");
 }
-if (!attorney.includes('"knowsLanguage":["en","hy","es"]') && !attorney.includes('"knowsLanguage": ["en", "hy", "es"]')) {
-  fail("attorney schema is missing knowsLanguage codes");
+if (!about.includes("https://calilawyer.com/about#person")) {
+  fail("about schema person @id is not the about page");
 }
-const deadlines = readFileSync(fileFor("/lemon-law/deadlines"), "utf8");
-if (!deadlines.includes("CCP §871.21") || !deadlines.includes("§871.29")) {
-  fail("deadlines page is missing CCP §871.21 and §871.29");
-}
-const used = readFileSync(fileFor("/lemon-law/used-cpo-leased"), "utf8");
-if (!strip(used).includes("Used vehicles may qualify, case by case.")) {
-  fail("used-vehicle page is missing the approved sentence");
-}
-if (/certified pre-owned|\bCPO\b/.test(strip(used))) {
-  fail("used-vehicle page still distinguishes certified pre-owned cars");
+
+const lemon = readFileSync(fileFor("/lemon-law"), "utf8");
+if (!strip(lemon).includes("Used vehicles may qualify, case by case.")) {
+  fail("lemon law page is missing the approved used-vehicle sentence");
 }
 
 if (existsSync(resolve(root, "this-page-does-not-exist.html"))) {

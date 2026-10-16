@@ -115,7 +115,7 @@ export const lemonLawContent: PracticeAreaContent = {
 
   whyUs: {
     title: "Manufacturer accountability",
-    body: "Manufacturers have ways to slow a buyback. We know the paperwork they ask for, and we don't let a goodwill check close a file that should be a repurchase.",
+    body: "Manufacturers have ways to slow a buyback. We know the paperwork they ask for.",
     stats: [],
   },
 

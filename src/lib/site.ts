@@ -36,11 +36,13 @@ export const ATTORNEY = {
   /** ISO date of California admission. Do not convert this into years of experience. */
   admitted: "2023-12-01",
   admittedDisplay: "December 1, 2023",
+  /** Not routed. The live profile is /about. */
   path: "/attorneys/robby-terziyan",
 } as const;
 
 export const ATTORNEY_ADDRESS = OFFICE.display;
-export const PERSON_ID = `${SITE.url}${ATTORNEY.path}#person`;
+/** Points at the live about page. The attorney profile route is not published. */
+export const PERSON_ID = `${SITE.url}/about#person`;
 export const FIRM_ID = `${SITE.url}/#firm`;
 
 export const NAV = [

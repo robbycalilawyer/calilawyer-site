@@ -44,7 +44,7 @@ const STEPS = [
   },
   {
     title: "Records",
-    body: "We get the documents the other side would rather see late.",
+    body: "We gather the records early.",
   },
   {
     title: "The demand",
@@ -52,7 +52,7 @@ const STEPS = [
   },
   {
     title: "Resolution",
-    body: "Settlement when it’s fair. Court when it isn’t. You’ll hear from us either way.",
+    body: "We prepare every case as if it may go to trial.",
   },
 ];
 

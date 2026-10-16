@@ -95,6 +95,7 @@ export function personSchema() {
   };
 }
 
+/** FAQPage JSON-LD. `name` and `text` are the same strings the accordion renders. */
 export function faqSchema(items: readonly FaqItem[]) {
   return {
     "@context": "https://schema.org",

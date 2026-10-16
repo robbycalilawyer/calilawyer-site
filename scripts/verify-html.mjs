@@ -103,25 +103,6 @@ for (const loc of locs) {
   ) {
     fail(`${path} still has a retired claim`);
   }
-  const faq = html.includes('"@type":"FAQPage"') || html.includes('"@type": "FAQPage"');
-  if (faq) {
-    const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
-    for (const block of blocks) {
-      const data = JSON.parse(block[1]);
-      const nodes = data["@graph"] ?? [data];
-      for (const node of nodes) {
-        if (node["@type"] !== "FAQPage") continue;
-        for (const question of node.mainEntity ?? []) {
-          if (!visible.includes(question.name)) {
-            fail(`${path} FAQ question does not match the visible question word for word: ${question.name}`);
-          }
-          if (!visible.includes(question.acceptedAnswer.text)) {
-            fail(`${path} FAQ answer does not match the visible answer word for word: ${question.name}`);
-          }
-        }
-      }
-    }
-  }
 }
 if (trailing.size > 1) fail("canonical paths mix trailing slashes");
 
@@ -154,7 +135,44 @@ const BANNED_PHRASES = [
 ];
 
 function readable(html) {
-  return strip(html).replace(/\u2019/g, "'").replace(/\u2018/g, "'");
+  return strip(html)
+    .replace(/\u2019/g, "'")
+    .replace(/\u2018/g, "'")
+    .replace(/\u201c/g, '"')
+    .replace(/\u201d/g, '"');
+}
+
+function faqText(value) {
+  return readable(value).replace(/\s+/g, " ").trim();
+}
+
+function assertFaqParity(file, html) {
+  const panels = [...html.matchAll(/role="region"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/g)].map((match) =>
+    faqText(match[1]),
+  );
+  const answers = [];
+  for (const block of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    const data = JSON.parse(block[1]);
+    const nodes = data["@graph"] ?? [data];
+    for (const node of nodes) {
+      const type = node["@type"];
+      const types = Array.isArray(type) ? type : [type];
+      if (!types.includes("FAQPage")) continue;
+      for (const question of node.mainEntity ?? []) {
+        const answer = faqText(question.acceptedAnswer?.text ?? "");
+        answers.push(answer);
+        if (!panels.includes(answer)) {
+          fail(`${file} FAQ JSON-LD answer is not the visible answer word for word: ${question.name}`);
+        }
+      }
+    }
+  }
+  if (answers.length && panels.length !== answers.length) {
+    fail(`${file} has ${panels.length} visible FAQ answers and ${answers.length} JSON-LD answers`);
+  }
+  if (answers.length && panels.join("\n") !== answers.join("\n")) {
+    fail(`${file} FAQ answers are not in the same order as the JSON-LD`);
+  }
 }
 
 let directAnswers = 0;
@@ -171,15 +189,17 @@ for (const file of walkHtml(root)) {
     const pattern = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
     if (pattern.test(text)) fail(`${file} contains banned phrase ${JSON.stringify(phrase)}`);
   }
+  assertFaqParity(file, html);
   for (const match of html.matchAll(/data-direct-answer="true"[^>]*>([\s\S]*?)<\/p>/g)) {
     directAnswers += 1;
-    const answer = readable(match[1]).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+    const answer = faqText(match[1]);
     const count = answer.split(/\s+/).filter(Boolean).length;
     if (count < 40 || count > 60) {
       fail(`${file} direct answer is ${count} words, expected 40-60`);
     }
     const firstSentence = answer.split(/(?<=\.)\s/)[0] ?? "";
-    if (firstSentence.split(/\s+/).filter(Boolean).length < 12) {
+    const firstWords = firstSentence.split(/\s+/).filter(Boolean);
+    if (firstWords.length < 12 || firstSentence.endsWith("?")) {
       fail(`${file} direct answer does not open with the answer`);
     }
   }

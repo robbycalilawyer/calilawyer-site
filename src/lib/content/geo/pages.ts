@@ -129,6 +129,7 @@ export const GEO_PAGES: GeoPage[] = [
     h1: "California lemon law deadlines",
     kind: "article",
     withTable: true,
+    answer: "See CCP §871.21 and §871.29. Copy pending fact-check.",
   }),
   shell({
     path: "/lemon-law/attorney-fees",

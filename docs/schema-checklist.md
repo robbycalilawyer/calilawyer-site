@@ -11,9 +11,9 @@ Checked against the static export. Items that need a live host are marked open.
 - [x] JSON-LD is in the static HTML (`scripts/verify-html.mjs`).
 - [x] Person `@id` is `https://calilawyer.com/attorneys/robby-terziyan#person`. The type is `Person`, not the deprecated `Attorney` type.
 - [x] Person name is Rober A. Terziyan. State Bar of California No. 351959. Admission date in the credential is 2023-12-01.
-- [x] Office address on the firm node: 315 Arden Ave, Ste 10, Glendale, CA 91203.
-- [x] `knowsLanguage` is `["en","hy","es"]`.
-- [x] `telephone` is `+13103310310`.
+- [x] Office address on the firm node: 315 Arden Ave Ste 10, Glendale, CA 91203.
+- [x] `knowsLanguage` is `["en","hy","es"]` on the firm node and the attorney Person node.
+- [x] `telephone` is `+1-310-331-0310`. Call links use `tel:+13103310310`.
 - [x] `name` and `legalName` are CaliLawyer.com.
 - [x] No federal-court admission is stated.
 - [x] No years-of-experience claim. Stats, case results, testimonials, and star ratings are not rendered.

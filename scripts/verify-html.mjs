@@ -96,7 +96,7 @@ for (const loc of locs) {
     if (!visible.includes("Copy pending fact-check.")) {
       fail(`${path} is missing the fact-check note`);
     }
-    if (/Rodriguez|871\.21|issued with the sale|years of experience/i.test(visible)) {
+    if (/Rodriguez|issued with the sale|years of experience/i.test(visible)) {
       fail(`${path} still contains brief copy`);
     }
   }
@@ -130,14 +130,29 @@ if (!/User-Agent: Google-Extended\s+Allow: \//i.test(robots)) fail("Google-Exten
 const llms = readFileSync(resolve(root, "llms.txt"), "utf8");
 if (!llms.startsWith("# CaliLawyer.com")) fail("llms.txt missing title");
 for (const needle of [
+  "](https://calilawyer.com/)",
+  "](https://calilawyer.com/lemon-law)",
+  "](https://calilawyer.com/personal-injury)",
+  "/lemon-law/deadlines",
+  "/lemon-law/used-cpo-leased",
+  "/personal-injury/attorney-fees",
+  "/attorneys/robby-terziyan",
+  "/glendale/personal-injury-lawyer",
+  "/glendale/lemon-law-attorney",
+  "/burbank/personal-injury-lawyer",
+  "/burbank/lemon-law-attorney",
+  "/pasadena/personal-injury-lawyer",
+  "/pasadena/lemon-law-attorney",
   "/los-angeles/personal-injury-lawyer",
   "/los-angeles/lemon-law-attorney",
-  "/lemon-law/used-cpo-leased",
-  "/attorneys/robby-terziyan",
-  "Copy pending fact-check.",
+  "CCP §871.21",
+  "§871.29",
+  "Rober A. Terziyan",
+  "351959",
   "(310) 331-0310",
   "CaliLawyer.com",
   "Used vehicles may qualify, case by case.",
+  "Copy pending fact-check.",
 ]) {
   if (!llms.includes(needle)) fail(`llms.txt missing ${needle}`);
 }
@@ -147,7 +162,8 @@ const home = readFileSync(fileFor("/"), "utf8");
 if (!home.includes('"knowsLanguage":["en","hy","es"]') && !home.includes('"knowsLanguage": ["en", "hy", "es"]')) {
   fail("home schema is missing knowsLanguage codes");
 }
-if (!home.includes("+13103310310")) fail("home schema is missing the phone");
+if (!home.includes("+1-310-331-0310")) fail("home schema telephone is not +1-310-331-0310");
+if (!home.includes("tel:+13103310310")) fail("home is missing the tel link");
 if (!home.includes('"postalCode":"91203"') && !home.includes('"postalCode": "91203"')) {
   fail("home schema postal code is not 91203");
 }
@@ -159,6 +175,20 @@ if (!strip(attorney).includes("Copy pending fact-check.")) {
   fail("attorney page is missing the fact-check note");
 }
 if (!attorney.includes("Rober A. Terziyan")) fail("attorney page is missing the attorney name");
+if (!attorney.includes('"knowsLanguage":["en","hy","es"]') && !attorney.includes('"knowsLanguage": ["en", "hy", "es"]')) {
+  fail("attorney schema is missing knowsLanguage codes");
+}
+const deadlines = readFileSync(fileFor("/lemon-law/deadlines"), "utf8");
+if (!deadlines.includes("CCP §871.21") || !deadlines.includes("§871.29")) {
+  fail("deadlines page is missing CCP §871.21 and §871.29");
+}
+const used = readFileSync(fileFor("/lemon-law/used-cpo-leased"), "utf8");
+if (!strip(used).includes("Used vehicles may qualify, case by case.")) {
+  fail("used-vehicle page is missing the approved sentence");
+}
+if (/certified pre-owned|\bCPO\b/.test(strip(used))) {
+  fail("used-vehicle page still distinguishes certified pre-owned cars");
+}
 
 if (existsSync(resolve(root, "this-page-does-not-exist.html"))) {
   fail("unknown path was exported");

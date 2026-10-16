@@ -1,14 +1,14 @@
 # CaliLawyer.com
-> California personal injury and lemon law site in Glendale. Firm name: CaliLawyer.com. Phone: (310) 331-0310. Page text on the routes below is Copy pending fact-check.
+> California personal injury and lemon law firm based in Glendale, CA, serving Glendale, Burbank, Pasadena, and Los Angeles. Attorney: Rober A. Terziyan, State Bar of California No. 351959. Free consultations. Phone: (310) 331-0310. Languages: English, Armenian, Spanish.
 
-## Guides
-- [California personal injury statute of limitations](https://calilawyer.com/guides/california-personal-injury-statute-of-limitations): Copy pending fact-check.
-- [California comparative fault](https://calilawyer.com/guides/california-comparative-fault): Copy pending fact-check.
-- [California lemon law explained](https://calilawyer.com/lemon-law/song-beverly-act-explained): Copy pending fact-check.
-- [California lemon law deadlines](https://calilawyer.com/lemon-law/deadlines): Copy pending fact-check.
-- [Lemon law attorney fees](https://calilawyer.com/lemon-law/attorney-fees): Copy pending fact-check.
+## Pages
+- [Home](https://calilawyer.com/): CaliLawyer.com in Glendale. Free consultation. We handle cases on contingency.
+- [Attorney](https://calilawyer.com/attorneys/robby-terziyan): Rober A. Terziyan, State Bar of California No. 351959.
+- [Lemon law](https://calilawyer.com/lemon-law): Used vehicles may qualify, case by case.
+- [California lemon law deadlines](https://calilawyer.com/lemon-law/deadlines): See CCP §871.21 and §871.29.
 - [Used and leased vehicles](https://calilawyer.com/lemon-law/used-cpo-leased): Used vehicles may qualify, case by case.
-- [Personal injury attorney fees](https://calilawyer.com/personal-injury/attorney-fees): Copy pending fact-check.
+- [Personal injury](https://calilawyer.com/personal-injury): Generally 2 years from the injury (CCP §335.1). Public-entity claims generally must be presented within 6 months (Gov. Code §911.2).
+- [Personal injury attorney fees](https://calilawyer.com/personal-injury/attorney-fees): We handle cases on contingency.
 
 ## Locations
 - [Glendale personal injury](https://calilawyer.com/glendale/personal-injury-lawyer) | [Glendale lemon law](https://calilawyer.com/glendale/lemon-law-attorney)
@@ -16,6 +16,4 @@
 - [Pasadena personal injury](https://calilawyer.com/pasadena/personal-injury-lawyer) | [Pasadena lemon law](https://calilawyer.com/pasadena/lemon-law-attorney)
 - [Los Angeles personal injury](https://calilawyer.com/los-angeles/personal-injury-lawyer) | [Los Angeles lemon law](https://calilawyer.com/los-angeles/lemon-law-attorney)
 
-## About
-- [Attorney](https://calilawyer.com/attorneys/robby-terziyan): Rober A. Terziyan, State Bar of California No. 351959. Copy pending fact-check.
-- Information on this site is general and is not legal advice.
+Information on this site is general and is not legal advice. Page bodies that are not decided yet say Copy pending fact-check.

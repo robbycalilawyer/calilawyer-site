@@ -14,7 +14,7 @@ export function Footer() {
               You talk to the office, not a call center.
             </p>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.12em] text-white">
-              Available to take a review
+              Free consultations.
             </p>
             <a href={SITE.phoneHref} className="figure mt-1 inline-block text-2xl font-semibold text-gold">
               {SITE.phoneDisplay}

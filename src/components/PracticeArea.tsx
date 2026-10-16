@@ -113,6 +113,9 @@ export function PracticeArea({
       <section className="bg-paper">
         <div className="container-site max-w-3xl py-20 md:py-28">
           <div className="space-y-5 text-lg leading-relaxed text-ink/85">
+            {c.directAnswer ? (
+              <p data-direct-answer="true">{c.directAnswer}</p>
+            ) : null}
             {c.intro.map((p, i) => (
               <p key={i}>{p}</p>
             ))}

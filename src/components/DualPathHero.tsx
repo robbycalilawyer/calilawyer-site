@@ -12,15 +12,15 @@ const LEFT: Door = {
   href: "/injury",
   eyebrow: "Personal Injury",
   headline: "You were hurt. Someone else is responsible.",
-  sub: "Crashes, rideshare, trucking, motorcycle, pedestrian, dog bites, premises liability, and wrongful death. We put pressure on the insurance company.",
+  sub: "If a driver, a property owner, or someone's dog caused the injury, call us. We'll put the pressure on the insurer.",
   cta: "Review my injury claim",
 };
 
 const RIGHT: Door = {
   href: "/lemon-law",
   eyebrow: "Lemon Law",
-  headline: "The dealer cannot fix it.",
-  sub: "Repeat repairs, warranty trouble, and manufacturer delay. We review the paperwork for a buyback, a replacement, or cash.",
+  headline: "The dealer can't fix it.",
+  sub: "The car keeps going back and the warranty still applies. Send the repair orders. A buyback, a replacement, or cash may be available. It depends on the file.",
   cta: "Check my lemon law case",
 };
 

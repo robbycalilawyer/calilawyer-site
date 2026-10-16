@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Frequently Asked Questions",
   description:
-    "Answers about California lemon law, injury claims, and fees. A form doesn’t make you a client. Not legal advice.",
+    "Plain answers on California lemon law, injury claims, and fees. A form doesn't make you a client. This isn't legal advice.",
   path: "/faq",
 });
 
@@ -20,7 +20,7 @@ export default function FaqPage() {
       <PageHero
         eyebrow="FAQ"
         title="Frequently asked questions."
-        sub="Clear answers. Not a case evaluation, and not legal advice about your facts."
+        sub="General answers. They aren't advice about your facts."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "FAQ", path: "/faq" },
@@ -32,7 +32,7 @@ export default function FaqPage() {
           <div className="mt-12 rounded-[var(--radius-lg)] border border-ink bg-white p-8">
             <h2 className="font-display text-3xl text-ink">Still have questions?</h2>
             <p className="mt-3 text-ink/75">
-              Send the facts. Free consultation, and it doesn’t make you a client.
+              Send the facts. Free consultation. It doesn’t make you a client.
             </p>
             <Link
               href="/contact"

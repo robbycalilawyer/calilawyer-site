@@ -10,13 +10,13 @@ export const injuryContent: PracticeAreaContent = {
   hero: {
     eyebrow: "Plaintiff representation",
     headline: "California personal injury lawyer in Glendale.",
-    sub: "Insurers delay, deny, and offer less than the bills. We build the file from the records and the medical care, then we ask for a number that matches it.",
+    sub: "An insurer can delay, deny, or offer less than the bills. We start with the records and the medical care, then we ask for a number that matches them.",
     stats: [],
   },
 
   intro: [
     "The other side starts the same day you're hurt. An adjuster sounds helpful and names a number before you know what the injury will cost. That's a tactic, not a favor.",
-    "CaliLawyer.com, in Glendale, reviews crashes, rideshare collisions, trucking wrecks, motorcycle and pedestrian injuries, dog bites, premises claims, catastrophic injuries, and wrongful death. We gather the evidence, document the damages, and deal with the carrier directly.",
+    "The Glendale office reviews crashes, rideshare collisions, and trucking wrecks. We also take motorcycle and pedestrian injuries, dog bites, premises claims, catastrophic injuries, and wrongful death. We gather the evidence and deal with the carrier ourselves.",
   ],
 
   legalCallout: {
@@ -67,20 +67,20 @@ export const injuryContent: PracticeAreaContent = {
   },
 
   scenarios: {
-    title: "Situations we see every week",
+    title: "Calls that sound like this",
     items: [
-      "A rear-end crash left neck and back pain that will not quit.",
-      "The insurer’s first offer does not cover the medical bills.",
-      "You were hit by an uninsured or hit-and-run driver.",
-      "Fault is disputed and you are not sure who to call.",
-      "A loved one was seriously hurt and cannot manage the claim.",
+      "Neck and back pain from a rear-end crash that won't quit.",
+      "The insurer's first offer doesn't cover the medical bills.",
+      "The other driver was uninsured, or left the scene.",
+      "People disagree about fault, and you aren't sure who to call.",
+      "A loved one was seriously hurt and can't manage the claim.",
     ],
   },
 
   tactics: {
     title: "What insurers do",
     intro:
-      "The moment you are injured, the at-fault party’s insurer can start a process aimed at paying less. These are three moves we see, and how the file answers them.",
+      "Once you're hurt, the other side's insurer can start working to pay less. Here are two moves we see, and how the file answers them.",
     items: [
       {
         tactic: "Quick settlements",
@@ -102,7 +102,7 @@ export const injuryContent: PracticeAreaContent = {
   related: {
     title: "Cases we handle",
     intro:
-      "Choose the injury type to see what makes that claim different, what evidence to preserve, and which damages tend to matter.",
+      "Pick the injury. The page says what makes that claim different and what to keep.",
     items: INJURY_LINKS.map((item) => ({
       href: item.href,
       title: item.label,
@@ -147,7 +147,7 @@ export const injuryContent: PracticeAreaContent = {
     },
     {
       q: "What if I was partly at fault?",
-      a: "California uses comparative fault. You may still recover if you were partly responsible, with the recovery reduced by your share. Do not assume you have no case.",
+      a: "California uses comparative fault. You may still recover if you were partly responsible. The recovery is reduced by your share. Don't assume you have no case.",
     },
     {
       q: "How long will my case take?",
@@ -157,11 +157,11 @@ export const injuryContent: PracticeAreaContent = {
 
   locations: {
     ...CALIFORNIA_LOCATIONS,
-    heading: "Glendale office. Serving injured clients across California",
+    heading: "The office is in Glendale. Injured clients call from across California.",
   },
 
   finalCta: {
     headline: "Tell us what happened. We’ll tell you the next step.",
-    sub: "Free consultation. Confidential, and not a retainer. Find out where the claim actually stands.",
+    sub: "Free consultation. It isn't a retainer. We'll tell you where the claim stands.",
   },
 };

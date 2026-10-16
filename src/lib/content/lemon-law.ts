@@ -10,7 +10,7 @@ export const lemonLawContent: PracticeAreaContent = {
   hero: {
     eyebrow: "Consumer protection",
     headline: "California lemon law attorneys for defective vehicles.",
-    sub: "If your vehicle keeps going back to the dealer for warranty repairs, we can review the repair history and explain the options. When the manufacturer cannot fix a covered defect, the path may be a buyback, a replacement, or cash. The manufacturer may be ordered to pay reasonable attorney’s fees.",
+    sub: "If the car keeps going back to the dealer, we can read the repair history and tell you the options. When the manufacturer can't fix a covered defect, the path may be a buyback, a replacement, or cash. The manufacturer may be ordered to pay reasonable attorney’s fees.",
     stats: [],
   },
 
@@ -132,7 +132,7 @@ export const lemonLawContent: PracticeAreaContent = {
     },
     {
       q: "Do I have to keep making payments?",
-      a: "Yes. Keep the payments current and the vehicle maintained while a claim is pending. Stopping payments can hurt the file. We will talk through your specific contract.",
+      a: "Yes. Keep the payments current and the vehicle maintained while a claim is pending. Stopping payments can hurt the file. We'll talk through your contract.",
     },
     {
       q: "What if I bought the car used?",
@@ -146,11 +146,11 @@ export const lemonLawContent: PracticeAreaContent = {
 
   locations: {
     ...CALIFORNIA_LOCATIONS,
-    heading: "Glendale office. Helping vehicle owners across California",
+    heading: "The office is in Glendale. Vehicle owners call from across California.",
   },
 
   finalCta: {
     headline: "Stop fighting the dealer alone.",
-    sub: "Send the repair history. We will tell you whether the manufacturer should be buying the vehicle back.",
+    sub: "Send the repair history. We'll tell you whether the manufacturer should be buying the vehicle back.",
   },
 };

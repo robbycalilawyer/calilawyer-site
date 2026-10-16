@@ -112,9 +112,11 @@ for (const loc of locs) {
       for (const node of nodes) {
         if (node["@type"] !== "FAQPage") continue;
         for (const question of node.mainEntity ?? []) {
-          if (!visible.includes(question.name)) fail(`${path} FAQ question not visible: ${question.name}`);
+          if (!visible.includes(question.name)) {
+            fail(`${path} FAQ question does not match the visible question word for word: ${question.name}`);
+          }
           if (!visible.includes(question.acceptedAnswer.text)) {
-            fail(`${path} FAQ answer not visible: ${question.name}`);
+            fail(`${path} FAQ answer does not match the visible answer word for word: ${question.name}`);
           }
         }
       }
@@ -135,12 +137,54 @@ function walkHtml(dir) {
   return found;
 }
 
+const BANNED_PHRASES = [
+  "navigating",
+  "landscape",
+  "we understand that",
+  "rest assured",
+  "comprehensive",
+  "seamless",
+  "dedicated to",
+  "tailored",
+  "empower",
+  "in today's",
+  "it's important to note",
+  "delve",
+  "journey",
+];
+
+function readable(html) {
+  return strip(html).replace(/\u2019/g, "'").replace(/\u2018/g, "'");
+}
+
+let directAnswers = 0;
 for (const file of walkHtml(root)) {
   const html = readFileSync(file, "utf8");
   for (const needle of FORBIDDEN_HTML) {
     if (html.includes(needle)) fail(`${file} contains ${JSON.stringify(needle)}`);
   }
+  if (/—|&mdash;|&#8212;|&#x2014;/i.test(html)) {
+    fail(`${file} contains an em dash`);
+  }
+  const text = readable(html).toLowerCase();
+  for (const phrase of BANNED_PHRASES) {
+    const pattern = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+    if (pattern.test(text)) fail(`${file} contains banned phrase ${JSON.stringify(phrase)}`);
+  }
+  for (const match of html.matchAll(/data-direct-answer="true"[^>]*>([\s\S]*?)<\/p>/g)) {
+    directAnswers += 1;
+    const answer = readable(match[1]).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+    const count = answer.split(/\s+/).filter(Boolean).length;
+    if (count < 40 || count > 60) {
+      fail(`${file} direct answer is ${count} words, expected 40-60`);
+    }
+    const firstSentence = answer.split(/(?<=\.)\s/)[0] ?? "";
+    if (firstSentence.split(/\s+/).filter(Boolean).length < 12) {
+      fail(`${file} direct answer does not open with the answer`);
+    }
+  }
 }
+if (directAnswers < 1) fail("no guide direct answer was exported");
 
 for (const path of UNPUBLISHED) {
   if (sitemap.includes(path)) fail(`sitemap still lists ${path}`);

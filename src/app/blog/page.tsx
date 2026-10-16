@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Resources",
   description:
-    "Short previews on California lemon law documents, car-accident steps, rideshare coverage, and insurance calls. Full articles are not published yet.",
+    "Short notes on lemon law paperwork, what to do after a crash, and rideshare coverage. These aren't finished articles.",
   path: "/blog",
 });
 
@@ -15,8 +15,8 @@ export default function BlogPage() {
     <>
       <PageHero
         eyebrow="Resources"
-        title="Resources and insights."
-        sub="Know the process before the other side calls. These cards are previews, not finished articles."
+        title="A few notes before you call."
+        sub="These cards are previews. The full articles aren't published yet."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Resources", path: "/blog" },

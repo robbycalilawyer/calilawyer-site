@@ -24,8 +24,8 @@ export default function PrivacyPage() {
       <section className="bg-paper">
         <div className="container-site max-w-3xl space-y-8 py-16 text-ink/80 md:py-20">
           <p>
-            This privacy policy describes how {SITE.name} handles information
-            sent through this website.
+            Here’s how {SITE.name} handles information you send through
+            this site.
           </p>
           <h2 className="h-card text-ink">1. Information we collect</h2>
           <p>

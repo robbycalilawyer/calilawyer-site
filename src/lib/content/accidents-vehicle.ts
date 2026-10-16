@@ -59,7 +59,7 @@ export const carAccident = {
       },
       {
         q: "What if the other driver says I was partly at fault?",
-        a: "Comparative fault can reduce a recovery. It does not automatically end one. We look at the physical evidence before anyone accepts a percentage.",
+        a: "Comparative fault can reduce a recovery. It doesn't automatically end one. We look at the physical evidence before anyone accepts a percentage.",
       },
     ],
     finalHeadline: "Just been in a crash? Start the review today.",
@@ -80,7 +80,7 @@ export const truckAccident = {
     headline: "California truck accident attorneys.",
     sub: "Commercial crashes are not oversized car cases. More defendants, safety rules for commercial trucks, and a company team that can be at the scene before you leave the hospital.",
     difference:
-      "A tractor-trailer wreck can involve the driver, the motor carrier, a freight broker, and a maintenance contractor. Hours-of-service and inspection rules often decide the file. We do not print policy limits.",
+      "A tractor-trailer wreck can involve the driver, the motor carrier, a freight broker, and a maintenance contractor. Hours-of-service and inspection rules often decide the file. We don't print policy limits.",
     evidenceIntro:
       "Electronic logs and engine data can be overwritten. We send preservation demands for:",
     evidence: [
@@ -125,10 +125,10 @@ export const truckAccident = {
       },
       {
         q: "Why is a truck case investigated differently?",
-        a: "Hours-of-service rules and electronic data create a paper trail a passenger-car crash usually does not have. That trail disappears if nobody asks for it quickly.",
+        a: "Hours-of-service rules and electronic data create a paper trail a passenger-car crash usually doesn't have. That trail disappears if nobody asks for it quickly.",
       },
     ],
-    finalHeadline: "A commercial rig hit you. Do not wait on their investigator.",
+    finalHeadline: "A commercial rig hit you. Don't wait on their investigator.",
     finalSub:
       "Preservation letters go out as soon as we are retained to send them. Free consultation.",
   }),
@@ -145,7 +145,7 @@ export const motorcycleAccident = {
   content: build({
     eyebrow: "Motorcycle accidents",
     headline: "California motorcycle accident attorneys.",
-    sub: "Riders are often treated as reckless before anyone looks at the lane, the turn, or the driver’s phone. The injuries are worse because the bike does not absorb the hit.",
+    sub: "Riders are often treated as reckless before anyone looks at the lane, the turn, or the driver’s phone. The injuries are worse because the bike doesn't absorb the hit.",
     difference:
       "Bias is part of the defense. Adjusters and, later, jurors may assume the rider was splitting lanes unsafely or speeding. The equipment and the roadway usually tell a more specific story.",
     evidenceIntro:
@@ -178,7 +178,7 @@ export const motorcycleAccident = {
       },
       {
         label: "Daily life",
-        detail: "Riding, work, and independence that do not return on the old schedule.",
+        detail: "Riding, work, and independence that don't return on the old schedule.",
       },
     ],
     help: sharedHelp(
@@ -187,15 +187,15 @@ export const motorcycleAccident = {
     faqs: [
       {
         q: "Does lane splitting ruin a claim?",
-        a: "Not by itself. Lane splitting can be lawful in California, and fault still depends on what each person did. We do not concede a percentage because you were on a bike.",
+        a: "Not by itself. Lane splitting can be lawful in California, and fault still depends on what each person did. We don't concede a percentage because you were on a bike.",
       },
       {
         q: "What if I was not wearing a helmet?",
-        a: "Helmet use can affect parts of a claim. It does not erase someone else’s negligence. Tell us the facts and we will explain how they cut.",
+        a: "Helmet use can affect parts of a claim. It doesn't erase someone else’s negligence. Tell us the facts and we'll explain how they cut.",
       },
     ],
-    finalHeadline: "You were on the bike. That is not the whole case.",
-    finalSub: "Send the photos and the medical records. We will tell you what the file still needs.",
+    finalHeadline: "You were on the bike. That's not the whole case.",
+    finalSub: "Send the photos and the medical records. We'll tell you what the file still needs.",
   }),
 };
 
@@ -212,7 +212,7 @@ export const rideshareAccident = {
     headline: "California rideshare accident attorneys.",
     sub: "Uber and Lyft crashes turn on app status. Waiting for a match and driving a passenger are not the same insurance question.",
     difference:
-      "The company’s policy position usually follows the driver’s status: app off, app on and waiting, or matched and on a trip. Which layer applies has to be confirmed for the date of the crash. We do not print policy limits.",
+      "The company’s policy position usually follows the driver’s status: app off, app on and waiting, or matched and on a trip. Which layer applies has to be confirmed for the date of the crash. We don't print policy limits.",
     evidenceIntro:
       "App data is the coverage map. We look for it before it ages out of the company’s systems.",
     evidence: [

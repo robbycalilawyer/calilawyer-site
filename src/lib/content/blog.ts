@@ -35,7 +35,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "Dec 15, 2023",
   },
   {
-    title: "Understanding maximum medical improvement",
+    title: "Maximum medical improvement",
     category: "Personal Injury",
     excerpt:
       "Settling before doctors say you have reached maximum medical improvement can leave future care out of the claim.",

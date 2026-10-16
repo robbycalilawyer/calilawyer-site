@@ -27,9 +27,9 @@ export default function AboutPage() {
           <div className="space-y-5 text-lg leading-relaxed text-ink/80">
             <h2 className="h-section text-ink">What the office does.</h2>
             <p>
-              You get updates in plain language and a person on the file. The
-              work starts with the documents, not a guess about what the case
-              is worth.
+              You’ll get updates in plain language, from a person on the file.
+              We start with the documents. We don’t guess what the case is
+              worth.
             </p>
             <p>
               We collect the record, then we ask the other side to answer it.

@@ -6,7 +6,7 @@ Checked against the static export. Items that need a live host are marked open.
 - [x] `areaServed` includes Glendale, Burbank, Pasadena, Los Angeles, and California. Glendale is first.
 - [x] `knowsAbout` is personal injury and California lemon law. No landlord-tenant.
 - [x] `sameAs` is omitted. No profile URLs are shipped.
-- [x] No `aggregateRating` or `review` on the firm node. `/reviews` has no star markup.
+- [x] No `aggregateRating` or `review` on the firm node. Star ratings are not rendered.
 - [x] FAQPage `name` and `text` are the same strings the accordion renders.
 - [x] JSON-LD is in the static HTML (`scripts/verify-html.mjs`).
 - [x] Person `@id` is `https://calilawyer.com/attorneys/robby-terziyan#person`. The type is `Person`, not the deprecated `Attorney` type.

@@ -4,7 +4,6 @@ export {
   COPY_PENDING,
   GEO_PAGES,
   attorneyPage,
-  reviewsPage,
 } from "./pages";
 export type { GeoKind, GeoPage, GeoSection } from "./types";
 

@@ -46,7 +46,7 @@ function shell(input: {
         }
       : undefined,
     citations: [],
-    faqs: input.kind === "reviews" ? [] : FAQS,
+    faqs: FAQS,
     related: RELATED.filter((link) => link.href !== input.path),
   });
 }
@@ -88,14 +88,6 @@ export const attorneyPage = shell({
   eyebrow: "Attorney",
   h1: ATTORNEY.name,
   kind: "person",
-});
-
-export const reviewsPage = shell({
-  path: "/reviews",
-  title: "Reviews",
-  eyebrow: "Reviews",
-  h1: "Reviews",
-  kind: "reviews",
 });
 
 export const GEO_PAGES: GeoPage[] = [
@@ -163,5 +155,4 @@ export const GEO_PAGES: GeoPage[] = [
   ...CITY_INJURY_PAGES,
   ...CITY_LEMON_PAGES,
   attorneyPage,
-  reviewsPage,
 ];

@@ -58,8 +58,10 @@ Components reference tokens only.
 `LeadForm` posts url-encoded fields to `/__forms.html` as Netlify form `lead`.
 Success is shown only after a 2xx response. A failed post tells the visitor to
 call (310) 331-0310. `public/__forms.html` is the static form Netlify detects
-at deploy, and it is `noindex`. Lemon-law forms collect vehicle facts. The
-repair-order upload is a labeled placeholder.
+at deploy, and it is `noindex`. After the site is imported, enable form
+detection in Netlify and set an email notification, or submissions are not
+delivered. Lemon-law forms collect vehicle facts. The repair-order upload is a
+labeled placeholder.
 
 ## Approved firm facts
 
@@ -71,7 +73,7 @@ Stats, case results, testimonials, and star ratings are not rendered.
 
 ## Answer pages
 
-Guides, city pages, fee pages, `/reviews`, and `/attorneys/robby-terziyan` are
+Guides, city pages, fee pages, and `/attorneys/robby-terziyan` are
 static App Router routes. Injury fee and case-type URLs live under `/injury`
 (`/injury/attorney-fees`, `/injury/car-accidents`, `/injury/premises-liability`).
 City injury pages are `/{city}/injury-lawyer`. Their unfinished body text says

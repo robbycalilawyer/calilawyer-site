@@ -49,7 +49,6 @@ const PENDING_PREFIXES = [
   "/pasadena/",
   "/los-angeles/",
   "/attorneys/",
-  "/reviews",
 ];
 
 function isPendingPage(path) {

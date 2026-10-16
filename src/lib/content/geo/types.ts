@@ -1,6 +1,6 @@
 import type { FaqItem } from "@/components/Accordion";
 
-export type GeoKind = "article" | "faq" | "city" | "person" | "reviews";
+export type GeoKind = "article" | "faq" | "city" | "person";
 
 export interface GeoSection {
   heading: string;

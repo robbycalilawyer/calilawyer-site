@@ -6,7 +6,7 @@ export const pedestrianAccident = {
     title: "California Pedestrian Accident Attorneys",
     description:
       "Pedestrian injury reviews after crosswalk and hit-and-run crashes in California. We secure video and the driver’s records early.",
-    path: "/injury/pedestrian-accident",
+    path: "/injury/pedestrian-accidents",
   },
   content: build({
     eyebrow: "Pedestrian accidents",
@@ -136,7 +136,7 @@ export const slipAndFall = {
     title: "California Slip and Fall Attorneys",
     description:
       "Premises-liability reviews for slip, trip, and fall injuries in California stores, buildings, and walkways. Video and maintenance logs come first.",
-    path: "/injury/slip-and-fall",
+    path: "/injury/premises-liability",
   },
   content: build({
     eyebrow: "Slip and fall",

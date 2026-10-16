@@ -6,25 +6,25 @@ export const SITEMAP_ROUTES: {
 }[] = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/injury", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/injury/car-accident", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/injury/truck-accident", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/injury/car-accidents", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/injury/truck-accidents", priority: 0.8, changeFrequency: "monthly" },
   {
-    path: "/injury/motorcycle-accident",
+    path: "/injury/motorcycle-accidents",
     priority: 0.8,
     changeFrequency: "monthly",
   },
   {
-    path: "/injury/rideshare-accident",
+    path: "/injury/rideshare-accidents",
     priority: 0.8,
     changeFrequency: "monthly",
   },
   {
-    path: "/injury/pedestrian-accident",
+    path: "/injury/pedestrian-accidents",
     priority: 0.8,
     changeFrequency: "monthly",
   },
   { path: "/injury/dog-bites", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/injury/slip-and-fall", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/injury/premises-liability", priority: 0.8, changeFrequency: "monthly" },
   { path: "/lemon-law", priority: 0.9, changeFrequency: "monthly" },
   {
     path: "/lemon-law/what-qualifies",

@@ -56,31 +56,31 @@ export const FIRM_LINKS = [
 export const INJURY_LINKS = [
   {
     label: "Car accidents",
-    href: "/injury/car-accident",
+    href: "/injury/car-accidents",
     description:
       "High-speed collisions, intersection crashes, and highway accidents.",
   },
   {
     label: "Truck accidents",
-    href: "/injury/truck-accident",
+    href: "/injury/truck-accidents",
     description:
       "Commercial vehicle crashes, jackknifes, and catastrophic injuries.",
   },
   {
     label: "Motorcycle accidents",
-    href: "/injury/motorcycle-accident",
+    href: "/injury/motorcycle-accidents",
     description:
       "Lane-splitting crashes, severe road rash, and traumatic brain injuries.",
   },
   {
     label: "Rideshare accidents",
-    href: "/injury/rideshare-accident",
+    href: "/injury/rideshare-accidents",
     description:
       "Uber and Lyft collisions, passenger injuries, and driver negligence.",
   },
   {
     label: "Pedestrian accidents",
-    href: "/injury/pedestrian-accident",
+    href: "/injury/pedestrian-accidents",
     description: "Crosswalk injuries, hit-and-runs, and severe bodily harm.",
   },
   {
@@ -90,7 +90,7 @@ export const INJURY_LINKS = [
   },
   {
     label: "Slip and fall",
-    href: "/injury/slip-and-fall",
+    href: "/injury/premises-liability",
     description:
       "Premises liability, unsafe conditions, and negligent property owners.",
   },

@@ -37,9 +37,10 @@ public/assets/                     # logo, white logo, portrait, OG image
 ```
 
 Practice hubs and child pages render from one `PracticeArea` component.
-Flat paths from the Vite export (`/personal-injury`, `/car-accidents`, and
-the other case-type slugs) render the same pages and canonicalize to the
-nested routes.
+Canonical injury URLs are `/injury` and the plural nested slugs
+(`/injury/car-accidents`, `/injury/premises-liability`, and the other case
+types). Flat paths from the Vite export (`/personal-injury`, `/car-accidents`,
+`/slip-and-fall`) and the earlier singular nested paths redirect to those URLs.
 
 ## Design system
 

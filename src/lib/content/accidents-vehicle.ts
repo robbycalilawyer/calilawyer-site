@@ -7,7 +7,7 @@ export const carAccident = {
     title: "California Car Accident Attorneys",
     description:
       "California car accident matters for intersection, highway, and multi-car crashes. We preserve evidence and deal with the insurer. Free consultation.",
-    path: "/injury/car-accident",
+    path: "/injury/car-accidents",
   },
   content: build({
     eyebrow: "Car accidents",
@@ -73,7 +73,7 @@ export const truckAccident = {
     title: "California Truck Accident Attorneys",
     description:
       "Commercial truck and tractor-trailer injury reviews in California. We pursue driver logs, maintenance records, and the companies behind the rig.",
-    path: "/injury/truck-accident",
+    path: "/injury/truck-accidents",
   },
   content: build({
     eyebrow: "Truck accidents",
@@ -140,7 +140,7 @@ export const motorcycleAccident = {
     title: "California Motorcycle Accident Attorneys",
     description:
       "Motorcycle crash reviews for riders blamed before the evidence is in. We document gear, roadway marks, and the other driver’s attention.",
-    path: "/injury/motorcycle-accident",
+    path: "/injury/motorcycle-accidents",
   },
   content: build({
     eyebrow: "Motorcycle accidents",
@@ -205,7 +205,7 @@ export const rideshareAccident = {
     title: "California Rideshare Accident Attorneys",
     description:
       "Uber and Lyft injury reviews in California. Coverage often depends on whether the driver was waiting for a ride or already on a trip.",
-    path: "/injury/rideshare-accident",
+    path: "/injury/rideshare-accidents",
   },
   content: build({
     eyebrow: "Rideshare accidents",

@@ -9,7 +9,7 @@ export const lemonLawContent: PracticeAreaContent = {
 
   hero: {
     eyebrow: "Consumer protection",
-    headline: "California lemon law lawyer for defective vehicles.",
+    headline: "A car the dealer can't fix.",
     sub: "If the car keeps going back to the dealer, we can read the repair history and tell you the options. When the manufacturer can't fix a covered defect, the path may be a buyback, a replacement, or cash. The manufacturer may be ordered to pay reasonable attorney’s fees.",
     stats: [],
   },
@@ -146,7 +146,8 @@ export const lemonLawContent: PracticeAreaContent = {
 
   locations: {
     ...CALIFORNIA_LOCATIONS,
-    heading: "The office is in Glendale. Vehicle owners call from across California.",
+    heading: "The office is in Glendale.",
+    lede: "Vehicle owners call from across California.",
   },
 
   finalCta: {

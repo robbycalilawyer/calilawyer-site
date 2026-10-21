@@ -39,7 +39,7 @@ export function AnswerPage({ page }: { page: GeoPage }) {
       ) : null}
       <PageHero eyebrow={page.eyebrow} title={page.h1} crumbs={crumbs} />
       <article className="bg-paper">
-        <div className="container-site max-w-3xl py-20 md:py-32">
+        <div className="container-site max-w-[65ch] py-20 md:py-32">
           {page.kind === "person" ? (
             <AttorneyFigure
               priority

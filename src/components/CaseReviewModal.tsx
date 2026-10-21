@@ -94,7 +94,7 @@ export function CaseReviewModal() {
             <h2 id={titleId} className="font-display text-2xl text-white">
               Free consultation
             </h2>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-bone">
+            <p className="mt-1 text-sm font-semibold text-bone">
               Confidential. No obligation.
             </p>
           </div>

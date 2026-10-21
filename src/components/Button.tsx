@@ -40,7 +40,7 @@ function classes({
   ];
 
   const sizes: Record<Size, string> = {
-    md: "px-5 py-2.5 text-[0.95rem]",
+    md: "px-5 py-2.5 text-base",
     lg: "px-7 py-3.5 text-base",
   };
 

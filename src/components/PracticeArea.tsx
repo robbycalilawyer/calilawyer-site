@@ -88,7 +88,10 @@ export function PracticeArea({
               <span className="eyebrow text-bone">{c.hero.eyebrow}</span>
             </div>
             <h1 className="h-hero mt-4 text-white">{c.hero.headline}</h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone">
+            {c.hero.lead ? (
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-bone">{c.hero.lead}</p>
+            ) : null}
+            <p className={`${c.hero.lead ? "mt-3" : "mt-6"} max-w-xl text-lg leading-relaxed text-bone`}>
               {c.hero.sub}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

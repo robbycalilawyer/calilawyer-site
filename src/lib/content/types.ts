@@ -14,6 +14,8 @@ export interface PracticeAreaContent {
   hero: {
     eyebrow: string;
     headline: string;
+    /** One sentence directly under the h1, before the supporting paragraph. */
+    lead?: string;
     sub: string;
     /** Stat counters shown in the hero. Placeholders stay bracketed. */
     stats: {

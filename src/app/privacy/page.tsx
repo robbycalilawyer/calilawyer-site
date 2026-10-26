@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         ]}
       />
       <section className="bg-paper">
-        <div className="container-site max-w-3xl space-y-8 py-16 text-ink/80 md:py-20">
+        <div className="container-site max-w-[65ch] space-y-8 py-16 text-ink/80 md:py-20">
           <p>
             Here’s how {SITE.name} handles information you send through
             this site.

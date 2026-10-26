@@ -27,7 +27,7 @@ export default function FaqPage() {
         ]}
       />
       <section className="bg-paper">
-        <div className="container-site max-w-3xl py-20 md:py-32">
+        <div className="container-site max-w-[65ch] py-20 md:py-32">
           <Accordion items={SITE_FAQS} />
           <div className="mt-12 rounded-[var(--radius-lg)] border border-ink bg-white p-8">
             <h2 className="font-display text-3xl text-ink">Still have questions?</h2>

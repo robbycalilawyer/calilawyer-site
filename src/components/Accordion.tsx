@@ -83,7 +83,7 @@ export function Accordion({ items, tone = "light" }: AccordionProps) {
             >
               <div>
                 <p
-                  className={`px-5 pb-6 text-[0.975rem] leading-relaxed md:px-6 ${
+                  className={`px-5 pb-6 text-base leading-relaxed md:px-6 ${
                     isDark ? "text-bone" : "text-ink/75"
                   }`}
                 >

@@ -9,12 +9,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Logo className="h-14 w-auto" />
-            <p className="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-bone">
+            <p className="mt-4 max-w-sm text-base leading-relaxed text-bone">
               We’re a Glendale firm for California lemon law and injury cases.
               You talk to the office, not a call center.
             </p>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.12em] text-white">
-              Available to take a review
+            <p className="mt-6 text-base font-semibold text-white">
+              Free consultations.
             </p>
             <a href={SITE.phoneHref} className="figure mt-1 inline-block text-2xl font-semibold text-gold">
               {SITE.phoneDisplay}
@@ -28,24 +28,24 @@ export function Footer() {
             <h2 className="eyebrow text-bone">Practice areas</h2>
             <ul className="mt-4 space-y-3">
               <li>
-                <Link href="/lemon-law" className="text-[0.95rem] text-bone hover:text-white">
+                <Link href="/lemon-law" className="text-base text-bone hover:text-white">
                   Lemon law
                 </Link>
               </li>
               <li>
-                <Link href="/injury" className="text-[0.95rem] text-bone hover:text-white">
+                <Link href="/injury" className="text-base text-bone hover:text-white">
                   Personal injury
                 </Link>
               </li>
               {INJURY_LINKS.slice(0, 4).map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-[0.95rem] text-bone hover:text-white">
+                  <Link href={item.href} className="text-base text-bone hover:text-white">
                     {item.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/injury" className="text-[0.95rem] text-bone hover:text-gold">
+                <Link href="/injury" className="text-base text-bone hover:text-gold">
                   All injury types →
                 </Link>
               </li>
@@ -57,7 +57,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {FIRM_LINKS.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-[0.95rem] text-bone hover:text-white">
+                  <Link href={item.href} className="text-base text-bone hover:text-white">
                     {item.label}
                   </Link>
                 </li>
@@ -67,16 +67,16 @@ export function Footer() {
 
           <div>
             <h2 className="eyebrow text-bone">Glendale</h2>
-            <p className="mt-4 text-sm leading-relaxed text-bone">
-              Office: {OFFICE.display}. Consultations are also handled statewide,
+            <p className="mt-4 max-w-[36ch] text-sm leading-relaxed text-bone">
+              Office: {OFFICE.display}. We also take cases across California,
               including Burbank, Pasadena, Los Angeles, Orange County, San Diego,
               the Inland Empire, Sacramento, and the Bay Area.
             </p>
           </div>
         </div>
 
-        <div className="mt-14 space-y-4 border-t border-charcoal pt-8 text-xs leading-relaxed text-bone/80">
-          <p className="font-semibold uppercase tracking-[0.14em] text-bone">
+        <div className="mt-14 max-w-[65ch] space-y-4 border-t border-charcoal pt-8 text-sm leading-relaxed text-bone">
+          <p className="font-semibold text-white">
             Advertisement / Attorney Advertising
           </p>
           <p>

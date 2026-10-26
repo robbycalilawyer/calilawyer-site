@@ -14,6 +14,8 @@ export interface PracticeAreaContent {
   hero: {
     eyebrow: string;
     headline: string;
+    /** One sentence directly under the h1, before the supporting paragraph. */
+    lead?: string;
     sub: string;
     /** Stat counters shown in the hero. Placeholders stay bracketed. */
     stats: {
@@ -95,6 +97,8 @@ export interface PracticeAreaContent {
 
   locations: {
     heading: string;
+    /** Sentence under the heading, so the h2 stays one line. */
+    lede?: string;
     cities: string[];
   };
 

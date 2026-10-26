@@ -153,16 +153,21 @@ body {
   color: var(--color-ink);
 }
 
-/* ---------- Utility: content width ---------- */
-.container-site {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--space-6);
-}
-@media (min-width: 768px) {
+/* ---------- Utility: content width ----------
+   Layered so a Tailwind max-w-* on the same element can narrow it.
+   An unlayered rule was beating those utilities, so long sections
+   ran the full 1200px. */
+@layer components {
   .container-site {
-    padding-inline: var(--space-8);
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+  }
+  @media (min-width: 768px) {
+    .container-site {
+      padding-inline: var(--space-8);
+    }
   }
 }
 

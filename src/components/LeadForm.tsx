@@ -157,10 +157,9 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
         >
           Request received
         </h3>
-        <p className="mt-3 text-[0.975rem] leading-relaxed">
-          Your request has been received. A team member will contact you
-          shortly to discuss your case. This doesn’t create an
-          attorney-client relationship.
+        <p className="mt-3 text-base leading-relaxed">
+          We got the request. Someone from the office will be in touch.
+          This doesn’t create an attorney-client relationship.
         </p>
         <div className="mt-6">
           <Button
@@ -178,7 +177,7 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
   const labelCls = `mb-1.5 block text-sm font-semibold ${
     isDark ? "text-bone" : "text-ink"
   }`;
-  const inputBase = `w-full rounded-[var(--radius-md)] border px-4 py-3 text-[0.975rem] outline-none transition-colors duration-[var(--motion-fast)] ${
+  const inputBase = `w-full rounded-[var(--radius-md)] border px-4 py-3 text-base outline-none transition-colors duration-[var(--motion-fast)] ${
     isDark
       ? "on-dark border-charcoal bg-ink text-white placeholder:text-bone/50"
       : "border-bone bg-white text-ink placeholder:text-ink/40"
@@ -347,8 +346,8 @@ export function LeadForm({ practice = "general", tone = "light" }: LeadFormProps
         </Button>
 
         <p
-          className={`text-xs leading-relaxed ${
-            isDark ? "text-bone/70" : "text-ink/55"
+          className={`text-sm leading-relaxed ${
+            isDark ? "text-bone" : "text-charcoal"
           }`}
         >
           {FEE_TERMS} Free consultation. Submitting this form doesn’t create an

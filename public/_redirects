@@ -13,6 +13,12 @@ https://regal-dragon-239a4a.netlify.app/personal-injury/   https://calilawyer.co
 /personal-injury /injury 301
 /personal-injury/ /injury 301
 
+# Old-site home. One hop to /. www and the production host are named
+# first so they do not stop on an intermediate URL.
+https://www.calilawyer.com/sb/2.0/sbhome2.html                 https://calilawyer.com/    301
+https://regal-dragon-239a4a.netlify.app/sb/2.0/sbhome2.html    https://calilawyer.com/    301
+/sb/2.0/sbhome2.html / 301
+
 /car-accidents                   https://calilawyer.com/injury/car-accidents                301!
 /car-accidents/                  https://calilawyer.com/injury/car-accidents                301!
 /injury/car-accident             https://calilawyer.com/injury/car-accidents                301!

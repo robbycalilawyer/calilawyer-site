@@ -16,7 +16,9 @@ Static marketing site for a California law firm (personal injury and lemon law):
 
 ## Task routing
 
-| To do this | Read, in order |
+Search for the file you need first (grep, codegraph); open a folder's CONTEXT.md only when you don't know where something lives.
+
+| To do this | Open as needed |
 |---|---|
 | Edit copy on a practice or case-type page | `src/lib/content/CONTEXT.md`, then `types.ts` |
 | Add or change a page or route | `src/app/CONTEXT.md`, then `src/lib/routes.ts` |

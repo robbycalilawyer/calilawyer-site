@@ -41,7 +41,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="bg-paper">
-        <div className="container-site max-w-3xl py-20 md:py-32">
+        <div className="container-site max-w-[65ch] py-20 md:py-32">
           <h2 className="h-section text-ink">Credentials and admissions</h2>
           <dl className="mt-8 space-y-6 rounded-[var(--radius-lg)] bg-white p-6 md:p-8">
             <div>

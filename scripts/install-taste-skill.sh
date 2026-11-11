@@ -6,7 +6,8 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 npx --yes skills add Leonxlnx/taste-skill --yes --agent cursor
-for skill in redesign-existing-projects design-taste-frontend; do
-  test -f ".agents/skills/${skill}/SKILL.md"
-done
+# The published package ships design-taste-frontend. It no longer
+# includes redesign-existing-projects, so requiring that file failed
+# CI after a successful install.
+test -f ".agents/skills/design-taste-frontend/SKILL.md"
 echo "taste-skill installed under .agents/skills"

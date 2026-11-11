@@ -11,7 +11,7 @@ interface Door {
 const LEFT: Door = {
   href: "/injury",
   eyebrow: "Personal Injury",
-  headline: "You were hurt. Someone else is responsible.",
+  headline: "You were hurt.",
   sub: "We'll deal with the insurer for you.",
   cta: "Review my injury claim",
 };
@@ -47,7 +47,11 @@ function DoorPanel({ door, align }: { door: Door; align: "left" | "right" }) {
   return (
     <Link
       href={door.href}
-      className="group on-dark relative flex flex-1 flex-col justify-center px-6 py-14 transition-colors duration-[var(--motion-base)] ease-[var(--ease-out)] hover:bg-charcoal focus-visible:bg-charcoal md:px-12 md:py-28 lg:px-16"
+      className={`group on-dark relative flex flex-1 flex-col justify-center px-6 py-14 transition-colors duration-[var(--motion-base)] ease-[var(--ease-out)] hover:bg-charcoal focus-visible:bg-charcoal md:py-28 ${
+        align === "right"
+          ? "md:pl-[max(1.5rem,calc((100vw-1200px)/2+2rem))] md:pr-8"
+          : "md:pr-[max(1.5rem,calc((100vw-1200px)/2+2rem))] md:pl-8"
+      }`}
     >
       <div
         className={`mx-auto w-full max-w-md ${

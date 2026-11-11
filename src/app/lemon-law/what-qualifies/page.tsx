@@ -21,6 +21,7 @@ const whatQualifiesContent: PracticeAreaContent = {
     ...lemonLawContent.hero,
     eyebrow: "What Qualifies",
     headline: "Does your vehicle actually qualify as a lemon?",
+    lead: undefined,
     sub: "There's no single repair count. It comes down to the repair history and the warranty.",
   },
   directAnswer:

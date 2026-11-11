@@ -27,7 +27,7 @@ const WHY = [
   },
   {
     title: "A file that can be filed",
-    body: "A low offer doesn't close the case. We negotiate from a file that can be filed.",
+    body: "A low offer doesn't close the case. We negotiate from a file that's ready to file.",
   },
   {
     title: "Anywhere in California",
@@ -115,7 +115,8 @@ export function HomeBands() {
       <section className="bg-paper">
         <div className="container-site py-20 md:py-28">
           <LocationGrid
-            heading="The office is in Glendale. We also take cases across California."
+            heading="The office is in Glendale."
+            lede="We also take cases across California."
             cities={[...SERVICE_CITIES]}
             hrefBase="/contact"
           />
@@ -123,7 +124,7 @@ export function HomeBands() {
       </section>
 
       <section className="bg-white">
-        <div className="container-site max-w-3xl py-20 md:py-28">
+        <div className="container-site max-w-[65ch] py-20 md:py-28">
           <h2 className="h-section text-ink">Questions, answered.</h2>
           <div className="mt-8">
             <Accordion items={SITE_FAQS} />
@@ -132,11 +133,14 @@ export function HomeBands() {
       </section>
 
       <section className="on-dark bg-charcoal">
-        <div className="container-site py-20 md:py-32">
-          <h2 className="h-hero max-w-3xl text-white">
-            Tell us what happened. We’ll tell you the next step.
-          </h2>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="container-site flex flex-col gap-8 py-20 md:flex-row md:items-end md:justify-between md:py-32">
+          <div className="max-w-xl">
+            <h2 className="h-section text-white">Tell us what happened.</h2>
+            <p className="mt-4 max-w-[36ch] text-lg leading-relaxed text-bone">
+              We’ll tell you the next step.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
             <LinkButton href="/contact" size="lg">
               Free consultation
             </LinkButton>

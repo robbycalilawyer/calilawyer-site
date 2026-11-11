@@ -157,11 +157,12 @@ export const injuryContent: PracticeAreaContent = {
 
   locations: {
     ...CALIFORNIA_LOCATIONS,
-    heading: "The office is in Glendale. Injured clients call from across California.",
+    heading: "The office is in Glendale.",
+    lede: "Injured clients call from across California.",
   },
 
   finalCta: {
-    headline: "Tell us what happened. We’ll tell you the next step.",
-    sub: "Free consultation. It isn't a retainer. We'll tell you where the claim stands.",
+    headline: "Tell us what happened.",
+    sub: "We'll tell you the next step, and where the claim stands. Free consultation. It isn't a retainer.",
   },
 };

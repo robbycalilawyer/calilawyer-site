@@ -16,7 +16,7 @@ export const SITE_FAQS: FaqItem[] = [
     a: "Get to safety and call 911 so there's a report. Get medical care even if you feel fine. Then photograph the scene, the vehicles, and any injuries you can see.",
   },
   {
-    q: "Can I still call for a review if I am not sure I have a case?",
+    q: "Can I still call for a review if I'm not sure I have a case?",
     a: "Yes. Most people don't know the legal standard that applies to their facts. Free consultation. We'll tell you if we see a path forward.",
   },
   {

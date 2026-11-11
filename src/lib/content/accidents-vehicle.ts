@@ -12,7 +12,7 @@ export const carAccident = {
   content: build({
     eyebrow: "Car accidents",
     headline: "California car accident lawyer.",
-    sub: "High-speed collisions, intersection crashes, and highway wrecks. The insurer will look for a way to share the blame. We build the file before that story hardens.",
+    sub: "Intersection crashes and highway wrecks. The insurer will look for a way to share the blame. We build the file before that story hardens.",
     difference:
       "California car cases sit on comparative negligence. A carrier can reduce what it pays by assigning you a share of fault.",
     evidenceIntro:
@@ -130,7 +130,7 @@ export const truckAccident = {
     ],
     finalHeadline: "A commercial rig hit you. Don't wait on their investigator.",
     finalSub:
-      "Preservation letters go out as soon as we are retained to send them. Free consultation.",
+      "Preservation letters go out as soon as we're retained to send them. Free consultation.",
   }),
 };
 

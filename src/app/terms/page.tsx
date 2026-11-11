@@ -22,7 +22,7 @@ export default function TermsPage() {
         ]}
       />
       <section className="bg-paper">
-        <div className="container-site max-w-3xl space-y-8 py-16 text-ink/80 md:py-20">
+        <div className="container-site max-w-[65ch] space-y-8 py-16 text-ink/80 md:py-20">
           <h2 className="h-card text-ink">Not legal advice</h2>
           <p>
             What’s on this site is general information. It isn’t legal
